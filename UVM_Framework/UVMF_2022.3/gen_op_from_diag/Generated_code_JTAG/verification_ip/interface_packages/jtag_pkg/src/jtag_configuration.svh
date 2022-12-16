@@ -21,7 +21,7 @@ class jtag_configuration  extends uvmf_parameterized_agent_configuration_base #(
 
   bit is_active = 1;
   bit [3:0] no_of_slaves = 0;
-  bit has_coverage = 0;
+  bit has_coverage = 1;
 
   // Sequencer handle populated by agent
   uvm_sequencer #(jtag_transaction  ) sequencer;

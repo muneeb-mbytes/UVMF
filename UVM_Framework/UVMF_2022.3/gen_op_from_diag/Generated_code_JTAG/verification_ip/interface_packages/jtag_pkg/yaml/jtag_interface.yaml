@@ -18,7 +18,7 @@ uvmf:
         isrand: 'False'
         name: has_coverage
         type: bit
-        value: '0'
+        value: '1'
       existing_library_component: 'True'
       gen_inbound_streaming_driver: 'False'
       hdl_pkg_parameters: []

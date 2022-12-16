@@ -50,4 +50,4 @@ uvmf:
           value: "0"
         - name: "has_coverage"
           type: "bit"
-          value: "0"
+          value: "1"
