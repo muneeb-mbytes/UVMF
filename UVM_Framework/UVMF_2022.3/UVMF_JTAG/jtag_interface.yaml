@@ -1,0 +1,62 @@
+# YAML structure that defines the 'jtag' interface
+uvmf:
+#interface name
+  interfaces:
+    "jtag":
+      clock: "clk"
+      reset: "rst"
+      # reset assertion level is True will make this reset to active low reset
+      reset_assertion_level: 'True'
+      # veloce ready is set to true that will make this generated interface is ready
+      # for use in simulation and emulation 
+      veloce_ready: "True"  
+
+#port declaration
+      ports:
+       - name: "tck"
+         dir: "output"
+         width: "1"
+       - name: "tms"
+         dir: "output"
+         width: "1"
+         reset_value: "1'b0"  
+       - name: "tdi"
+         dir: "output"
+         width: "1"
+         reset_value: "1'b0"  
+       - name: "tdo"
+         dir: "input"
+         width: "1"
+         reset_value: "1'b0"  
+
+#transaction variables
+      transaction_vars:
+       - name: "tck"
+         type: "output"
+         isrand: "False"
+         iscompare: "True"  
+       - name: "tms"
+         type: "output"
+         isrand: "True"
+         iscompare: "True"  
+       - name: "tdi"
+         type: "output"
+         isrand: "True"
+         iscompare: "True"  
+       - name: "tdo"
+         type: "input"
+         isrand: "False"
+         iscompare: "True"  
+  
+#congiguration variables
+      config_vars: 
+       - name: "is_active"
+         type: "bit"
+         value: '1'
+       - name: "no_of_slaves"
+         type: "int"
+         value: '1'
+       - name: "has_coverage"
+         type: "bit"
+         value: '1'
+
