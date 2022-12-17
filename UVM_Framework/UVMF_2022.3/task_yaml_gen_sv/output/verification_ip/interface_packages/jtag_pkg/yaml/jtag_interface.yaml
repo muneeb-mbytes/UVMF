@@ -1,0 +1,77 @@
+uvmf:
+  interfaces:
+    jtag:
+      clock: clock
+      config_constraints:
+      - comment: ''
+        name: slavecount
+        value: '{ noofslaves>0;noofslaves<17 }'
+      config_vars:
+      - comment: ''
+        isrand: 'True'
+        name: isactive
+        type: bit
+        value: 1'b1
+      - comment: ''
+        isrand: 'True'
+        name: noofslaves
+        type: int
+        value: '1'
+      - comment: ''
+        isrand: 'True'
+        name: hascoverage
+        type: bit
+        value: 1'b1
+      existing_library_component: 'True'
+      gen_inbound_streaming_driver: 'False'
+      hdl_pkg_parameters: []
+      hdl_typedefs: []
+      hvl_pkg_parameters: []
+      hvl_typedefs: []
+      parameters: []
+      ports:
+      - dir: input
+        name: TCK
+        reset_value: '''bz'
+        width: '1'
+      - dir: output
+        name: TMS
+        reset_value: 1'b0
+        width: '1'
+      - dir: output
+        name: TDI
+        reset_value: 1'b0
+        width: '1'
+      - dir: input
+        name: TDO
+        reset_value: 1'b0
+        width: '1'
+      reset: reset
+      reset_assertion_level: 'True'
+      transaction_constraints: []
+      transaction_vars:
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: T_clock
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'True'
+        name: T_MS
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'True'
+        name: T_datain
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: T_dataout
+        type: bit
+        unpacked_dimension: ''
+      use_dpi_link: 'False'

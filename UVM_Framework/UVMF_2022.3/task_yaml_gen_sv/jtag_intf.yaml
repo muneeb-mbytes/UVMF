@@ -1,0 +1,63 @@
+uvmf:
+  interfaces: 
+    "jtag":
+      # The name of the clock & reset are the only required
+      # elements for each interface
+      clock: "clock"
+      reset: "reset"
+      # Reset assertion level specified as True will make this
+      # interface sensitive to an active HIGH reset
+      reset_assertion_level: "True"
+      veloce_ready: "True"
+      ports: 
+        - name: "TCK"   
+          width: "1"        
+          dir: "input"
+          #reset_value: "1'b0"
+        - name: "TMS"  
+          width: "1"         
+          dir: "output"
+          reset_value: "1'b0"
+        - name: "TDI"  
+          width: "1"       
+          dir: "output"
+          reset_value: "1'b0" 
+        - name: "TDO" 
+          width: "1" 
+          dir: "input"
+          reset_value: "1'b0"
+      transaction_vars:
+        - name: "T_clock"  
+          type: "bit"
+          isrand: "False"
+          #iscompare: "False" 
+        - name: "T_MS" 
+          type: "bit"
+          isrand: "True"
+          #iscompare: "True" 
+        - name: "T_datain"    
+          type: "bit"
+          isrand: "True" 
+          #iscompare: "True" 
+        - name: "T_dataout"
+          type: "bit"           
+          isrand: "False"
+            #set to true if the exists function is being checked 
+          #iscompare: "False"
+      config_vars:
+        - name: "isactive"
+          type: "bit"
+          isrand: "True"
+          value: "1'b1"
+        - name: "noofslaves"
+          type: "int"
+          isrand: "True"
+          value: "1" 
+        - name: "hascoverage"
+          type: "bit"
+          isrand: "True"
+          value: "1'b1"
+      config_constraints:
+        - name: "slavecount"
+          value: "{ noofslaves>0;noofslaves<17 }"
+          
