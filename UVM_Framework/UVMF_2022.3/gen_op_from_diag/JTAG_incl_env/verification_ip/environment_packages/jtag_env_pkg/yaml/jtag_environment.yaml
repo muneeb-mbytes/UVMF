@@ -1,0 +1,23 @@
+uvmf:
+  environments:
+    jtag:
+      agents:
+      - initiator_responder: INITIATOR
+        name: agent
+        type: jtag
+      analysis_components: []
+      analysis_exports: []
+      analysis_ports:
+      - connected_to: agent.monitored_ap
+        name: agent_ap
+        trans_type: jtag_transaction
+      config_constraints: []
+      config_vars: []
+      existing_library_component: 'True'
+      hvl_pkg_parameters: []
+      non_uvmf_components: []
+      parameters: []
+      qvip_memory_agents: []
+      scoreboards: []
+      subenvs: []
+      tlm_connections: []
