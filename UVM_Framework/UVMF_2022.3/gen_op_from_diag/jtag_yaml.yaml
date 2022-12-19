@@ -25,7 +25,7 @@ uvmf:
       transaction_vars:
         - name: "tck"  
           type: "bit"
-          isrand: "True"
+          isrand: "False"
           iscompare: "True" 
         - name: "tms" 
           type: "bit"
@@ -46,8 +46,13 @@ uvmf:
           isrand: "False"
           value: "1"
         - name: "no_of_slaves"
-          type: "bit [3:0]"
-          value: "0"
+          type: "int"
+          value: "1"
+          isrand: "True"
         - name: "has_coverage"
           type: "bit"
           value: "1"
+
+      config_constraints:
+        - name: "slavecount"
+          value: "{ noofslaves>0;noofslaves<17 }"
