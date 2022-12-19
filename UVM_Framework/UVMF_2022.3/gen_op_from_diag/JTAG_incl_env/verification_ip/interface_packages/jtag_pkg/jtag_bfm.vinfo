@@ -1,0 +1,6 @@
+@use $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg_hdl.vinfo
+@use jtag_pkg_hdl.vinfo
++incdir+@vinfodir
+src/jtag_if.sv
+src/jtag_driver_bfm.sv
+src/jtag_monitor_bfm.sv

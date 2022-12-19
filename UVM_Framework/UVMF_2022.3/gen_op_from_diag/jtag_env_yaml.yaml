@@ -1,0 +1,11 @@
+uvmf:
+  environments: 
+    "jtag":
+      agents:
+        - name: "agent"
+          type: "jtag"
+
+      analysis_ports: 
+        - name: "agent_ap"
+          trans_type: "jtag_transaction"
+          connected_to: "agent.monitored_ap"
