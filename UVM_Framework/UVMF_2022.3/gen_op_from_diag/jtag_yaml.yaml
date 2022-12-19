@@ -55,4 +55,4 @@ uvmf:
 
       config_constraints:
         - name: "slavecount"
-          value: "{ noofslaves>0;noofslaves<17 }"
+          value: "{ no_of_slaves>0;no_of_slaves<17 }"
