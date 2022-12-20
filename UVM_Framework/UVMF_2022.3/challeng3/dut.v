@@ -3,16 +3,16 @@ module adder_ex(input [3:0]a,
                 input clk,
                 input rst,
                 output reg [3:0]sum,
-                output reg c_out);
+                output reg cout);
 
   always@(posedge clk) begin
     if(!rst)begin
       sum = 4'b0000;
-      c_out=1'b0;
+      cout=1'b0;
     end
 
     else
-      {c_out,sum} = a+b;
+      {cout,sum} = a+b;
   end
 
 endmodule
