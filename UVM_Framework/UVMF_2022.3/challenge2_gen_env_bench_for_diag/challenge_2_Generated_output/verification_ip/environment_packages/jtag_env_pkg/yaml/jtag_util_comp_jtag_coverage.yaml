@@ -1,0 +1,8 @@
+uvmf:
+  util_components:
+    jtag_coverage:
+      analysis_exports:
+      - name: jtag_cov_ae
+        type: jtag_transaction
+      existing_library_component: 'True'
+      type: coverage
