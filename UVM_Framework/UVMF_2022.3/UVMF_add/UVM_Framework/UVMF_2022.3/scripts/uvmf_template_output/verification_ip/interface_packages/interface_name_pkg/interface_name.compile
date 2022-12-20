@@ -1,0 +1,3 @@
+needs:
+  - interface_name_hvl.compile
+  - interface_name_hdl.compile

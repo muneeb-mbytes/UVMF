@@ -1,0 +1,1 @@
+$UVMF_VIP_LIBRARY_HOME/interface_packages/mem_pkg/mem_pkg.sv

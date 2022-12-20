@@ -1,0 +1,1 @@
+$UVMF_VIP_LIBRARY_HOME/interface_packages/interface_name_pkg/interface_name_pkg.sv

@@ -1,0 +1,21 @@
+uvmf:
+  util_components:
+    block_c_predictor:
+      analysis_exports:
+      - name: mem_in_ae
+        type: mem_transaction
+      - name: axi4_master_1_ae
+        type: mvc_sequence_item_base
+      - name: axi4_master_0_ae
+        type: mvc_sequence_item_base
+      analysis_ports:
+      - name: pkt_sb_ap
+        type: pkt_transaction
+      - name: apb3_config_master_ap
+        type: mvc_sequence_item_base
+      - name: axi4_slave_ap
+        type: mvc_sequence_item_base
+      - name: mem_sb_ap
+        type: mem_transaction
+      existing_library_component: 'True'
+      type: predictor

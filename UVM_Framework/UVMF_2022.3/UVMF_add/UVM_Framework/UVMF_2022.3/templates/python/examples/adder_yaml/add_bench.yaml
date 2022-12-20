@@ -1,0 +1,14 @@
+uvmf:
+  benches:
+    add:
+    
+      active_passive:
+      - bfm_name: add_in_agent
+        value: ACTIVE
+      - bfm_name: add_out_agent
+        value: PASSIVE
+    
+    
+      top_env: add
+
+      

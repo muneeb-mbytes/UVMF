@@ -1,0 +1,20 @@
+//----------------------------------------------------------------------
+// Created with uvmf_gen version 2022.3
+//----------------------------------------------------------------------
+// pragma uvmf custom header begin
+// pragma uvmf custom header end
+//----------------------------------------------------------------------
+//----------------------------------------------------------------------
+//
+
+,
+Interface Description, Interface Type, Interface Transaction, Interface Name,
+block_a_env_control_plane_in, mem_driver_bfm mem_monitor_bfm, mem_transaction, mem_pkg_block_a_env_control_plane_in_BFM,
+block_a_env_control_plane_out, mem_driver_bfm mem_monitor_bfm, mem_transaction, mem_pkg_block_a_env_control_plane_out_BFM,
+block_a_env_secure_data_plane_in, pkt_driver_bfm pkt_monitor_bfm, pkt_transaction, pkt_pkg_block_a_env_secure_data_plane_in_BFM,
+block_a_env_secure_data_plane_out, pkt_driver_bfm pkt_monitor_bfm, pkt_transaction, pkt_pkg_block_a_env_secure_data_plane_out_BFM,
+block_b_env_control_plane_in, mem_driver_bfm mem_monitor_bfm, mem_transaction, mem_pkg_block_b_env_control_plane_in_BFM,
+block_b_env_control_plane_out, mem_driver_bfm mem_monitor_bfm, mem_transaction, mem_pkg_block_b_env_control_plane_out_BFM,
+block_b_env_unsecure_data_plane_in, pkt_driver_bfm pkt_monitor_bfm, pkt_transaction, pkt_pkg_block_b_env_unsecure_data_plane_in_BFM,
+block_b_env_unsecure_data_plane_out, pkt_driver_bfm pkt_monitor_bfm, pkt_transaction, pkt_pkg_block_b_env_unsecure_data_plane_out_BFM,
+

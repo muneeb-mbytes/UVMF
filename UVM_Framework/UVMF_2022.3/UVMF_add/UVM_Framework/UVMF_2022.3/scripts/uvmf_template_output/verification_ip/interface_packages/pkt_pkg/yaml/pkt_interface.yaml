@@ -1,0 +1,104 @@
+uvmf:
+  interfaces:
+    pkt:
+      clock: pclk
+      config_constraints:
+      - comment: ''
+        name: valid_dst_c
+        value: '{ src_address inside {[63:16], 1025}; }'
+      config_vars:
+      - comment: ''
+        isrand: 'True'
+        name: src_address
+        type: bit [DATA_WIDTH-1:0]
+        value: ''
+      dpi_define:
+        comp_args: -c -DPRINT32 -O2
+        files:
+        - myFirstIfFile.c
+        - mySecondIfFile.c
+        imports:
+        - c_args: (unsigned int variable1, unsigned int variable2)
+          c_return_type: void
+          name: hello_world_from_interface
+          sv_args:
+          - dir: input
+            name: variable1
+            type: int unsigned
+          - dir: input
+            name: variable2
+            type: int unsigned
+          sv_return_type: void
+        - c_args: (unsigned int variable3, unsigned int variable4)
+          c_return_type: void
+          name: good_bye_world_from_interface
+          sv_args:
+          - dir: input
+            name: variable3
+            type: int unsigned
+          - dir: input
+            name: variable4
+            type: int unsigned
+          sv_return_type: void
+        link_args: -shared
+        name: pktPkgCFunctions
+      existing_library_component: 'True'
+      gen_inbound_streaming_driver: 'False'
+      hdl_pkg_parameters: []
+      hdl_typedefs: []
+      hvl_pkg_parameters: []
+      hvl_typedefs: []
+      parameters:
+      - name: DATA_WIDTH
+        type: int
+        value: '240'
+      - name: STATUS_WIDTH
+        type: int
+        value: '230'
+      ports:
+      - dir: output
+        name: sop
+        reset_value: 1'b0
+        width: '1'
+      - dir: output
+        name: eop
+        reset_value: 1'b0
+        width: '1'
+      - dir: input
+        name: rdy
+        reset_value: 1'b1
+        width: '1'
+      - dir: output
+        name: data
+        reset_value: '''bz'
+        width: DATA_WIDTH
+      - dir: input
+        name: status
+        reset_value: '''bz'
+        width: STATUS_WIDTH
+      reset: prst
+      reset_assertion_level: 'True'
+      transaction_constraints:
+      - comment: ''
+        name: valid_dst_c
+        value: '{ dst_address inside {1,2,4,8,16,32,64,128,256,512,1024,2048}; }'
+      transaction_vars:
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: data
+        type: bit [DATA_WIDTH-1:0]
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'True'
+        name: dst_address
+        type: bit [DATA_WIDTH-1:0]
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'True'
+        name: status
+        type: bit [STATUS_WIDTH-1:0]
+        unpacked_dimension: ''
+      use_dpi_link: 'False'

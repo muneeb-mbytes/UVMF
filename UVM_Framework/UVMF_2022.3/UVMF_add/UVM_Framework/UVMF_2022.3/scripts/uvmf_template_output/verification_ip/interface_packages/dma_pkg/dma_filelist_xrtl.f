@@ -1,0 +1,3 @@
+$UVMF_VIP_LIBRARY_HOME/interface_packages/dma_pkg/src/dma_if.sv
+$UVMF_VIP_LIBRARY_HOME/interface_packages/dma_pkg/src/dma_monitor_bfm.sv
+$UVMF_VIP_LIBRARY_HOME/interface_packages/dma_pkg/src/dma_driver_bfm.sv

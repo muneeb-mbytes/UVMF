@@ -1,0 +1,57 @@
+uvmf:
+  benches:
+    block_b:
+      active_passive:
+      - bfm_name: control_plane_in
+        value: ACTIVE
+      - bfm_name: control_plane_out
+        value: ACTIVE
+      - bfm_name: unsecure_data_plane_in
+        value: ACTIVE
+      - bfm_name: unsecure_data_plane_out
+        value: ACTIVE
+      active_passive_default: ACTIVE
+      clock_half_period: 6ns
+      clock_phase_offset: 21ns
+      existing_library_component: 'True'
+      interface_params:
+      - bfm_name: control_plane_in
+        value:
+        - name: ADDR_WIDTH
+          value: TEST_CP_IN_ADDR_WIDTH
+        - name: DATA_WIDTH
+          value: TEST_CP_IN_DATA_WIDTH
+      - bfm_name: control_plane_out
+        value:
+        - name: ADDR_WIDTH
+          value: TEST_CP_OUT_ADDR_WIDTH
+      - bfm_name: unsecure_data_plane_in
+        value:
+        - name: DATA_WIDTH
+          value: TEST_UDP_DATA_WIDTH
+      parameters:
+      - name: TEST_CP_IN_DATA_WIDTH
+        type: int
+        value: '20'
+      - name: TEST_CP_IN_ADDR_WIDTH
+        type: int
+        value: '10'
+      - name: TEST_CP_OUT_ADDR_WIDTH
+        type: int
+        value: '21'
+      - name: TEST_UDP_DATA_WIDTH
+        type: int
+        value: '40'
+      reset_assertion_level: 'True'
+      reset_duration: 250ns
+      top_env: block_b
+      top_env_params:
+      - name: CP_IN_DATA_WIDTH
+        value: TEST_CP_IN_DATA_WIDTH
+      - name: CP_OUT_ADDR_WIDTH
+        value: TEST_CP_OUT_ADDR_WIDTH
+      - name: CP_IN_ADDR_WIDTH
+        value: TEST_CP_IN_ADDR_WIDTH
+      - name: UDP_DATA_WIDTH
+        value: TEST_UDP_DATA_WIDTH
+      use_dpi_link: 'False'

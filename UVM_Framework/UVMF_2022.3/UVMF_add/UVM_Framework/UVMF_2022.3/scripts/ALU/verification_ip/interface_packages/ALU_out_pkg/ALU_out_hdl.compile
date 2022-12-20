@@ -1,0 +1,9 @@
+needs:
+  - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg_hdl.compile
+  - ./ALU_out_common.compile
+incdir:
+  - .
+src:
+  - src/ALU_out_if.sv
+  - src/ALU_out_monitor_bfm.sv
+  - src/ALU_out_driver_bfm.sv

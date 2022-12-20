@@ -1,0 +1,9 @@
+needs:
+  - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg.compile
+  - ./pkt_common.compile
+incdir:
+  - .
+src:
+  - pkt_pkg.sv
+  - dpi/myFirstIfFile.c
+  - dpi/mySecondIfFile.c

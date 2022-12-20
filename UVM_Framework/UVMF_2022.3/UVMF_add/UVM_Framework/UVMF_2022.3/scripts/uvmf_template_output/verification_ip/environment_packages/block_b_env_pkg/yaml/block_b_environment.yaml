@@ -1,0 +1,166 @@
+uvmf:
+  environments:
+    block_b:
+      agents:
+      - initiator_responder: INITIATOR
+        name: control_plane_in
+        parameters:
+        - name: ADDR_WIDTH
+          value: CP_IN_ADDR_WIDTH
+        - name: DATA_WIDTH
+          value: CP_IN_DATA_WIDTH
+        type: mem
+      - initiator_responder: INITIATOR
+        name: control_plane_out
+        parameters:
+        - name: ADDR_WIDTH
+          value: CP_OUT_ADDR_WIDTH
+        type: mem
+      - initiator_responder: INITIATOR
+        name: unsecure_data_plane_in
+        parameters:
+        - name: DATA_WIDTH
+          value: UDP_DATA_WIDTH
+        type: pkt
+      - initiator_responder: INITIATOR
+        name: unsecure_data_plane_out
+        type: pkt
+      analysis_components:
+      - name: control_plane_pred
+        parameters:
+        - name: ae_mem_transaction_t
+          value: mem_transaction#(.ADDR_WIDTH(CP_IN_ADDR_WIDTH),.DATA_WIDTH(CP_IN_DATA_WIDTH))
+        - name: ap_mem_transaction_t
+          value: 'mem_transaction #(.ADDR_WIDTH(CP_OUT_ADDR_WIDTH))'
+        type: control_plane_predictor
+      - name: unsecure_data_plane_pred
+        parameters:
+        - name: control_plane_in_ae_t
+          value: 'mem_transaction #(.ADDR_WIDTH(CP_IN_ADDR_WIDTH),.DATA_WIDTH(CP_IN_DATA_WIDTH))'
+        - name: unsecure_data_plane_in_ae_t
+          value: 'pkt_transaction #(.DATA_WIDTH(UDP_DATA_WIDTH))'
+        - name: unsecure_data_plane_sb_ap_t
+          value: pkt_transaction
+        type: unsecure_data_plane_predictor
+      analysis_exports: []
+      analysis_ports: []
+      config_constraints:
+      - comment: ''
+        name: element_range_c
+        value: '{ block_b_cfgVar4>block_b_cfgVar5; }'
+      - comment: ''
+        name: non_negative_c
+        value: '{ (block_b_cfgVar1==0) -> block_b_cfgVar4==0;}'
+      config_vars:
+      - comment: ''
+        isrand: 'False'
+        name: block_b_cfgVar1
+        type: bit
+        value: ''
+      - comment: ''
+        isrand: 'True'
+        name: block_b_cfgVar3
+        type: bit [3:0]
+        value: ''
+      - comment: ''
+        isrand: 'True'
+        name: block_b_cfgVar4
+        type: int
+        value: ''
+      - comment: ''
+        isrand: 'True'
+        name: block_b_cfgVar5
+        type: int
+        value: ''
+      dpi_define:
+        comp_args: -c -DPRINT32 -O2
+        files:
+        - myFirstFile.c
+        - mySecondFile.c
+        imports:
+        - c_args: (unsigned int variable1, unsigned int variable2)
+          c_return_type: void
+          name: hello_world_from_environment
+          sv_args:
+          - dir: input
+            name: variable1
+            type: int unsigned
+          - dir: input
+            name: variable2
+            type: int unsigned
+          sv_return_type: void
+        - c_args: (unsigned int variable3, unsigned int variable4)
+          c_return_type: void
+          name: good_bye_world_from_environment
+          sv_args:
+          - dir: input
+            name: variable3
+            type: int unsigned
+          - dir: input
+            name: variable4
+            type: int unsigned
+          sv_return_type: void
+        link_args: -shared
+        name: blockBEnvPkgCFunctions
+      existing_library_component: 'True'
+      hvl_pkg_parameters:
+      - name: ENV_HVL_PKG_PARAMETER1
+        type: integer
+        value: '92'
+      - name: ENV_HVL_PKG_PARAMETER2
+        type: integer
+        value: '29'
+      non_uvmf_components: []
+      parameters:
+      - name: CP_IN_DATA_WIDTH
+        type: int
+        value: '120'
+      - name: CP_IN_ADDR_WIDTH
+        type: int
+        value: '110'
+      - name: CP_OUT_ADDR_WIDTH
+        type: int
+        value: '111'
+      - name: UDP_DATA_WIDTH
+        type: int
+        value: '140'
+      qvip_memory_agents: []
+      register_model:
+        maps:
+        - interface: control_plane_in
+          name: bus_map
+          qvip_agent: 'False'
+        reg_block_class: blkb_reg_block
+        reg_model_package: blkb_reg_pkg
+        use_adapter: 'True'
+        use_explicit_prediction: 'True'
+      scoreboards:
+      - name: control_plane_sb
+        sb_type: uvmf_in_order_race_scoreboard
+        trans_type: 'mem_transaction #(.ADDR_WIDTH(CP_OUT_ADDR_WIDTH))'
+      - name: unsecure_data_plane_sb
+        sb_type: uvmf_in_order_race_scoreboard
+        trans_type: pkt_transaction
+      subenvs: []
+      tlm_connections:
+      - driver: control_plane_in.monitored_ap
+        receiver: control_plane_pred.control_plane_in_ae
+        validate: 'True'
+      - driver: control_plane_in.monitored_ap
+        receiver: unsecure_data_plane_pred.control_plane_in_ae
+        validate: 'True'
+      - driver: unsecure_data_plane_in.monitored_ap
+        receiver: unsecure_data_plane_pred.unsecure_data_plane_in_ae
+        validate: 'True'
+      - driver: control_plane_pred.control_plane_sb_ap
+        receiver: control_plane_sb.expected_analysis_export
+        validate: 'True'
+      - driver: unsecure_data_plane_pred.unsecure_data_plane_sb_ap
+        receiver: unsecure_data_plane_sb.expected_analysis_export
+        validate: 'True'
+      - driver: control_plane_out.monitored_ap
+        receiver: control_plane_sb.actual_analysis_export
+        validate: 'True'
+      - driver: unsecure_data_plane_out.monitored_ap
+        receiver: unsecure_data_plane_sb.actual_analysis_export
+        validate: 'True'

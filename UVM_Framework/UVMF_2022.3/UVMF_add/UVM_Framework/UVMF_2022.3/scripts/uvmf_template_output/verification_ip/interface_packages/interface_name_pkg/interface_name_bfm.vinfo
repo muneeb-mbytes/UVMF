@@ -1,0 +1,6 @@
+@use $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg_hdl.vinfo
+@use interface_name_pkg_hdl.vinfo
++incdir+@vinfodir
+src/interface_name_if.sv
+src/interface_name_driver_bfm.sv
+src/interface_name_monitor_bfm.sv

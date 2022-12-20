@@ -1,0 +1,24 @@
+uvmf:
+  benches:
+    block_c:
+      active_passive:
+      - bfm_name: mem_in
+        value: ACTIVE
+      - bfm_name: mem_out
+        value: ACTIVE
+      - bfm_name: pkt_out
+        value: ACTIVE
+      active_passive_default: ACTIVE
+      clock_half_period: 6ns
+      clock_phase_offset: 21ns
+      existing_library_component: 'True'
+      imports:
+      - name: mvc_pkg
+      - name: mgc_pcie_v2_0_pkg
+      - name: mgc_axi4_v1_0_pkg
+      - name: mgc_apb3_v1_0_pkg
+      interface_params: []
+      reset_assertion_level: 'True'
+      reset_duration: 250ns
+      top_env: block_c
+      use_dpi_link: 'False'

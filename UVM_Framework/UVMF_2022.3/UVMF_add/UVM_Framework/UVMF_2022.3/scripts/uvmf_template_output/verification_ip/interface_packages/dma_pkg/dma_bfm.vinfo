@@ -1,0 +1,6 @@
+@use $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg_hdl.vinfo
+@use dma_pkg_hdl.vinfo
++incdir+@vinfodir
+src/dma_if.sv
+src/dma_driver_bfm.sv
+src/dma_monitor_bfm.sv

@@ -1,0 +1,7 @@
+needs:
+  - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg.compile
+  - ./jtag_a_common.compile
+incdir:
+  - .
+src:
+  - jtag_a_pkg.sv

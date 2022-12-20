@@ -1,0 +1,11 @@
+needs:
+  - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg.compile
+  - ../../../verification_ip/interface_packages/mem_pkg/mem_hvl.compile
+  - ../../../verification_ip/interface_packages/pkt_pkg/pkt_hvl.compile
+
+src:
+  - registers/blkb_reg_pkg.sv
+  - block_b_env_pkg.sv
+  - dpi/myFirstFile.c
+  - dpi/mySecondFile.c
+

@@ -1,0 +1,15 @@
+uvmf:
+  util_components:
+    block_a_predictor:
+      analysis_exports:
+      - name: control_plane_in_ae
+        type: mem_transaction
+      - name: secure_data_plane_in_ae
+        type: pkt_transaction
+      analysis_ports:
+      - name: secure_data_plane_sb_ap
+        type: pkt_transaction
+      - name: control_plane_sb_ap
+        type: mem_transaction
+      existing_library_component: 'True'
+      type: predictor

@@ -1,0 +1,7 @@
+needs:
+  - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg.compile
+  - ./interface_name_common.compile
+incdir:
+  - .
+src:
+  - interface_name_pkg.sv

@@ -1,0 +1,15 @@
+uvmf:
+  benches:
+    bench_name:
+      active_passive:
+      - bfm_name: agent_instance_name
+        value: ACTIVE
+      active_passive_default: ACTIVE
+      clock_half_period: 6ns
+      clock_phase_offset: 21ns
+      existing_library_component: 'True'
+      interface_params: []
+      reset_assertion_level: 'True'
+      reset_duration: 250ns
+      top_env: environment_name
+      use_dpi_link: 'False'

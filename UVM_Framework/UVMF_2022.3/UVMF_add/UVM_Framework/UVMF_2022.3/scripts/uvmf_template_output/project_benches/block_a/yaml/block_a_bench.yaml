@@ -1,0 +1,21 @@
+uvmf:
+  benches:
+    block_a:
+      active_passive:
+      - bfm_name: control_plane_in
+        value: ACTIVE
+      - bfm_name: control_plane_out
+        value: ACTIVE
+      - bfm_name: secure_data_plane_in
+        value: ACTIVE
+      - bfm_name: secure_data_plane_out
+        value: ACTIVE
+      active_passive_default: ACTIVE
+      clock_half_period: 6ns
+      clock_phase_offset: 21ns
+      existing_library_component: 'True'
+      interface_params: []
+      reset_assertion_level: 'True'
+      reset_duration: 250ns
+      top_env: block_a
+      use_dpi_link: 'False'

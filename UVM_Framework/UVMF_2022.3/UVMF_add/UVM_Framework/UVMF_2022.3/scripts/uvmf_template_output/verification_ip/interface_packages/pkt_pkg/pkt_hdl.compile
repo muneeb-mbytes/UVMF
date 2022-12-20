@@ -1,0 +1,9 @@
+needs:
+  - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg_hdl.compile
+  - ./pkt_common.compile
+incdir:
+  - .
+src:
+  - src/pkt_if.sv
+  - src/pkt_monitor_bfm.sv
+  - src/pkt_driver_bfm.sv

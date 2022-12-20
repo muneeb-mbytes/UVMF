@@ -1,0 +1,3 @@
+$UVMF_VIP_LIBRARY_HOME/interface_packages/interface_name_pkg/src/interface_name_if.sv
+$UVMF_VIP_LIBRARY_HOME/interface_packages/interface_name_pkg/src/interface_name_monitor_bfm.sv
+$UVMF_VIP_LIBRARY_HOME/interface_packages/interface_name_pkg/src/interface_name_driver_bfm.sv

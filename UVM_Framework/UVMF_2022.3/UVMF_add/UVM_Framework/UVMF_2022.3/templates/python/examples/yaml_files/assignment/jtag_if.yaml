@@ -1,0 +1,24 @@
+
+# YAML structure that defines the 'mem' interface
+uvmf:
+  # All interfaces must live underneath the 'interfaces' structure
+  interfaces:
+    # Each interface must be given a unique name
+    "mem":
+      # The name of the clock & reset are the only required
+      # elements for each interface
+      clock: "clock"
+      reset: "reset"
+      # Reset assertion level specified as True will make this
+      # interface sensitive to an active HIGH reset
+      reset_assertion_level: "True"
+      veloce_ready: "True"
+      transaction_vars:
+        - name: "TCK"  
+          type: "bit"
+        - name: "TMK"  
+          type: "bit"
+        - name: "TDI"  
+          type: "bit"
+        - name: "TDO"  
+          type: "bit"

@@ -1,0 +1,30 @@
+uvmf:
+  environments:
+    add:
+    
+      agents:
+      - name: "add_in_agent"
+        type: "add_in"
+        initiator_responder: "INITIATOR"
+      - name: "add_out_agent"
+        type: "add_out"
+        initiator_responder: "RESPONDER"
+    
+      analysis_components:
+      - name: "add_pred"
+        type: "add_predictor"
+    
+      scoreboards:
+      - name: add_sb
+        sb_type: uvmf_in_order_scoreboard
+        trans_type: add_out_transaction
+    
+    
+      tlm_connections:
+      - driver: add_in_agent.monitored_ap            # connection 00
+        receiver: add_pred.add_in_agent_ae
+      - driver: add_pred.add_sb_ap                   # connection 01
+        receiver: add_sb.expected_analysis_export
+      - driver: add_out_agent.monitored_ap           # connection 02
+        receiver: add_sb.actual_analysis_export
+

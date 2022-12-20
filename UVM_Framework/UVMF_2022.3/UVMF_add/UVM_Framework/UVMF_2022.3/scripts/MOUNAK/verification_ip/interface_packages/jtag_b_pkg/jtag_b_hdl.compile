@@ -1,0 +1,9 @@
+needs:
+  - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg_hdl.compile
+  - ./jtag_b_common.compile
+incdir:
+  - .
+src:
+  - src/jtag_b_if.sv
+  - src/jtag_b_monitor_bfm.sv
+  - src/jtag_b_driver_bfm.sv

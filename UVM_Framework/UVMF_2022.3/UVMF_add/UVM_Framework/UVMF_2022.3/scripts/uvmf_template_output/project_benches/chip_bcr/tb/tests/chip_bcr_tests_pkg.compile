@@ -1,0 +1,9 @@
+needs:
+  - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg.compile
+  - ../../../../verification_ip/interface_packages/mem_pkg/mem.compile
+  - ../../../../verification_ip/interface_packages/pkt_pkg/pkt.compile
+  - ../../../../verification_ip/environment_packages/chip_env_pkg/chip_env_pkg.compile
+  - ../parameters/chip_bcr_parameters_pkg.compile
+  - ../sequences/chip_bcr_sequences_pkg.compile
+src:
+  - chip_bcr_tests_pkg.sv

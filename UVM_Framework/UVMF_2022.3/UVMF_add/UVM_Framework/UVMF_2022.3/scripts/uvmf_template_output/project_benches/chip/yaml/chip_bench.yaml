@@ -1,0 +1,65 @@
+uvmf:
+  benches:
+    chip:
+      active_passive:
+      - bfm_name: block_a_env_control_plane_in
+        value: ACTIVE
+      - bfm_name: block_a_env_control_plane_out
+        value: PASSIVE
+      - bfm_name: block_a_env_secure_data_plane_in
+        value: ACTIVE
+      - bfm_name: block_a_env_secure_data_plane_out
+        value: ACTIVE
+      - bfm_name: block_b_env_control_plane_in
+        value: PASSIVE
+      - bfm_name: block_b_env_control_plane_out
+        value: ACTIVE
+      - bfm_name: block_b_env_unsecure_data_plane_in
+        value: ACTIVE
+      - bfm_name: block_b_env_unsecure_data_plane_out
+        value: ACTIVE
+      active_passive_default: ACTIVE
+      clock_half_period: 6ns
+      clock_phase_offset: 21ns
+      existing_library_component: 'True'
+      interface_params:
+      - bfm_name: block_b_env_control_plane_in
+        value:
+        - name: ADDR_WIDTH
+          value: TEST_CP_IN_ADDR_WIDTH
+        - name: DATA_WIDTH
+          value: TEST_CP_IN_DATA_WIDTH
+      - bfm_name: block_b_env_control_plane_out
+        value:
+        - name: ADDR_WIDTH
+          value: TEST_CP_OUT_ADDR_WIDTH
+      - bfm_name: block_b_env_unsecure_data_plane_in
+        value:
+        - name: DATA_WIDTH
+          value: TEST_UDP_DATA_WIDTH
+      parameters:
+      - name: TEST_CP_IN_DATA_WIDTH
+        type: int
+        value: '28'
+      - name: TEST_CP_IN_ADDR_WIDTH
+        type: int
+        value: '37'
+      - name: TEST_CP_OUT_ADDR_WIDTH
+        type: int
+        value: '37'
+      - name: TEST_UDP_DATA_WIDTH
+        type: int
+        value: '28'
+      reset_assertion_level: 'True'
+      reset_duration: 250ns
+      top_env: chip
+      top_env_params:
+      - name: CHIP_CP_IN_ADDR_WIDTH
+        value: TEST_CP_IN_ADDR_WIDTH
+      - name: CHIP_CP_IN_DATA_WIDTH
+        value: TEST_CP_IN_DATA_WIDTH
+      - name: CHIP_CP_OUT_ADDR_WIDTH
+        value: TEST_CP_OUT_ADDR_WIDTH
+      - name: CHIP_UDP_DATA_WIDTH
+        value: TEST_UDP_DATA_WIDTH
+      use_dpi_link: 'False'

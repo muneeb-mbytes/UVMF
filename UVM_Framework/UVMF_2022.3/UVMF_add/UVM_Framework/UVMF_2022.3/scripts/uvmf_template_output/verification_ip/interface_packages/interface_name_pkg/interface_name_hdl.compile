@@ -1,0 +1,9 @@
+needs:
+  - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg_hdl.compile
+  - ./interface_name_common.compile
+incdir:
+  - .
+src:
+  - src/interface_name_if.sv
+  - src/interface_name_monitor_bfm.sv
+  - src/interface_name_driver_bfm.sv

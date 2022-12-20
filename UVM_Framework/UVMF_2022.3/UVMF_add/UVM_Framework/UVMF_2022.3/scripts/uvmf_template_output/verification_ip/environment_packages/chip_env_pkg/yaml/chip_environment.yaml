@@ -1,0 +1,48 @@
+uvmf:
+  environments:
+    chip:
+      agents: []
+      analysis_components: []
+      analysis_exports: []
+      analysis_ports: []
+      config_constraints: []
+      config_vars: []
+      existing_library_component: 'True'
+      hvl_pkg_parameters: []
+      non_uvmf_components: []
+      parameters:
+      - name: CHIP_CP_IN_DATA_WIDTH
+        type: int
+        value: '20'
+      - name: CHIP_CP_IN_ADDR_WIDTH
+        type: int
+        value: '10'
+      - name: CHIP_CP_OUT_ADDR_WIDTH
+        type: int
+        value: '25'
+      - name: CHIP_UDP_DATA_WIDTH
+        type: int
+        value: '40'
+      qvip_memory_agents: []
+      register_model:
+        reg_block_class: chip_reg_model
+        reg_model_package: chip_reg_pkg
+        use_adapter: 'False'
+        use_explicit_prediction: 'False'
+      scoreboards: []
+      subenvs:
+      - name: block_a_env
+        parameters: []
+        type: block_a
+      - name: block_b_env
+        parameters:
+        - name: CP_IN_DATA_WIDTH
+          value: CHIP_CP_IN_DATA_WIDTH
+        - name: CP_OUT_ADDR_WIDTH
+          value: CHIP_CP_OUT_ADDR_WIDTH
+        - name: CP_IN_ADDR_WIDTH
+          value: CHIP_CP_IN_ADDR_WIDTH
+        - name: UDP_DATA_WIDTH
+          value: CHIP_UDP_DATA_WIDTH
+        type: block_b
+      tlm_connections: []

@@ -1,0 +1,105 @@
+uvmf:
+  environments:
+    block_a:
+      agents:
+      - initiator_responder: INITIATOR
+        name: control_plane_in
+        type: mem
+      - initiator_responder: RESPONDER
+        name: control_plane_out
+        type: mem
+      - initiator_responder: INITIATOR
+        name: secure_data_plane_in
+        type: pkt
+      - initiator_responder: RESPONDER
+        name: secure_data_plane_out
+        type: pkt
+      analysis_components:
+      - name: block_a_pred
+        parameters: []
+        type: block_a_predictor
+      - name: block_a_cov
+        parameters: []
+        type: block_a_coverage
+      analysis_exports:
+      - connected_to: block_a_pred.secure_data_plane_in_ae
+        name: external_pkt_ep
+        trans_type: pkt_transaction
+      analysis_ports:
+      - connected_to: control_plane_in.monitored_ap
+        name: control_plane_in_ap
+        trans_type: mem_transaction
+      - connected_to: control_plane_out.monitored_ap
+        name: control_plane_out_ap
+        trans_type: mem_transaction
+      config_constraints:
+      - comment: ''
+        name: element_range_c
+        value: '{ block_a_cfgVar4>block_a_cfgVar5; }'
+      - comment: ''
+        name: non_negative_c
+        value: '{ (block_a_cfgVar1==0) -> block_a_cfgVar4==0;}'
+      config_variable_values:
+      - name: control_plane_in_config.transfer_gap
+        value: '9'
+      - name: control_plane_out_config.transfer_gap
+        value: '7'
+      config_vars:
+      - comment: ''
+        isrand: 'False'
+        name: block_a_cfgVar1
+        type: bit
+        value: ''
+      - comment: ''
+        isrand: 'True'
+        name: block_a_cfgVar3
+        type: bit [3:0]
+        value: '29'
+      - comment: ''
+        isrand: 'True'
+        name: block_a_cfgVar4
+        type: int
+        value: ''
+      - comment: ''
+        isrand: 'True'
+        name: block_a_cfgVar5
+        type: int
+        value: ''
+      existing_library_component: 'True'
+      hvl_pkg_parameters: []
+      non_uvmf_components: []
+      parameters: []
+      qvip_memory_agents: []
+      scoreboards:
+      - name: control_plane_sb
+        sb_type: uvmf_in_order_race_scoreboard
+        trans_type: mem_transaction
+      - name: secure_data_plane_sb
+        sb_type: uvmf_in_order_race_scoreboard
+        trans_type: pkt_transaction
+      subenvs: []
+      tlm_connections:
+      - driver: control_plane_in.monitored_ap
+        receiver: block_a_pred.control_plane_in_ae
+        validate: 'True'
+      - driver: secure_data_plane_in.monitored_ap
+        receiver: block_a_pred.secure_data_plane_in_ae
+        validate: 'True'
+      - driver: block_a_pred.control_plane_sb_ap
+        receiver: control_plane_sb.expected_analysis_export
+        validate: 'True'
+      - driver: block_a_pred.secure_data_plane_sb_ap
+        receiver: secure_data_plane_sb.expected_analysis_export
+        validate: 'True'
+      - driver: control_plane_out.monitored_ap
+        receiver: control_plane_sb.actual_analysis_export
+        validate: 'True'
+      - driver: secure_data_plane_out.monitored_ap
+        receiver: secure_data_plane_sb.actual_analysis_export
+        validate: 'True'
+      - driver: control_plane_in.monitored_ap
+        receiver: block_a_cov.control_plane_in_ae
+        validate: 'True'
+      - driver: secure_data_plane_in.monitored_ap
+        receiver: block_a_cov.secure_data_plane_in_ae
+        validate: 'True'

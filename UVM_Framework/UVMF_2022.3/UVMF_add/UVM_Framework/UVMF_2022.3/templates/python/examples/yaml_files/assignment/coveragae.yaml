@@ -1,0 +1,14 @@
+uvmf:
+  util_components:
+    "block_a_coverage" :
+      type: coverage
+      analysis_exports:
+        - name: "coverage_export"
+          type: "mem_transaction"
+      # - name: "seq_item_export"
+      #   type: "mem_transaction"
+      #analysis_ports:
+      # - name: "monitor_proxy_ap"
+      #   type: "mem_transaction"
+    #   - name: "driver_proxy_port"
+    #     type: "mem_transaction"

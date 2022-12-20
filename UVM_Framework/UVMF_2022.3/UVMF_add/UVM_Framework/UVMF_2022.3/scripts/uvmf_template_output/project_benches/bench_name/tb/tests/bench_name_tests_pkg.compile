@@ -1,0 +1,8 @@
+needs:
+  - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg.compile
+  - ../../../../verification_ip/interface_packages/interface_name_pkg/interface_name.compile
+  - ../../../../verification_ip/environment_packages/environment_name_env_pkg/environment_name_env_pkg.compile
+  - ../parameters/bench_name_parameters_pkg.compile
+  - ../sequences/bench_name_sequences_pkg.compile
+src:
+  - bench_name_tests_pkg.sv

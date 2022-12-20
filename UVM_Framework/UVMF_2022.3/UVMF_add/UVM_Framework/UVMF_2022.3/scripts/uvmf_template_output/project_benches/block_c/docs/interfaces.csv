@@ -1,0 +1,15 @@
+//----------------------------------------------------------------------
+// Created with uvmf_gen version 2022.3
+//----------------------------------------------------------------------
+// pragma uvmf custom header begin
+// pragma uvmf custom header end
+//----------------------------------------------------------------------
+//----------------------------------------------------------------------
+//
+
+,
+Interface Description, Interface Type, Interface Transaction, Interface Name,
+mem_in, mem_driver_bfm mem_monitor_bfm, mem_transaction, mem_pkg_mem_in_BFM,
+mem_out, mem_driver_bfm mem_monitor_bfm, mem_transaction, mem_pkg_mem_out_BFM,
+pkt_out, pkt_driver_bfm pkt_monitor_bfm, pkt_transaction, pkt_pkg_pkt_out_BFM,
+

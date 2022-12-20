@@ -1,0 +1,3 @@
+needs:
+  - dma_hvl.compile
+  - dma_hdl.compile

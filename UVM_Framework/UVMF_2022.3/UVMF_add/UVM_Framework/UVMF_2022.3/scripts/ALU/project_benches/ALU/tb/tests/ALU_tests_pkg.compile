@@ -1,0 +1,9 @@
+needs:
+  - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg.compile
+  - ../../../../verification_ip/interface_packages/ALU_in_pkg/ALU_in.compile
+  - ../../../../verification_ip/interface_packages/ALU_out_pkg/ALU_out.compile
+  - ../../../../verification_ip/environment_packages/ALU_env_pkg/ALU_env_pkg.compile
+  - ../parameters/ALU_parameters_pkg.compile
+  - ../sequences/ALU_sequences_pkg.compile
+src:
+  - ALU_tests_pkg.sv

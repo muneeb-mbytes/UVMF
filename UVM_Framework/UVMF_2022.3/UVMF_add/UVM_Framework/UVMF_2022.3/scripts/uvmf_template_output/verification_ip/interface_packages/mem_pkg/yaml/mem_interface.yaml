@@ -1,0 +1,113 @@
+uvmf:
+  interfaces:
+    mem:
+      clock: clock
+      config_constraints:
+      - comment: ''
+        name: valid_packet_gap_range_c
+        value: '{ transfer_gap inside {0, 2, 4, 8, 15}; }'
+      config_vars:
+      - comment: ''
+        isrand: 'True'
+        name: transfer_gap
+        type: bit [3:0]
+        value: ''
+      - comment: ''
+        isrand: 'False'
+        name: speed_grade
+        type: bit [3:0]
+        value: '35'
+      existing_library_component: 'True'
+      gen_inbound_streaming_driver: 'False'
+      hdl_pkg_parameters:
+      - name: MEM_HDL_PKG_PARAMETER1
+        type: byte
+        value: '27'
+      - name: MEM_HDL_PKG_PARAMETER2
+        type: byte
+        value: '28'
+      hdl_typedefs:
+      - name: my_byte_t
+        type: byte
+      - name: my_word_t
+        type: 'bit [15:0] '
+      hvl_pkg_parameters:
+      - name: MEM_HVL_PKG_PARAMETER1
+        type: integer
+        value: '21'
+      - name: MEM_HVL_PKG_PARAMETER2
+        type: integer
+        value: '22'
+      hvl_typedefs:
+      - name: my_object_t
+        type: uvm_object
+      parameters:
+      - name: DATA_WIDTH
+        type: int
+        value: '220'
+      - name: ADDR_WIDTH
+        type: int
+        value: '210'
+      ports:
+      - dir: output
+        name: cs
+        reset_value: 1'b0
+        width: '1'
+      - dir: output
+        name: rwn
+        reset_value: 1'b1
+        width: '1'
+      - dir: input
+        name: rdy
+        reset_value: 1'b0
+        width: '1'
+      - dir: output
+        name: addr
+        reset_value: '''bz'
+        width: ADDR_WIDTH
+      - dir: output
+        name: wdata
+        reset_value: '''bz'
+        width: DATA_WIDTH
+      - dir: input
+        name: rdata
+        reset_value: '''bz'
+        width: DATA_WIDTH
+      reset: reset
+      reset_assertion_level: 'True'
+      transaction_constraints:
+      - comment: ''
+        name: address_word_align_c
+        value: '{ address[1:0]==0; }'
+      transaction_vars:
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: read_data
+        type: bit [DATA_WIDTH-1:0]
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: write_data
+        type: bit [DATA_WIDTH-1:0]
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'True'
+        name: address
+        type: bit [ADDR_WIDTH-1:0]
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'False'
+        isrand: 'True'
+        name: byte_enable
+        type: bit [3:0]
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'False'
+        isrand: 'False'
+        name: chksum
+        type: int
+        unpacked_dimension: ''
+      use_dpi_link: 'False'

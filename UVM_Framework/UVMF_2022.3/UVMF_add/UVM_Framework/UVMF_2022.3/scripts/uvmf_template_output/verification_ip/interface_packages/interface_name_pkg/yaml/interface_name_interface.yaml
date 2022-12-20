@@ -1,0 +1,25 @@
+uvmf:
+  interfaces:
+    interface_name:
+      clock: clock
+      config_constraints: []
+      config_vars: []
+      existing_library_component: 'True'
+      gen_inbound_streaming_driver: 'False'
+      hdl_pkg_parameters: []
+      hdl_typedefs: []
+      hvl_pkg_parameters: []
+      hvl_typedefs: []
+      parameters: []
+      ports: []
+      reset: reset
+      reset_assertion_level: 'True'
+      transaction_constraints: []
+      transaction_vars:
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: transaction_variable_name
+        type: bit
+        unpacked_dimension: ''
+      use_dpi_link: 'False'

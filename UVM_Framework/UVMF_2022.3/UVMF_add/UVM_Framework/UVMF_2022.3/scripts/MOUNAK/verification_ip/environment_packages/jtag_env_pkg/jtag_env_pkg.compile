@@ -1,0 +1,8 @@
+needs:
+  - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg.compile
+  - ../../../verification_ip/interface_packages/jtag_a_pkg/jtag_a_hvl.compile
+  - ../../../verification_ip/interface_packages/jtag_b_pkg/jtag_b_hvl.compile
+
+src:
+  - jtag_env_pkg.sv
+

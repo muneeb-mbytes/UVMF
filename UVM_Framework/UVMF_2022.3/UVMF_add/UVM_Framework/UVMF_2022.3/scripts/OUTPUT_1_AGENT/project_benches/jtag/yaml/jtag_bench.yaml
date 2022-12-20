@@ -1,0 +1,15 @@
+uvmf:
+  benches:
+    jtag:
+      active_passive:
+      - bfm_name: jtag_agent
+        value: ACTIVE
+      active_passive_default: ACTIVE
+      clock_half_period: 5ns
+      clock_phase_offset: 9ns
+      existing_library_component: 'True'
+      interface_params: []
+      reset_assertion_level: 'False'
+      reset_duration: 200ns
+      top_env: jtag
+      use_dpi_link: 'False'

@@ -1,0 +1,26 @@
+uvmf:
+  environments:
+    jtag:
+    
+      agents:
+      - name: "jtag_agent"
+        type: "jtag"
+    
+  #   analysis_components:
+  #   - name: "jtag_pred"
+  #     type: "jtag_predictor"
+    
+  #   scoreboards:
+  #   - name: jtag_sb
+  #     sb_type: uvmf_in_order_scoreboard
+  #     trans_type: jtag_transaction
+    
+    
+  #   tlm_connections:
+  #   - driver: jtag_agent_b.monitored_ap            # connection 00
+  #     receiver: jtag_pred.jtag_agent_b_ae
+  #   - driver: jtag_pred.jtag_sb_ap                   # connection 01
+  #     receiver: jtag_sb.expected_analysis_export
+  #   - driver: jtag_agent_a.monitored_ap           # connection 02
+  #     receiver: jtag_sb.actual_analysis_export
+

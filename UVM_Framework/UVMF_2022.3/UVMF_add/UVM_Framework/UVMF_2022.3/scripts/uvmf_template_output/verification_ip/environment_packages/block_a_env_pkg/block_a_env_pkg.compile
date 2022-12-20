@@ -1,0 +1,8 @@
+needs:
+  - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg.compile
+  - ../../../verification_ip/interface_packages/mem_pkg/mem_hvl.compile
+  - ../../../verification_ip/interface_packages/pkt_pkg/pkt_hvl.compile
+
+src:
+  - block_a_env_pkg.sv
+

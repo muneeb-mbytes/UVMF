@@ -1,0 +1,63 @@
+uvmf:
+  interfaces:
+    dma:
+      clock: clock
+      config_constraints: []
+      config_vars: []
+      existing_library_component: 'True'
+      gen_inbound_streaming_driver: 'False'
+      hdl_pkg_parameters: []
+      hdl_typedefs: []
+      hvl_pkg_parameters: []
+      hvl_typedefs: []
+      parameters:
+      - name: DATA_WIDTH
+        type: int
+        value: '16'
+      - name: ADDR_WIDTH
+        type: int
+        value: '8'
+      ports:
+      - dir: output
+        name: rd_en
+        reset_value: 1'b0
+        width: '1'
+      - dir: output
+        name: wr_en
+        reset_value: 1'b0
+        width: '1'
+      - dir: output
+        name: addr
+        reset_value: '''bz'
+        width: ADDR_WIDTH
+      - dir: output
+        name: wdata
+        reset_value: '''bz'
+        width: DATA_WIDTH
+      - dir: input
+        name: rdata
+        reset_value: '''bz'
+        width: DATA_WIDTH
+      reset: reset
+      reset_assertion_level: 'True'
+      transaction_constraints: []
+      transaction_vars:
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'True'
+        name: addr
+        type: bit [ADDR_WIDTH-1:0]
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'True'
+        name: data
+        type: bit [DATA_WIDTH-1:0]
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'True'
+        name: wr
+        type: bit
+        unpacked_dimension: ''
+      use_dpi_link: 'False'

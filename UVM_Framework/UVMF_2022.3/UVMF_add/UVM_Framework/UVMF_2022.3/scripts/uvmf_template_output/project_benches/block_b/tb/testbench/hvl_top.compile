@@ -1,0 +1,7 @@
+incdir:
+  - ${uvm_path}/src
+  - .
+needs:
+  - ../tests/block_b_tests_pkg.compile
+src:
+  - hvl_top.sv

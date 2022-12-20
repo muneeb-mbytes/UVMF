@@ -1,0 +1,10 @@
+uvmf:
+  util_components:
+    block_a_coverage:
+      analysis_exports:
+      - name: control_plane_in_ae
+        type: mem_transaction
+      - name: secure_data_plane_in_ae
+        type: pkt_transaction
+      existing_library_component: 'True'
+      type: coverage
