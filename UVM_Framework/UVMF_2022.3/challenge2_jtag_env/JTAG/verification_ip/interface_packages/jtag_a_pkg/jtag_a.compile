@@ -1,0 +1,3 @@
+needs:
+  - jtag_a_hvl.compile
+  - jtag_a_hdl.compile

@@ -1,0 +1,11 @@
+uvmf:
+  util_components:
+    jtag_predictor:
+      analysis_exports:
+      - name: jtag_agent_b_ae
+        type: jtag_b_transaction
+      analysis_ports:
+      - name: jtag_sb_ap
+        type: jtag_a_transaction
+      existing_library_component: 'True'
+      type: predictor

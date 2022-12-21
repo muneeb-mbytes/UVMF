@@ -1,0 +1,14 @@
+//----------------------------------------------------------------------
+// Created with uvmf_gen version 2022.3
+//----------------------------------------------------------------------
+// pragma uvmf custom header begin
+// pragma uvmf custom header end
+//----------------------------------------------------------------------
+//----------------------------------------------------------------------
+//
+
+,
+Interface Description, Interface Type, Interface Transaction, Interface Name,
+jtag_agent_a, jtag_a_driver_bfm jtag_a_monitor_bfm, jtag_a_transaction, jtag_a_pkg_jtag_agent_a_BFM,
+jtag_agent_b, jtag_b_driver_bfm jtag_b_monitor_bfm, jtag_b_transaction, jtag_b_pkg_jtag_agent_b_BFM,
+

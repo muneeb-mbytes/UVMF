@@ -1,0 +1,14 @@
+uvmf:
+  benches:
+    jtag:
+    
+      active_passive:
+      - bfm_name: jtag_agent_a
+        value: ACTIVE
+      - bfm_name: jtag_agent_b
+        value: ACTIVE
+    
+    
+      top_env: jtag
+
+      
