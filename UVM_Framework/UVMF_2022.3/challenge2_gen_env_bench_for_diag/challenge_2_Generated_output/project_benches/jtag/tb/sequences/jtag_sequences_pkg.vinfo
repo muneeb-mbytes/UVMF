@@ -1,0 +1,6 @@
+@use $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg.vinfo
+@use $UVMF_VIP_LIBRARY_HOME/interface_packages/jtag_pkg/jtag_pkg.vinfo
+@use $UVMF_VIP_LIBRARY_HOME/environment_packages/jtag_env_pkg/jtag_env_pkg.vinfo
+@use $UVMF_PROJECT_DIR/tb/parameters/jtag_parameters_pkg.vinfo
++incdir+@vinfodir
+jtag_sequences_pkg.sv
