@@ -1,1 +1,0 @@
-$UVMF_VIP_LIBRARY_HOME/interface_packages/jtag_a_pkg/jtag_a_pkg.sv

@@ -1,3 +1,0 @@
-needs:
-  - mem_hvl.compile
-  - mem_hdl.compile

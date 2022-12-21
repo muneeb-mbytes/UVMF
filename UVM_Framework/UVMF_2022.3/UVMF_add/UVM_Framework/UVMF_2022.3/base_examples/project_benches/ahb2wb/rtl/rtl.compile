@@ -1,2 +1,0 @@
-src:
-  - ./verilog/ahb2wb.v

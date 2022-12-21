@@ -1,3 +1,0 @@
-$UVMF_VIP_LIBRARY_HOME/interface_packages/ccs_pkg/src/ccs_if.sv
-$UVMF_VIP_LIBRARY_HOME/interface_packages/ccs_pkg/src/ccs_monitor_bfm.sv
-$UVMF_VIP_LIBRARY_HOME/interface_packages/ccs_pkg/src/ccs_driver_bfm.sv

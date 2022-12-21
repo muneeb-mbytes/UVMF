@@ -1,1 +1,0 @@
-$UVMF_VIP_LIBRARY_HOME/interface_packages/alu_out_pkg/alu_out_pkg_hdl.sv

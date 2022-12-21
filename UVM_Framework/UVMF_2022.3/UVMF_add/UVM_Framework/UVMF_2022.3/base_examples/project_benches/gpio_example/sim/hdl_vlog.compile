@@ -1,2 +1,0 @@
-needs:
-  - ../tb/testbench/hdl_top.compile

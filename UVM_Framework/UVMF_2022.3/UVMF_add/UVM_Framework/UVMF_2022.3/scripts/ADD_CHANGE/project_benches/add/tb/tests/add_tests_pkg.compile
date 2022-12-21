@@ -1,9 +1,0 @@
-needs:
-  - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg.compile
-  - ../../../../verification_ip/interface_packages/add_in_pkg/add_in.compile
-  - ../../../../verification_ip/interface_packages/add_out_pkg/add_out.compile
-  - ../../../../verification_ip/environment_packages/add_env_pkg/add_env_pkg.compile
-  - ../parameters/add_parameters_pkg.compile
-  - ../sequences/add_sequences_pkg.compile
-src:
-  - add_tests_pkg.sv

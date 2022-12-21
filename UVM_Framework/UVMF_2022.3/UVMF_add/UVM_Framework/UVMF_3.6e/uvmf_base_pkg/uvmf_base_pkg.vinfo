@@ -1,4 +1,0 @@
-+incdir+@vinfodir
-@use ../fli_pkg/fli_pkg.vinfo
-@use uvmf_base_pkg_hdl.vinfo
-uvmf_base_pkg.sv

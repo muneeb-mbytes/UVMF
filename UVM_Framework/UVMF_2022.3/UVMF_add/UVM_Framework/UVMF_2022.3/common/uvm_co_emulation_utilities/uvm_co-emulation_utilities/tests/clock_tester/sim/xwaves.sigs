@@ -1,6 +1,0 @@
-Group All
-
-#Top level signals
-hdl_top.*
-#Add additional levels or individual signals as needed
-#hdl_top.*.*

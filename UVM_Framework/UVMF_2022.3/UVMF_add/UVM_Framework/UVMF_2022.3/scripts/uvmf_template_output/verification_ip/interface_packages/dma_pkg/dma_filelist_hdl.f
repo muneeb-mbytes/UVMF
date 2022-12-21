@@ -1,1 +1,0 @@
-$UVMF_VIP_LIBRARY_HOME/interface_packages/dma_pkg/dma_pkg_hdl.sv

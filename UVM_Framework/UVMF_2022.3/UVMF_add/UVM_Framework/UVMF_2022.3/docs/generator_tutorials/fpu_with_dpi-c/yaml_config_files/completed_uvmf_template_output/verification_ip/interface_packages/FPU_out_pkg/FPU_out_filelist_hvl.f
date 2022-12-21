@@ -1,2 +1,0 @@
-$UVMF_VIP_LIBRARY_HOME/interface_packages/FPU_out_pkg/FPU_out_pkg_hdl.sv
-$UVMF_VIP_LIBRARY_HOME/interface_packages/FPU_out_pkg/FPU_out_pkg.sv

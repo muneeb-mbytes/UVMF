@@ -1,3 +1,0 @@
-needs:
-  - ALU_in_hvl.compile
-  - ALU_in_hdl.compile

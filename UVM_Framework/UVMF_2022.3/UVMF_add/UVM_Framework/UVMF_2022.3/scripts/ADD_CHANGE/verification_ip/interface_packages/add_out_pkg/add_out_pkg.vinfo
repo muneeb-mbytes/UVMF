@@ -1,4 +1,0 @@
-@use $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg.vinfo
-@use add_out_pkg_hdl.vinfo
-+incdir+@vinfodir
-add_out_pkg.sv

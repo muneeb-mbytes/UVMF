@@ -1,1 +1,0 @@
-$UVMF_VIP_LIBRARY_HOME/interface_packages/ALU_in_pkg/ALU_in_pkg_hdl.sv

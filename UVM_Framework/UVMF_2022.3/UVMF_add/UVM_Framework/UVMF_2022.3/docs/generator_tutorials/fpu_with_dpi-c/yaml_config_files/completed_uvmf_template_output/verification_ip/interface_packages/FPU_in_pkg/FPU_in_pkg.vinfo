@@ -1,3 +1,0 @@
-@use $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg.vinfo
-@use FPU_in_pkg_hdl.vinfo
-FPU_in_pkg.sv

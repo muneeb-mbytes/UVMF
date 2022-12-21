@@ -1,3 +1,0 @@
-TB_INFO qvip_axi4_example {} {}
-TB qvip_axi4_example
-TEST test_top 3 
