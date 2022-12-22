@@ -37,11 +37,6 @@ package add_ben_sequences_pkg;
   `include "src/register_test_sequence.svh"
   `include "src/example_derived_test_sequence.svh"
 
-  `include "src/add_fixed_sequence.sv"
-  `include "src/add_reset_sequence.sv"
-  `include "src/add_random_sequence.sv"
-  `include "src/add_general_sequence.sv"
-
   // pragma uvmf custom package_item_additional begin
   // UVMF_CHANGE_ME : When adding new sequences to the src directory
   //    be sure to add the sequence file here so that it will be

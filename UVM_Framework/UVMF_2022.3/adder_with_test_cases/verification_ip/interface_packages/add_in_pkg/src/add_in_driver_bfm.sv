@@ -153,8 +153,9 @@ end
 
                          add_in_configuration_arg
                          );  
-    initiator_responder = add_in_configuration_arg.initiator_responder;
+    initiator_responder_conflict = add_in_configuration_arg.initiator_responder;
   // pragma uvmf custom configure begin
+  `uvm_info("driver_conflict","added",UVM_LOW)
   // pragma uvmf custom configure end
   endfunction                                                                             
 

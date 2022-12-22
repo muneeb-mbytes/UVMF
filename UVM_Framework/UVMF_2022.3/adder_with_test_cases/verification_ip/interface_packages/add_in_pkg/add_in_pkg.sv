@@ -56,10 +56,6 @@ package add_in_pkg;
    `include "src/add_in_transaction_coverage.svh"
    `include "src/add_in_sequence_base.svh"
    `include "src/add_in_random_sequence.svh"
-   `include "src/add_in_reset_sequence.sv"
-   `include "src/add_in_general_sequence.sv"
-   `include "src/add_in_fixed_sequence.sv"
-
 
    `include "src/add_in_responder_sequence.svh"
    `include "src/add_in2reg_adapter.svh"

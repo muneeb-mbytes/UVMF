@@ -37,8 +37,7 @@ class add_scoreboard #(
 
   // Instantiate a handle to the configuration of the environment in which this component resides
   CONFIG_T configuration;
-  bit [3:0] sum_p,sum_a;                                                                            
-  bit cout_p,cout_a;
+
   
   // Instantiate the analysis exports
   uvm_analysis_imp_add_out_pred_sb_ae #(add_out_transaction, add_scoreboard #(
@@ -105,15 +104,8 @@ class add_scoreboard #(
  
     // pragma uvmf custom add_out_ag_sb_ae_scoreboard end
   endfunction
-  virtual function void comparing();
-  if(sum_p == sum_a && cout_p == cout_a) begin 
-    `uvm_info("SCOREBOARD","compare success ",UVM_LOW)
-  end
-  else
-  begin
-    `uvm_error("SCOREBOARD","compare failed ")
-  end
-  endfunction
+
+
 
   // FUNCTION: extract_phase
   virtual function void extract_phase(uvm_phase phase);

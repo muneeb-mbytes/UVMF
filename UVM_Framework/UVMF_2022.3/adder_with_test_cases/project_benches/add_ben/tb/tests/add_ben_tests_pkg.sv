@@ -39,11 +39,7 @@ package add_ben_tests_pkg;
    `include "src/test_top.svh"
    `include "src/register_test.svh"
    `include "src/example_derived_test.svh"
-  
-   `include "src/add_fixed_test.sv"
-   `include "src/add_general_test.sv"
-   `include "src/add_random_test.sv"
-   `include "src/add_reset_test.sv"
+
   // pragma uvmf custom package_item_additional begin
   // UVMF_CHANGE_ME : When adding new tests to the src directory
   //    be sure to add the test file here so that it will be

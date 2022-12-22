@@ -32,8 +32,8 @@ interface  add_in_if #(
   (
   input tri clk, 
   input tri rst,
-  inout logic [add_width-1:0] a,
-  inout logic [add_width-1:0] b
+  inout tri [add_width-1:0] a,
+  inout tri [add_width-1:0] b
   );
 
 modport monitor_port 

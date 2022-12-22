@@ -79,8 +79,7 @@ import uvmf_base_pkg_hdl::*;
   //vhdl_dut            dut_vhdl   (   .clk(clk), .rst(rst), .in_signal(verilog_to_vhdl_signal), .out_signal(vhdl_to_verilog_signal));
   // pragma uvmf custom dut_instantiation end
 
-  initial begin 
-    import uvm_pkg::uvm_config_db;
+  initial begin      import uvm_pkg::uvm_config_db;
     // The monitor_bfm and driver_bfm for each interface is placed into the uvm_config_db.
     // They are placed into the uvm_config_db using the string names defined in the parameters package.
     // The string names are passed to the agent configurations by test_top through the top level configuration.

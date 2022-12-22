@@ -32,8 +32,8 @@ interface  add_out_if #(
   (
   input tri clk, 
   input tri rst,
-  inout logic [add_width-1:0] sum,
-  inout logic  cout
+  inout tri [add_width-1:0] sum,
+  inout tri  cout
   );
 
 modport monitor_port 
