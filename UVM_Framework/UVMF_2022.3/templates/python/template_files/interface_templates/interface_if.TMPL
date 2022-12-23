@@ -32,7 +32,7 @@ interface  {{name}}_if {{macro.paramDeclare(paramDefs)|indent(2)}}
   input logic {{reset}}{% if sigs|length > 0 %},{% endif %}
 
 {% for sig in sigs %}
-  inout logic {{sig.vector}} {{sig.name}}{{macro.commalist(loop)}}
+  {{sig.dir}} logic {{sig.vector}} {{sig.name}}{{macro.commalist(loop)}}
 {%- endfor %}
 
   );
