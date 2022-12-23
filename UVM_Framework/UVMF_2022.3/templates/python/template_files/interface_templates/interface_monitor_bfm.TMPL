@@ -87,8 +87,8 @@ end
   {{config.type}} {{config.name}} {{config.unpackedDim}};
 {% endfor %}
 
-  tri {{clock}}_i;
-  tri {{reset}}_i;
+  logic {{clock}}_i;
+  logic {{reset}}_i;
 {% for sig in sigs %}
   tri {{sig.vector}} {{sig.name}}_i;
 {% endfor %}
