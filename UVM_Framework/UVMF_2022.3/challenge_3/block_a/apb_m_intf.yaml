@@ -2,6 +2,9 @@ uvmf:
   interfaces:
     apb:
       clock: "pclk"
+      reset: "presetn"
+      veloce_ready: "True"
+      reset_assertion_level: 'False'
       parameters:
       - name: "APB_ADDR_WIDTH"
         type: int
@@ -9,6 +12,9 @@ uvmf:
       - name: "APB_DATA_WIDTH"
         type: int
         value: '32'
+      - name: "STRB_LEN"
+        type: int
+        value: APB_ADDR_WIDTH/8
       ports:
       - dir: "output"
         name: "psel"
@@ -33,7 +39,7 @@ uvmf:
       - dir: "output"
         name: "pstrb"
         reset_value: '''b0'
-        width: '4'
+        width: 'STRB_LEN'
       - dir: "output"
         name: "pprot"
         reset_value: '''b0'
@@ -50,9 +56,6 @@ uvmf:
         name: "pslverr"
         reset_value: '0'
         width: '1'
-      reset: "presetn"
-      veloce_ready: "True"
-      reset_assertion_level: 'False'
       transaction_vars:
       - iscompare: 'False'
         isrand: 'True'
@@ -77,20 +80,20 @@ uvmf:
       - iscompare: 'True'
         isrand: 'True'
         name: "pstrb"
-        type: "bit [3:0]"
+        type: "bit [STRB_LEN:0]"
       - iscompare: 'True'
         isrand: 'True'
         name: "pprot"
         type: "bit [3:0]"
       - iscompare: 'True'
-        isrand: 'True'
+        isrand: 'False'
         name: "prdata"
         type: "APB_DATA_WIDTH"
       - iscompare: 'True'
-        isrand: 'True'
+        isrand: 'False'
         name: "pready"
         type: "bit"
       - iscompare: 'True'
-        isrand: 'True'
+        isrand: 'False'
         name: "pslverr"
         type: "bit"
