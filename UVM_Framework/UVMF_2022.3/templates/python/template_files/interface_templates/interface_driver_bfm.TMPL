@@ -96,8 +96,8 @@ end
   {{config.type}} {{config.name}} {{config.unpackedDim}};
 {% endfor %}
 
-  tri {{clock}}_i;
-  tri {{reset}}_i;
+  logic {{clock}}_i;
+  logic {{reset}}_i;
 
   // Signal list (all signals are capable of being inputs and outputs for the sake
   // of supporting both INITIATOR and RESPONDER mode operation. Expectation is that 
