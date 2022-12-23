@@ -28,11 +28,11 @@ import {{name}}_pkg_hdl::*;
 interface  {{name}}_if {{macro.paramDeclare(paramDefs)|indent(2)}}
 
   (
-  input tri {{clock}}, 
-  input tri {{reset}}{% if sigs|length > 0 %},{% endif %}
+  input logic {{clock}}, 
+  input logic {{reset}}{% if sigs|length > 0 %},{% endif %}
 
 {% for sig in sigs %}
-  inout tri {{sig.vector}} {{sig.name}}{{macro.commalist(loop)}}
+  inout logic {{sig.vector}} {{sig.name}}{{macro.commalist(loop)}}
 {%- endfor %}
 
   );
