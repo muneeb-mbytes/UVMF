@@ -12,7 +12,7 @@ uvmf:
       - type: "scoreboard"
       analysis_ports: 
         - name: "subsys_sb_ap"
-          type: "block_2_sb"
+          type: "wb_master_transaction"
 
 
         
