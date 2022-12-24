@@ -1,0 +1,9 @@
+@use $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg.vinfo
+@use $UVMF_VIP_LIBRARY_HOME/interface_packages/apb_master_pkg/apb_master_pkg.vinfo
+@use $UVMF_VIP_LIBRARY_HOME/interface_packages/axi_master_pkg/axi_master_pkg.vinfo
+@use $UVMF_VIP_LIBRARY_HOME/interface_packages/spi_slave_pkg/spi_slave_pkg.vinfo
+@use $UVMF_VIP_LIBRARY_HOME/environment_packages/block_1_env_pkg/block_1_env_pkg.vinfo
+@use $UVMF_PROJECT_DIR/tb/parameters/block_1_ben_parameters_pkg.vinfo
+@use $UVMF_PROJECT_DIR/tb/sequences/block_1_ben_sequences_pkg.vinfo
++incdir+@vinfodir
+block_1_ben_tests_pkg.sv

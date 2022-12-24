@@ -1,0 +1,1 @@
+$UVMF_VIP_LIBRARY_HOME/interface_packages/wishbone_slave_pkg/wishbone_slave_pkg_hdl.sv

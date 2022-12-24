@@ -1,0 +1,10 @@
+uvmf:
+  util_components:
+    block_2_scoreboard:
+      analysis_exports:
+      - name: wishbone_slave_agent_sb_ae
+        type: wishbone_slave_transaction
+      - name: wishbone_slave_pred_sb_ae
+        type: wishbone_slave_transaction
+      existing_library_component: 'True'
+      type: scoreboard

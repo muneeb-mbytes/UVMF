@@ -1,0 +1,130 @@
+uvmf:
+  interfaces:
+    apb_master:
+      clock: clock
+      config_constraints: []
+      config_vars:
+      - comment: ''
+        isrand: 'False'
+        name: is_active
+        type: bit
+        value: '1'
+      - comment: ''
+        isrand: 'True'
+        name: no_of_slaves
+        type: int
+        value: '1'
+      - comment: ''
+        isrand: 'False'
+        name: has_coverage
+        type: bit
+        value: '1'
+      existing_library_component: 'True'
+      gen_inbound_streaming_driver: 'False'
+      hdl_pkg_parameters: []
+      hdl_typedefs: []
+      hvl_pkg_parameters: []
+      hvl_typedefs: []
+      parameters: []
+      ports:
+      - dir: output
+        name: pclk
+        reset_value: 1'b0
+        width: '1'
+      - dir: output
+        name: preset_n
+        reset_value: 1'b0
+        width: '1'
+      - dir: output
+        name: pselx
+        reset_value: 1'b0
+        width: '1'
+      - dir: output
+        name: penable
+        reset_value: 1'b0
+        width: '1'
+      - dir: output
+        name: paddr
+        reset_value: 1'b0
+        width: '32'
+      - dir: output
+        name: pwdata
+        reset_value: 1'b0
+        width: '32'
+      - dir: output
+        name: pwrite
+        reset_value: 1'b0
+        width: '32'
+      - dir: output
+        name: pprot
+        reset_value: 1'b0
+        width: '3'
+      - dir: output
+        name: pstrobe
+        reset_value: 1'b0
+        width: '4'
+      - dir: input
+        name: prdata
+        reset_value: '''bz'
+        width: '32'
+      - dir: input
+        name: pready
+        reset_value: 1'b0
+        width: '1'
+      - dir: input
+        name: pslverr
+        reset_value: 1'b0
+        width: '4'
+      reset: reset
+      reset_assertion_level: 'True'
+      transaction_constraints: []
+      transaction_vars:
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'True'
+        name: paddr
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: pwdata
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: penable
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: pwrite
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: psel
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'False'
+        isrand: 'False'
+        name: pready
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'False'
+        isrand: 'False'
+        name: pprot
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'False'
+        isrand: 'False'
+        name: pslverr
+        type: bit
+        unpacked_dimension: ''
+      use_dpi_link: 'False'

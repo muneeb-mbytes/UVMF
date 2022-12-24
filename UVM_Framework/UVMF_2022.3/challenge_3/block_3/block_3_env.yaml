@@ -1,0 +1,45 @@
+
+uvmf:
+  environments:
+    "block_3" :
+      ## Agents are defined in a LIST so that the order is maintained. This is important
+      ## because of how the BFMs are passed in at the bench utilize this same order when
+      ## this environment's initialize() routine is called.
+      agents :
+        - name: "wishbone_master_agent" 
+          type: "wishbone_master"
+          initiator_responder: "INITIATOR"
+        - name: "axi_slave_agent"
+          type: "axi_slave"
+          initiator_responder: "RESPONDER"
+      ## Analysis components are defined externally in a 'util_components' structure.
+      ## They are instantiated here.
+      analysis_ports:
+        - name: "axi_slave_ap"
+          trans_type: "axi_slave_transaction"
+          connected_to: "axi_slave_agent.monitored_ap"
+      analysis_components :
+        - name: "block_3_pred"
+          type: "block_3_predictor"
+        - name: "block_3_sb"
+          type: "block_3_scoreboard"
+      ## Define internal TLM connections. Each entry must have a 'driver' and
+      ## a 'receiver' entry used to determine the full connection.
+      tlm_connections :
+        # Connection 0
+        - driver:   "wishbone_master_agent.monitored_ap"
+          receiver: "block_3_pred.wishbone_master_agent_ae"
+        # Connection 1
+        - driver:   "block_3_pred.block_3_sb_ap"
+          receiver: "block_3_sb.axi_slave_pred_sb_ae"
+        # Connection 2
+        - driver:   "axi_slave_agent.monitored_ap"
+          receiver: "block_3_sb.axi_slave_agent_sb_ae"
+      ## Environment-level configuration variables. Each entry is keyed with a 
+      ## unique name and is assigned a 'type' and 'isrand' value.
+      config_vars :
+        - name: "block_3_cfgVar1"
+          type : "bit"      
+          isrand : "True"
+
+

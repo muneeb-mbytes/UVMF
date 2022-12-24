@@ -1,0 +1,3 @@
+needs:
+  - wishbone_slave_hvl.compile
+  - wishbone_slave_hdl.compile

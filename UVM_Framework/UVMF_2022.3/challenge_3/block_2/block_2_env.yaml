@@ -1,0 +1,50 @@
+
+uvmf:
+  environments:
+    "block_2" :
+      ## Agents are defined in a LIST so that the order is maintained. This is important
+      ## because of how the BFMs are passed in at the bench utilize this same order when
+      ## this environment's initialize() routine is called.
+      agents :
+        - name: "spi_master_agent" 
+          type: "spi_master"
+          initiator_responder: "INITIATOR"
+        - name: "wishbone_slave_agent"
+          type: "wishbone_slave"
+          initiator_responder: "RESPONDER"
+      ## Analysis components are defined externally in a 'util_components' structure.
+      ## They are instantiated here.
+      analysis_ports:
+        - name: "wishbone_ap"
+          trans_type: "wishbone_slave_transaction"
+          connected_to: "wishbone_slave_agent.monitored_ap"
+      # - name: "wishbone_ae"
+      #   trans_type: "wishbone_slave_transaction"
+      #   connected_to: "wishbone_slave_agent_sb_ae"
+     
+    
+      analysis_components :
+        - name: "block_2_pred"
+          type: "block_2_predictor"
+        - name: "block_2_sb"
+          type: "block_2_scoreboard"
+      ## Define internal TLM connections. Each entry must have a 'driver' and
+      ## a 'receiver' entry used to determine the full connection.
+      tlm_connections :
+        # Connection 0
+        - driver:   "spi_master_agent.monitored_ap"
+          receiver: "block_2_pred.spi_master_agent_ae"
+        # Connection 1
+        - driver:   "block_2_pred.block_2_sb_ap"
+          receiver: "block_2_sb.wishbone_slave_pred_sb_ae"
+        # Connection 2
+        - driver:   "wishbone_slave_agent.monitored_ap"
+          receiver: "block_2_sb.wishbone_slave_agent_sb_ae"
+      ## Environment-level configuration variables. Each entry is keyed with a 
+      ## unique name and is assigned a 'type' and 'isrand' value.
+      config_vars :
+        - name: "block_2_cfgVar1"
+          type : "bit"      
+          isrand : "True"
+
+

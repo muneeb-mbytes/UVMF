@@ -1,0 +1,6 @@
+@use $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg_hdl.vinfo
+@use spi_master_pkg_hdl.vinfo
++incdir+@vinfodir
+src/spi_master_if.sv
+src/spi_master_driver_bfm.sv
+src/spi_master_monitor_bfm.sv

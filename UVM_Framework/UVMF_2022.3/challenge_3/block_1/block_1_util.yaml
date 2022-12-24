@@ -1,0 +1,26 @@
+uvmf:
+  util_components:
+    "block_1_predictor":
+      type: predictor
+      analysis_exports:
+      - name: "apb_master_agent_ae"
+        type: 'apb_master_transaction'
+     
+      - name: "axi_master1_agent_ae"
+        type: 'axi_master_transaction'
+   
+      - name: "axi_master2_agent_ae"
+        type: 'axi_master_transaction'
+
+      analysis_ports:
+      - name: "block_1_sb_ap"
+        type: 'spi_slave_transaction'
+    
+    "block_1_scoreboard":
+      type: scoreboard
+      
+      analysis_exports:
+      - name: "spi_slave_pred_sb_ae"
+        type: 'spi_slave_transaction'
+      - name: "spi_slave_agent_sb_ae"
+        type: 'spi_slave_transaction'

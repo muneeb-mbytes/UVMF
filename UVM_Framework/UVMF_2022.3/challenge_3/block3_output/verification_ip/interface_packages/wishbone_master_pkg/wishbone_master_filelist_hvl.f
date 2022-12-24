@@ -1,0 +1,1 @@
+$UVMF_VIP_LIBRARY_HOME/interface_packages/wishbone_master_pkg/wishbone_master_pkg.sv

@@ -1,0 +1,98 @@
+uvmf:
+  interfaces:
+    wishbone_slave:
+      clock: clock
+      config_constraints: []
+      config_vars:
+      - comment: ''
+        isrand: 'False'
+        name: is_active
+        type: bit
+        value: '1'
+      - comment: ''
+        isrand: 'False'
+        name: no_of_slaves
+        type: int
+        value: '1'
+      - comment: ''
+        isrand: 'False'
+        name: has_coverage
+        type: bit
+        value: '1'
+      existing_library_component: 'True'
+      gen_inbound_streaming_driver: 'False'
+      hdl_pkg_parameters: []
+      hdl_typedefs: []
+      hvl_pkg_parameters: []
+      hvl_typedefs: []
+      parameters: []
+      ports:
+      - dir: output
+        name: ADR_O
+        reset_value: 1'b0
+        width: '32'
+      - dir: input
+        name: DATA_I
+        reset_value: 1'b0
+        width: '32'
+      - dir: output
+        name: DATA_O
+        reset_value: 1'b0
+        width: '32'
+      - dir: output
+        name: WE_O
+        reset_value: 1'b0
+        width: '1'
+      - dir: output
+        name: SEL_O
+        reset_value: 1'b0
+        width: '1'
+      - dir: output
+        name: STB_O
+        reset_value: 1'b0
+        width: '1'
+      - dir: input
+        name: ACK_I
+        reset_value: 1'b0
+        width: '1'
+      - dir: output
+        name: CYC_O
+        reset_value: 1'b0
+        width: '1'
+      - dir: output
+        name: TAGN_O
+        reset_value: 1'b0
+        width: '1'
+      - dir: input
+        name: TAGN_I
+        reset_value: '''bz'
+        width: '1'
+      reset: reset
+      reset_assertion_level: 'True'
+      transaction_constraints: []
+      transaction_vars:
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: sck
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'True'
+        name: cs
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'True'
+        name: mosi
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: miso
+        type: bit
+        unpacked_dimension: ''
+      use_dpi_link: 'False'

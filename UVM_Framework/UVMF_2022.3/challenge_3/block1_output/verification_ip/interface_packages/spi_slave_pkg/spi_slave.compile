@@ -1,0 +1,3 @@
+needs:
+  - spi_slave_hvl.compile
+  - spi_slave_hdl.compile

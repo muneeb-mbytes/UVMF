@@ -1,0 +1,3 @@
+needs:
+  - axi_slave_hvl.compile
+  - axi_slave_hdl.compile

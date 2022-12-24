@@ -1,0 +1,406 @@
+uvmf:
+  interfaces:
+    axi_slave:
+      clock: clock
+      config_constraints: []
+      config_vars:
+      - comment: ''
+        isrand: 'False'
+        name: is_active
+        type: bit
+        value: '1'
+      - comment: ''
+        isrand: 'True'
+        name: no_of_slaves
+        type: int
+        value: '1'
+      - comment: ''
+        isrand: 'False'
+        name: has_coverage
+        type: bit
+        value: '1'
+      existing_library_component: 'True'
+      gen_inbound_streaming_driver: 'False'
+      hdl_pkg_parameters: []
+      hdl_typedefs: []
+      hvl_pkg_parameters: []
+      hvl_typedefs: []
+      parameters: []
+      ports:
+      - dir: output
+        name: pclk
+        reset_value: 1'b0
+        width: '1'
+      - dir: output
+        name: preset_n
+        reset_value: 1'b0
+        width: '1'
+      - dir: output
+        name: AWADDER
+        reset_value: 1'b0
+        width: '32'
+      - dir: output
+        name: AWBURST
+        reset_value: 1'b0
+        width: '1'
+      - dir: output
+        name: AWCACHE
+        reset_value: 1'b0
+        width: '4'
+      - dir: output
+        name: AWID
+        reset_value: 1'b0
+        width: '4'
+      - dir: output
+        name: AWLENGTH
+        reset_value: 1'b0
+        width: '4'
+      - dir: output
+        name: AWLOCK
+        reset_value: 1'b0
+        width: '2'
+      - dir: output
+        name: AWPROT
+        reset_value: 1'b0
+        width: '3'
+      - dir: input
+        name: AWREADY
+        reset_value: 1'b0
+        width: '1'
+      - dir: input
+        name: AWSIZE
+        reset_value: 1'b0
+        width: '3'
+      - dir: output
+        name: AWVALID
+        reset_value: 1'b0
+        width: '1'
+      - dir: output
+        name: WDATA
+        reset_value: 1'b0
+        width: '32'
+      - dir: output
+        name: WSTRB
+        reset_value: 1'b0
+        width: '4'
+      - dir: output
+        name: WUSER
+        reset_value: 1'b0
+        width: '17'
+      - dir: input
+        name: BID
+        reset_value: 1'b0
+        width: '4'
+      - dir: output
+        name: BRESP
+        reset_value: 1'b0
+        width: '2'
+      - dir: input
+        name: BUSER
+        reset_value: 1'b0
+        width: ''
+      - dir: output
+        name: BVALID
+        reset_value: 1'b0
+        width: ''
+      - dir: output
+        name: ARID
+        reset_value: 1'b0
+        width: '4'
+      - dir: output
+        name: ARADDR
+        reset_value: 1'b0
+        width: '32'
+      - dir: output
+        name: ARLEN
+        reset_value: 1'b0
+        width: '8'
+      - dir: output
+        name: ARSIZE
+        reset_value: 1'b0
+        width: '3'
+      - dir: output
+        name: ARBURST
+        reset_value: 1'b0
+        width: '2'
+      - dir: output
+        name: ARCACHE
+        reset_value: 1'b0
+        width: '4'
+      - dir: output
+        name: ARPROT
+        reset_value: 1'b0
+        width: '3'
+      - dir: output
+        name: ARQOS
+        reset_value: 1'b0
+        width: '4'
+      - dir: output
+        name: ARREGION
+        reset_value: 1'b0
+        width: '4'
+      - dir: output
+        name: ARUSER
+        reset_value: 1'b0
+        width: '4'
+      - dir: output
+        name: ARLOCK
+        reset_value: 1'b0
+        width: '1'
+      - dir: output
+        name: RID
+        reset_value: 1'b0
+        width: '4'
+      - dir: output
+        name: RDATA
+        reset_value: 1'b0
+        width: '4'
+      - dir: output
+        name: RRESP
+        reset_value: 1'b0
+        width: '4'
+      - dir: output
+        name: RUSER
+        reset_value: 1'b0
+        width: '64'
+      - dir: output
+        name: RLAST
+        reset_value: 1'b0
+        width: '2'
+      - dir: output
+        name: RVALID
+        reset_value: 1'b0
+        width: '1'
+      reset: reset
+      reset_assertion_level: 'True'
+      transaction_constraints: []
+      transaction_vars:
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: AWID
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: AWADDR
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: AWLEN
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: AWSIZE
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: AWBURST
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: AWLOCK
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: AWCACHE
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: AWQOS
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: AWREGION
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: AWUSER
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: AWPROT
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: AWVALID
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: AWREADY
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: WDATA
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: WSTRB
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: WUSER
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: WLAST
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: BID
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: BRESP
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: BUSER
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: BVALID
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: ARID
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: ARADDR
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: ARLEN
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: ARSIZE
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: ARBURST
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: ARCACHE
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: ARPROT
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: ARQOS
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: ARREGION
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: ARUSER
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: ARLOCK
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: RID
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: RDATA
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: RRESP
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: RUSER
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: RLAST
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: RVALID
+        type: bit
+        unpacked_dimension: ''
+      use_dpi_link: 'False'

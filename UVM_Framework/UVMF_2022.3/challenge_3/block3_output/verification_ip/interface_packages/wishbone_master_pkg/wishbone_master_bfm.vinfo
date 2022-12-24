@@ -1,0 +1,6 @@
+@use $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg_hdl.vinfo
+@use wishbone_master_pkg_hdl.vinfo
++incdir+@vinfodir
+src/wishbone_master_if.sv
+src/wishbone_master_driver_bfm.sv
+src/wishbone_master_monitor_bfm.sv

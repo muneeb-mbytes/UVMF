@@ -1,0 +1,8 @@
+needs:
+  - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg.compile
+  - ../../../verification_ip/interface_packages/spi_master_pkg/spi_master_hvl.compile
+  - ../../../verification_ip/interface_packages/wishbone_slave_pkg/wishbone_slave_hvl.compile
+
+src:
+  - block_2_env_pkg.sv
+

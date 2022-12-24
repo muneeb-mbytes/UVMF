@@ -1,0 +1,16 @@
+//----------------------------------------------------------------------
+// Created with uvmf_gen version 2022.3
+//----------------------------------------------------------------------
+// pragma uvmf custom header begin
+// pragma uvmf custom header end
+//----------------------------------------------------------------------
+//----------------------------------------------------------------------
+//
+
+,
+Interface Description, Interface Type, Interface Transaction, Interface Name,
+apb_master_agent, apb_master_driver_bfm apb_master_monitor_bfm, apb_master_transaction, apb_master_pkg_apb_master_agent_BFM,
+axi_master1_agent, axi_master_driver_bfm axi_master_monitor_bfm, axi_master_transaction, axi_master_pkg_axi_master1_agent_BFM,
+axi_master2_agent, axi_master_driver_bfm axi_master_monitor_bfm, axi_master_transaction, axi_master_pkg_axi_master2_agent_BFM,
+spi_slave_agent, spi_slave_driver_bfm spi_slave_monitor_bfm, spi_slave_transaction, spi_slave_pkg_spi_slave_agent_BFM,
+

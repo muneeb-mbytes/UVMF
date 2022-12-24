@@ -1,0 +1,8 @@
+needs:
+  - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg.compile
+  - ../../../../verification_ip/interface_packages/wishbone_master_pkg/wishbone_master.compile
+  - ../../../../verification_ip/interface_packages/axi_slave_pkg/axi_slave.compile
+  - ../../../../verification_ip/environment_packages/block_3_env_pkg/block_3_env_pkg.compile
+  - ../parameters/block_3_ben_parameters_pkg.compile
+src:
+  - block_3_ben_sequences_pkg.sv

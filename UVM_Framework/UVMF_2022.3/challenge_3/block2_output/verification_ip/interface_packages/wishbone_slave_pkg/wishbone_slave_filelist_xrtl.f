@@ -1,0 +1,3 @@
+$UVMF_VIP_LIBRARY_HOME/interface_packages/wishbone_slave_pkg/src/wishbone_slave_if.sv
+$UVMF_VIP_LIBRARY_HOME/interface_packages/wishbone_slave_pkg/src/wishbone_slave_monitor_bfm.sv
+$UVMF_VIP_LIBRARY_HOME/interface_packages/wishbone_slave_pkg/src/wishbone_slave_driver_bfm.sv

@@ -1,0 +1,6 @@
+@use $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg.vinfo
+@use $UVMF_VIP_LIBRARY_HOME/interface_packages/apb_master_pkg/apb_master_pkg.vinfo
+@use $UVMF_VIP_LIBRARY_HOME/interface_packages/axi_master_pkg/axi_master_pkg.vinfo
+@use $UVMF_VIP_LIBRARY_HOME/interface_packages/spi_slave_pkg/spi_slave_pkg.vinfo
++incdir+@vinfodir
+block_1_env_pkg.sv

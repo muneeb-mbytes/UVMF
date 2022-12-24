@@ -1,0 +1,74 @@
+uvmf:
+  interfaces:
+    spi_slave:
+      clock: clock
+      config_constraints: []
+      config_vars:
+      - comment: ''
+        isrand: 'False'
+        name: is_active
+        type: bit
+        value: '1'
+      - comment: ''
+        isrand: 'False'
+        name: no_of_slaves
+        type: int
+        value: '1'
+      - comment: ''
+        isrand: 'False'
+        name: has_coverage
+        type: bit
+        value: '1'
+      existing_library_component: 'True'
+      gen_inbound_streaming_driver: 'False'
+      hdl_pkg_parameters: []
+      hdl_typedefs: []
+      hvl_pkg_parameters: []
+      hvl_typedefs: []
+      parameters: []
+      ports:
+      - dir: input
+        name: sck
+        reset_value: 1'b0
+        width: '1'
+      - dir: input
+        name: cs
+        reset_value: 1'b0
+        width: '1'
+      - dir: input
+        name: mosi
+        reset_value: 1'b0
+        width: '8'
+      - dir: output
+        name: miso
+        reset_value: 1'b0
+        width: '8'
+      reset: reset
+      reset_assertion_level: 'True'
+      transaction_constraints: []
+      transaction_vars:
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: sck
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: cs
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: mosi
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'True'
+        name: miso
+        type: bit
+        unpacked_dimension: ''
+      use_dpi_link: 'False'

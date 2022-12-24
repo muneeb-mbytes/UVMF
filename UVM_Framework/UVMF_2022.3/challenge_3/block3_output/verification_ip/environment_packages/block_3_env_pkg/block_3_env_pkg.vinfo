@@ -1,0 +1,5 @@
+@use $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg.vinfo
+@use $UVMF_VIP_LIBRARY_HOME/interface_packages/wishbone_master_pkg/wishbone_master_pkg.vinfo
+@use $UVMF_VIP_LIBRARY_HOME/interface_packages/axi_slave_pkg/axi_slave_pkg.vinfo
++incdir+@vinfodir
+block_3_env_pkg.sv

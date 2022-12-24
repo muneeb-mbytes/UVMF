@@ -1,0 +1,12 @@
+
+uvmf:
+  benches:
+    "block_2_ben":
+      active_passive:
+      - bfm_name: "spi_master_agent"
+        value: "ACTIVE"
+      - bfm_name: "wishbone_slave_agent"
+        value: "PASSIVE"
+      veloce_ready: "True"
+      top_env: "block_2"
+

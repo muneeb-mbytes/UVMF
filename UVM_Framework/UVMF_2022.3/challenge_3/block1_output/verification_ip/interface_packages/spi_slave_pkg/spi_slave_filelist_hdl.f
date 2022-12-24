@@ -1,0 +1,1 @@
+$UVMF_VIP_LIBRARY_HOME/interface_packages/spi_slave_pkg/spi_slave_pkg_hdl.sv

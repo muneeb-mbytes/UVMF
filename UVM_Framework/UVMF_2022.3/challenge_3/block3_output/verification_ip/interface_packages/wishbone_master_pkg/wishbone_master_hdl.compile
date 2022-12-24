@@ -1,0 +1,9 @@
+needs:
+  - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg_hdl.compile
+  - ./wishbone_master_common.compile
+incdir:
+  - .
+src:
+  - src/wishbone_master_if.sv
+  - src/wishbone_master_monitor_bfm.sv
+  - src/wishbone_master_driver_bfm.sv

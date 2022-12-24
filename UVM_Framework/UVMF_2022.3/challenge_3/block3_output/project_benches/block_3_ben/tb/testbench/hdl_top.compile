@@ -1,0 +1,10 @@
+incdir:
+  - ${uvm_path}/src
+  - .
+needs:
+  - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg_hdl.compile
+  - ../parameters/block_3_ben_parameters_pkg.compile
+  - ../../../../verification_ip/interface_packages/wishbone_master_pkg/wishbone_master_hdl.compile
+  - ../../../../verification_ip/interface_packages/axi_slave_pkg/axi_slave_hdl.compile
+src:
+  - hdl_top.sv

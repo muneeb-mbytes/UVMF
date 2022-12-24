@@ -1,0 +1,14 @@
+//----------------------------------------------------------------------
+// Created with uvmf_gen version 2022.3
+//----------------------------------------------------------------------
+// pragma uvmf custom header begin
+// pragma uvmf custom header end
+//----------------------------------------------------------------------
+//----------------------------------------------------------------------
+//
+
+,
+Interface Description, Interface Type, Interface Transaction, Interface Name,
+wishbone_master_agent, wishbone_master_driver_bfm wishbone_master_monitor_bfm, wishbone_master_transaction, wishbone_master_pkg_wishbone_master_agent_BFM,
+axi_slave_agent, axi_slave_driver_bfm axi_slave_monitor_bfm, axi_slave_transaction, axi_slave_pkg_axi_slave_agent_BFM,
+
