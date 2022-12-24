@@ -1,0 +1,9 @@
+needs:
+  - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg_hdl.compile
+  - ./spi_s_common.compile
+incdir:
+  - .
+src:
+  - src/spi_s_if.sv
+  - src/spi_s_monitor_bfm.sv
+  - src/spi_s_driver_bfm.sv

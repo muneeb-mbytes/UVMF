@@ -36,10 +36,9 @@ uvmf:
           receiver: "block_2_pred.spi_ae"
         - driver:   "wb_slave.monitored_ap"
           receiver: "block_2_sb.wb_ae"
-        - driver:   "block_2_pred.pred_to_sco_ap"
-          receiver: "block_2_sb.sco_from_pred_ae"
+        - driver:   "block_2_pred.pre_to_sco_ap"
+          receiver: "block_2_sb.sco_from_pre_ae"
       config_vars :
         - name: "has_scoreboard"
           type : "bit"      
           isrand : "False"
-
