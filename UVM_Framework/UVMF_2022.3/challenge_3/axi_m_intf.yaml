@@ -1,6 +1,6 @@
 uvmf:
   interfaces:
-    axi:
+    axi_m:
       clock: axi_clk
       reset: rst
       reset_assertion_level: "False"

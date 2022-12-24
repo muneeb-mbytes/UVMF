@@ -1,12 +1,12 @@
 uvmf:
   interfaces:
-    axi:
+    axi_s:
       clock: axi_clk
       reset: rst
       reset_assertion_level: "False"
       veloce_ready: "True"
       parameters:
-        - name: "AW_WIDTH""
+        - name: "AW_WIDTH"
           type: "int"
           value: "32"
         - name: "LEN"
@@ -28,7 +28,7 @@ uvmf:
           width: "1"
         - name: awaddr
           dir: input
-          width: "AW_WIDTH""
+          width: "AW_WIDTH"
         - name: awsize
           dir: input
           width: "3"
@@ -106,7 +106,7 @@ uvmf:
           width: "1"
         - name: araddr
           dir: input
-          width: "AW_WIDTH""
+          width: "AW_WIDTH"
         - name: arsize
           dir: input
           width: "3"
