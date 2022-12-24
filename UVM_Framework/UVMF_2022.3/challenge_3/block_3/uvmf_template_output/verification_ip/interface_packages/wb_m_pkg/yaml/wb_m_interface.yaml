@@ -1,16 +1,22 @@
 uvmf:
   interfaces:
     wb_m:
-      clock: "clock"
-      reset: "reset"
-      reset_assertion_level: 'True'
+      clock: clock
+      config_constraints: []
+      config_vars: []
+      existing_library_component: 'True'
+      gen_inbound_streaming_driver: 'False'
+      hdl_pkg_parameters: []
+      hdl_typedefs: []
+      hvl_pkg_parameters: []
+      hvl_typedefs: []
       parameters:
-        - name: WB_ADDR_WIDTH
-          type: int
-          value: '32'
-        - name: WB_DATA_WIDTH
-          type: int
-          value: '16'
+      - name: WB_ADDR_WIDTH
+        type: int
+        value: '32'
+      - name: WB_DATA_WIDTH
+        type: int
+        value: '16'
       ports:
       - dir: input
         name: din
@@ -21,10 +27,12 @@ uvmf:
         reset_value: '''b0'
         width: WB_DATA_WIDTH
       - dir: input
-        name: "TGD_I"
+        name: TGD_I
+        reset_value: '''bz'
         width: WB_DATA_WIDTH
       - dir: output
-        name: "TGD_O"
+        name: TGD_O
+        reset_value: '''bz'
         width: WB_DATA_WIDTH
       - dir: output
         name: ack
@@ -54,20 +62,32 @@ uvmf:
         name: sel
         reset_value: '''b0'
         width: WB_DATA_WIDTH/8
+      reset: reset
+      reset_assertion_level: 'True'
+      transaction_constraints: []
       transaction_vars:
-      - iscompare: 'True'
+      - comment: ''
+        iscompare: 'True'
         isrand: 'True'
         name: data
-        type: "bit [WB_DATA_WIDTH-1:0]"
-      - iscompare: 'True'
+        type: bit [WB_DATA_WIDTH-1:0]
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
         isrand: 'True'
         name: byte_select
-        type: "bit [(WB_DATA_WIDTH/8)-1:0]"
-      - iscompare: "True"
-        isrand: "True"
+        type: bit [(WB_DATA_WIDTH/8)-1:0]
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'True'
         name: WrENB
-        type: "bit"
-      - iscompare: "True"
-        isrand: "True"
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'True'
         name: selslv
-        type: "bit"
+        type: bit
+        unpacked_dimension: ''
+      use_dpi_link: 'False'

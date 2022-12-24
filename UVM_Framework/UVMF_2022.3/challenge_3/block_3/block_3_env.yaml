@@ -1,0 +1,42 @@
+uvmf:
+  benches:
+    "block_3" :
+      ## Specify the top-level block
+      top_env: "block_3"
+      clock_half_period: "5ns"
+      reset_assertion_level: "True"
+      reset_duration: "200ns"
+  environments:
+    "block_3" :
+      agents :
+        - name: "wb_master" 
+          type: "wb_m"
+          initiator_responder: "INITIATOR"
+        - name: "axi_slave"
+          type: "axi_s"
+          initiator_responder: "RESPONDER"
+      analysis_components :
+        - name: "block_3_pred"
+          type: "block_3_predictor"
+        - name: "block_3_sb"
+          type: "block_3_scoreboard"
+
+      analysis_ports:
+        - name: block_3_wb
+          trans_type: wb_m_transaction
+          connected_to: wb_master.monitored_ap
+
+      tlm_connections:
+        - driver: wb_master.monitored_ap
+          receiver: block_3_pred.wb_ae
+        - driver: axi_slave.monitored_ap
+          receiver: block_3_sb.axi_ae
+        - driver: block_3_pred.pre_to_sco_ap
+          receiver: block_3_sb.sco_from_pre_ae
+
+      config_vars:
+        - name: "has_scoreboard"
+          type: bit
+          isrand: "False"
+
+        
