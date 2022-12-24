@@ -1,0 +1,34 @@
+uvmf:
+  benches:
+    "system":
+      ## Specify the top-level block
+      top_env: "system"
+  environments:
+    "system":
+      subenvs:
+        - name: "s1"
+          type: "subsys"
+        - name: "b3"
+          type: "block_3"
+      #analysis_components:
+      #  - name: "sys_pred"
+      #    type: "sys_predictor"
+      #  - name: "sys_sb"
+      #    type: "sys_scoreboard"
+      #tlm_connections:
+      #  - driver: "subsys.b1.apb_master_ap"
+      #    receiver: "sub_pred.subsys_apb_ae"
+      #  - driver: "subsys.b1.axi_master1_ap"
+      #    receiver: "sub_pred.subsys_axi_1_ae"
+      #  - driver: "subsys.b1.axi_master2_ap"
+      #    receiver: "sub_pred.subsys_axi_2_ae"
+      #  - driver: "sub_pred.pred_to_sco_ap"
+      #    receiver: "sub_sb.pred_ae"
+      #  - driver: "b2.wb_slave_ap"
+      #   receiver: "sub_sb.block2_ae"
+
+
+      
+
+
+

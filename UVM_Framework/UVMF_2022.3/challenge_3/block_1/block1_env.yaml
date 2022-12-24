@@ -63,4 +63,3 @@ uvmf:
         - name: "has_scoreboard"
           type : "bit"      
           isrand : "False"
-

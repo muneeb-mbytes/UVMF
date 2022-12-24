@@ -1,0 +1,34 @@
+uvmf:
+  util_components:
+    block_1_predictor:
+      analysis_exports:
+      - name: axi_2_ae
+        type: 'axi_transaction #(.AW_WIDTH(AW_WIDTH), .LEN(LEN), .DATA_WIDTH(DATA_WIDTH), .X(X))'
+      - name: apb_ae
+        type: 'apb_transaction #(.APB_DATA_WIDTH(APB_DATA_WIDTH), .APB_ADDR_WIDTH(APB_ADDR_WIDTH))'
+      - name: axi_1_ae
+        type: 'axi_transaction #(.AW_WIDTH(AW_WIDTH), .LEN(LEN), .DATA_WIDTH(DATA_WIDTH), .X(X))'
+      analysis_ports:
+      - name: pre_to_sco_ap
+        type: spi_s_transaction
+      existing_library_component: 'True'
+      parameters:
+      - name: APB_DATA_WIDTH
+        type: int
+        value: '32'
+      - name: APB_ADDR_WIDTH
+        type: int
+        value: '32'
+      - name: AW_WIDTH
+        type: int
+        value: '32'
+      - name: DATA_WIDTH
+        type: int
+        value: '32'
+      - name: LEN
+        type: int
+        value: '32'
+      - name: X
+        type: int
+        value: '16'
+      type: predictor

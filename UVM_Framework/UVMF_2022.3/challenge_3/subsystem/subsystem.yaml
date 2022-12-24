@@ -1,4 +1,8 @@
 uvmf:
+  benches:
+    "subsys" :
+      ## Specify the top-level block
+      top_env: "subsys"
   environments:
     "subsys":
       subenvs:
@@ -11,6 +15,7 @@ uvmf:
           type: "subsys_predictor"
         - name: "sub_sb"
           type: "subsys_scoreboard"
+
       tlm_connections:
         - driver: "b1.apb_master_ap"
           receiver: "sub_pred.subsys_apb_ae"
@@ -18,10 +23,10 @@ uvmf:
           receiver: "sub_pred.subsys_axi_1_ae"
         - driver: "b1.axi_master2_ap"
           receiver: "sub_pred.subsys_axi_2_ae"
-        - driver: "sub_pred.pred_to_sco_ap"
-          receiver: "sub_sb.pred_ae"
+        - driver: "sub_pred.subsys_pre_to_sco_ap"
+          receiver: "sub_sb.subsys_sco_from_pre_ae"
         - driver: "b2.wb_slave_ap"
-          receiver: "sub_sb.block2_ae"
+          receiver: "sub_sb.subsys_wb_ae"
 
 
       

@@ -1,0 +1,3 @@
+$UVMF_VIP_LIBRARY_HOME/interface_packages/spi_s_pkg/src/spi_s_if.sv
+$UVMF_VIP_LIBRARY_HOME/interface_packages/spi_s_pkg/src/spi_s_monitor_bfm.sv
+$UVMF_VIP_LIBRARY_HOME/interface_packages/spi_s_pkg/src/spi_s_driver_bfm.sv

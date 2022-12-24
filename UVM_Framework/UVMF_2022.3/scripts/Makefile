@@ -49,7 +49,7 @@ ifeq ($(DEBUG),1)
 endif
 
 # Control if we wish to use the multi-user coverage mode 
-MULTIUSER ?= 1
+MULTIUSER ?= 0
 
 # Control whether or not to run at all in debug simulation
 NO_RUN ?= 0
