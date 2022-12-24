@@ -1,6 +1,6 @@
 uvmf:
   interfaces:
-    wb_slave:
+    wb_s:
       clock: "clock"
       reset: "reset"
       reset_assertion_level: 'True'

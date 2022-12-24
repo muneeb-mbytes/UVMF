@@ -1,0 +1,38 @@
+uvmf:
+  benches:
+    "block_2" :
+      top_env: "block_2"
+      clock_half_period: "5ns"
+      reset_assertion_level: "True"
+      reset_duration: "200ns"
+      active_passive: 
+        - bfm_name: "spi_master" 
+          value: "ACTIVE"
+        - bfm_name: "wb_slave" 
+          value: "PASSIVE"
+  environments:
+    "block_2" :
+      agents :
+        - name: "spi_master" 
+          type: "spi_m"
+          initiator_responder: "INITIATOR"
+        - name: "wb_slave"
+          type: "wb_s"
+          initiator_responder: "RESPONDER"
+      analysis_components :
+        - name: "block_2_pred"
+          type: "block_2_predictor"
+        - name: "block_2_sb"
+          type: "block_2_scoreboard"
+      tlm_connections: 
+        - driver:   "spi_master.monitored_ap"
+          receiver: "block_2_pred.spi_ae"
+        - driver:   "wb_slave.monitored_ap"
+          receiver: "block_2_sb.wb_ae"
+        - driver:   "block_2_pred.pred_to_sco_ap"
+          receiver: "block_2_sb.sco_from_pred_ae"
+      config_vars :
+        - name: "has_scoreboard"
+          type : "bit"      
+          isrand : "False"
+

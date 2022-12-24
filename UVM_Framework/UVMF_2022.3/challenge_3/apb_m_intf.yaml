@@ -1,20 +1,20 @@
 uvmf:
   interfaces:
-    apb:
+    "apb":
       clock: "pclk"
       reset: "presetn"
       veloce_ready: "True"
       reset_assertion_level: 'False'
       parameters:
       - name: "APB_ADDR_WIDTH"
-        type: int
+        type: "int"
         value: '32'
       - name: "APB_DATA_WIDTH"
-        type: int
+        type: "int"
         value: '32'
       - name: "STRB_LEN"
-        type: int
-        value: APB_ADDR_WIDTH/8
+        type: "int"
+        value: "APB_ADDR_WIDTH/8"
       ports:
       - dir: "output"
         name: "psel"

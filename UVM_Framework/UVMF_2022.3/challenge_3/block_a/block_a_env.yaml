@@ -19,7 +19,7 @@ uvmf:
           type: "axi_m"
           initiator_responder: "INITIATOR"
         - name: "spi_slave"
-          type: "pkt"
+          type: "spi_s"
           initiator_responder: "RESPONDER"
       analysis_components :
         - name: "block_1_pred"
