@@ -6,6 +6,15 @@ uvmf:
       clock_half_period: "5ns"
       reset_assertion_level: "True"
       reset_duration: "200ns"
+      active_passive: 
+        - bfm_name: "apb_master" 
+          value: "ACTIVE"
+        - bfm_name: "axi_master1" 
+          value: "ACTIVE"
+        - bfm_name: "axi_master2" 
+          value: "ACTIVE"
+        - bfm_name: "spi_slave" 
+          value: "PASSIVE"
   environments:
     "block_1" :
       agents :
