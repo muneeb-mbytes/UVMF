@@ -1,0 +1,17 @@
+uvmf:
+  benches:
+    block_2:
+      active_passive:
+      - bfm_name: spi_master
+        value: ACTIVE
+      - bfm_name: wb_slave
+        value: PASSIVE
+      active_passive_default: ACTIVE
+      clock_half_period: 5ns
+      clock_phase_offset: 9ns
+      existing_library_component: 'True'
+      interface_params: []
+      reset_assertion_level: 'True'
+      reset_duration: 200ns
+      top_env: block_2
+      use_dpi_link: 'False'
