@@ -1,0 +1,10 @@
+uvmf:
+  util_components:
+    block_1_scoreboard:
+      analysis_exports:
+      - name: sco_from_pre_ae
+        type: spi_s_transaction
+      - name: spi_ae
+        type: spi_s_transaction
+      existing_library_component: 'True'
+      type: scoreboard

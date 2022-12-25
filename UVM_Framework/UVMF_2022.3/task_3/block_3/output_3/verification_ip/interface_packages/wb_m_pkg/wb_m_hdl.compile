@@ -1,0 +1,9 @@
+needs:
+  - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg_hdl.compile
+  - ./wb_m_common.compile
+incdir:
+  - .
+src:
+  - src/wb_m_if.sv
+  - src/wb_m_monitor_bfm.sv
+  - src/wb_m_driver_bfm.sv

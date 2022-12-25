@@ -1,0 +1,31 @@
+uvmf:
+  util_components:
+    "subsys_predictor":
+       type: "predictor"
+       analysis_exports:
+        - name: "subsys_apb_ae"
+          type: "apb_transaction"
+    #     type: "apb_transaction #(.APB_DATA_WIDTH(APB_DATA_WIDTH), .APB_ADDR_WIDTH(APB_ADDR_WIDTH))"
+        - name: "subsys_axi_1_ae"
+    #     type: "axi_m_transaction  #(.AW_WIDTH(AW_WIDTH), .LEN(LEN), .DATA_WIDTH(DATA_WIDTH), .X(X))"
+          type: "axi_m_transaction"
+        - name: "subsys_axi_2_ae"
+          type: "axi_m_transaction"
+    #      type: "axi_m_transaction #(.AW_WIDTH(AW_WIDTH), .LEN(LEN), .DATA_WIDTH(DATA_WIDTH), .X(X))"
+       analysis_ports:
+        - name: "pred_to_sco_ap"
+       #   type: "wb_s_transaction #(.WB_ADDR_WIDTH(WB_ADDR_WIDTH),.WB_DATA_WIDTH(WB_DATA_WIDTH))"
+          type: "wb_s_transaction"
+    "subsys_scoreboard":
+       type: "scoreboard"
+       analysis_exports: 
+        - name: "sco_from_pred_ae"
+       #   type: "wb_s_transaction #(.WB_ADDR_WIDTH(WB_ADDR_WIDTH),.WB_DATA_WIDTH(WB_DATA_WIDTH))"
+          type: "wb_s_transaction"
+        - name: "wb_s_ae"
+       #          type: "wb_s_transaction #(.WB_ADDR_WIDTH(WB_ADDR_WIDTH),.WB_DATA_WIDTH(WB_DATA_WIDTH))"
+          type: "wb_s_transaction"
+
+
+        
+

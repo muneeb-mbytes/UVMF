@@ -1,0 +1,15 @@
+uvmf:
+  util_components:
+    subsys_predictor:
+      analysis_exports:
+      - name: subsys_apb_ae
+        type: apb_transaction
+      - name: subsys_axi_1_ae
+        type: axi_m_transaction
+      - name: subsys_axi_2_ae
+        type: axi_m_transaction
+      analysis_ports:
+      - name: pred_to_sco_ap
+        type: wb_s_transaction
+      existing_library_component: 'True'
+      type: predictor

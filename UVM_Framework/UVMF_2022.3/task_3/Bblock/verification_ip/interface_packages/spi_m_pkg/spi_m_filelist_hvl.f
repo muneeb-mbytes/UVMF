@@ -1,0 +1,1 @@
+$UVMF_VIP_LIBRARY_HOME/interface_packages/spi_m_pkg/spi_m_pkg.sv

@@ -1,0 +1,10 @@
+needs:
+  - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg.compile
+  - ../../../../verification_ip/interface_packages/apb_pkg/apb.compile
+  - ../../../../verification_ip/interface_packages/axi_m_pkg/axi_m.compile
+  - ../../../../verification_ip/interface_packages/spi_s_pkg/spi_s.compile
+  - ../../../../verification_ip/environment_packages/block_1_env_pkg/block_1_env_pkg.compile
+  - ../parameters/block_1_parameters_pkg.compile
+  - ../sequences/block_1_sequences_pkg.compile
+src:
+  - block_1_tests_pkg.sv

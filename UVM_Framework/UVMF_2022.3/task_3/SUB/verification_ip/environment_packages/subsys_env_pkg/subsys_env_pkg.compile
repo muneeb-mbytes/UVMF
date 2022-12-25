@@ -1,0 +1,8 @@
+needs:
+  - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg.compile
+  - ../block_1_env_pkg/block_1_env_pkg.compile
+  - ../block_2_env_pkg/block_2_env_pkg.compile
+
+src:
+  - subsys_env_pkg.sv
+

@@ -1,0 +1,3 @@
+$UVMF_VIP_LIBRARY_HOME/interface_packages/wb_m_pkg/src/wb_m_if.sv
+$UVMF_VIP_LIBRARY_HOME/interface_packages/wb_m_pkg/src/wb_m_monitor_bfm.sv
+$UVMF_VIP_LIBRARY_HOME/interface_packages/wb_m_pkg/src/wb_m_driver_bfm.sv
