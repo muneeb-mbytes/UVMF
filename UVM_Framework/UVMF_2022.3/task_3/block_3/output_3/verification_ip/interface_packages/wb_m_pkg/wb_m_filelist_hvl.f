@@ -1,0 +1,1 @@
+$UVMF_VIP_LIBRARY_HOME/interface_packages/wb_m_pkg/wb_m_pkg.sv

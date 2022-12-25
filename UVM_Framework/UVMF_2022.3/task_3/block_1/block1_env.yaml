@@ -1,0 +1,94 @@
+uvmf:
+  benches:
+    "block_1" :
+      ## Specify the top-level block
+      top_env: "block_1"
+      clock_half_period: "5ns"
+      reset_assertion_level: "True"
+      reset_duration: "200ns"
+      active_passive: 
+        - bfm_name: "apb_master" 
+          value: "ACTIVE"
+        - bfm_name: "axi_master1" 
+          value: "ACTIVE"
+        - bfm_name: "axi_master2" 
+          value: "ACTIVE"
+        - bfm_name: "spi_slave" 
+          value: "PASSIVE"
+  environments:
+    "block_1" :
+      agents :
+        - name: "apb_master" 
+          type: "apb"
+          initiator_responder: "INITIATOR"
+        - name: "axi_master1"
+          type: "axi_m"
+          initiator_responder: "INITIATOR"
+        - name: "axi_master2"
+          type: "axi_m"
+          initiator_responder: "INITIATOR"
+        - name: "spi_slave"
+          type: "spi_s"
+          initiator_responder: "RESPONDER"
+      analysis_components :
+        - name: "block_1_pred"
+          type: "block_1_predictor"
+        - name: "block_1_sb"
+          type: "block_1_scoreboard"
+      analysis_ports :
+        - name: "apb_master_ap"
+          trans_type: "apb_transaction"
+      #    trans_type: 'apb_transaction #(.APB_DATA_WIDTH(APB_DATA_WIDTH), .APB_ADDR_WIDTH(APB_ADDR_WIDTH))'
+          connected_to: "apb_master.monitored_ap"
+        - name: "axi_master1_ap"
+          trans_type: "axi_m_transaction"
+      #    trans_type: 'axi_m_transaction #(.AW_WIDTH(AW_WIDTH), .LEN(LEN), .DATA_WIDTH(DATA_WIDTH), .X(X))'
+          connected_to: "axi_master1.monitored_ap"
+        - name: "axi_master2_ap"
+          trans_type: "axi_m_transaction"
+        #  trans_type: 'axi_m_transaction #(.AW_WIDTH(AW_WIDTH), .LEN(LEN), .DATA_WIDTH(DATA_WIDTH), .X(X))'
+          connected_to: "axi_master2.monitored_ap"
+        - name: "spi_slave_ap"
+          trans_type: "spi_s_transaction"
+          connected_to: "spi_slave.monitored_ap"
+      tlm_connections: 
+        - driver:   "spi_slave.monitored_ap"
+          receiver: "block_1_sb.spi_ae"
+        - driver:   "apb_master.monitored_ap"
+          receiver: "block_1_pred.apb_ae"
+        - driver:   "axi_master1.monitored_ap"
+          receiver: "block_1_pred.axi_1_ae"
+        - driver:   "axi_master2.monitored_ap"
+          receiver: "block_1_pred.axi_2_ae"
+        - driver:   "block_1_pred.pre_to_sco_ap"
+          receiver: "block_1_sb.sco_from_pre_ae"
+      config_vars :
+        - name: "has_scoreboard"
+          type : "bit"      
+          isrand : "False"
+        #      parameters:
+        #      - name: APB_DATA_WIDTH
+        #       type: int
+        # value: '32'
+        # - name: APB_ADDR_WIDTH
+        #  type: int
+        #        value: '32'
+        # - name: AW_WIDTH
+        #  type: int
+        #  value: '32'
+        # - name: DATA_WIDTH
+        #  type: int
+        # value: '32'
+        # - name: LEN
+        #  type: int
+        # value: '32'
+        #- name: X
+        # type: int
+        # value: '16'
+      #        - name: WB_ADDR_WIDTH
+      #   type: int
+      #   value: '32'
+      # - name: WB_DATA_WIDTH
+      #   type: int
+      #   value: '32'
+

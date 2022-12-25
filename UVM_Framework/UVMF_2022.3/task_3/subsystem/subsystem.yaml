@@ -1,0 +1,46 @@
+uvmf:
+  benches:
+    "subsys" :
+      ## Specify the top-level block
+      top_env: "subsys"
+      clock_half_period: "5ns"
+      reset_assertion_level: "True"
+      reset_duration: "200ns"
+      active_passive: 
+        - bfm_name: "b1_spi_slave"
+          value: "PASSIVE"
+        - bfm_name: "b2_spi_master"
+          value: "PASSIVE"
+  environments:
+    "subsys":
+      subenvs:
+        - name: "b1"
+          type: "block_1"
+        - name: "b2"
+          type: "block_2"
+      analysis_components:
+        - name: "sub_pred"
+          type: "subsys_predictor"
+        - name: "sub_sb"
+          type: "subsys_scoreboard"
+  #   analysis_ports :
+  #     - name: "apb_master_ap"
+  #       trans_type: "apb_transaction"
+  #       connected_to: "apb_master.monitored_ap"
+      tlm_connections:
+        - driver: "b1.apb_master_ap"
+          receiver: "sub_pred.subsys_apb_ae"
+        - driver: "b1.axi_master1_ap"
+          receiver: "sub_pred.subsys_axi_1_ae"
+        - driver: "b1.axi_master2_ap"
+          receiver: "sub_pred.subsys_axi_2_ae"
+        - driver: "sub_pred.pred_to_sco_ap"
+          receiver: "sub_sb.sco_from_pred_ae"
+        - driver: "b2.wb_slave_ap"
+          receiver: "sub_sb.wb_s_ae"
+
+
+      
+
+
+

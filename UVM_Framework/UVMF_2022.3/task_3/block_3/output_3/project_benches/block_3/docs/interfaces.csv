@@ -1,0 +1,14 @@
+//----------------------------------------------------------------------
+// Created with uvmf_gen version 2022.3
+//----------------------------------------------------------------------
+// pragma uvmf custom header begin
+// pragma uvmf custom header end
+//----------------------------------------------------------------------
+//----------------------------------------------------------------------
+//
+
+,
+Interface Description, Interface Type, Interface Transaction, Interface Name,
+wb_master, wb_m_driver_bfm wb_m_monitor_bfm, wb_m_transaction, wb_m_pkg_wb_master_BFM,
+axi_slave, axi_s_driver_bfm axi_s_monitor_bfm, axi_s_transaction, axi_s_pkg_axi_slave_BFM,
+

@@ -1,0 +1,25 @@
+uvmf:
+  benches:
+    subsys:
+      active_passive:
+      - bfm_name: b1_apb_master
+        value: ACTIVE
+      - bfm_name: b1_axi_master1
+        value: ACTIVE
+      - bfm_name: b1_axi_master2
+        value: ACTIVE
+      - bfm_name: b1_spi_slave
+        value: PASSIVE
+      - bfm_name: b2_spi_master
+        value: PASSIVE
+      - bfm_name: b2_wb_slave
+        value: ACTIVE
+      active_passive_default: ACTIVE
+      clock_half_period: 5ns
+      clock_phase_offset: 9ns
+      existing_library_component: 'True'
+      interface_params: []
+      reset_assertion_level: 'True'
+      reset_duration: 200ns
+      top_env: subsys
+      use_dpi_link: 'False'
