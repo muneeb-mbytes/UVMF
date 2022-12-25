@@ -1,1 +1,0 @@
-$UVMF_VIP_LIBRARY_HOME/interface_packages/axi_m_pkg/axi_m_pkg_hdl.sv
