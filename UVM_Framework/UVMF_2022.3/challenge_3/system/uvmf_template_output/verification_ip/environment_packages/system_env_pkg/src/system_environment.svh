@@ -31,6 +31,14 @@ class system_environment  extends uvmf_environment_base #(
 
 
 
+  typedef sys_predictor #(
+                .CONFIG_T(CONFIG_T)
+                ) sys_pred_t;
+  sys_pred_t sys_pred;
+  typedef sys_scoreboard #(
+                .CONFIG_T(CONFIG_T)
+                ) sys_sb_t;
+  sys_sb_t sys_sb;
 
 
 
@@ -61,6 +69,10 @@ class system_environment  extends uvmf_environment_base #(
     s1.set_config(configuration.s1_config);
     b3 = b3_t::type_id::create("b3",this);
     b3.set_config(configuration.b3_config);
+    sys_pred = sys_pred_t::type_id::create("sys_pred",this);
+    sys_pred.configuration = configuration;
+    sys_sb = sys_sb_t::type_id::create("sys_sb",this);
+    sys_sb.configuration = configuration;
 
     vsqr = system_vsqr_t::type_id::create("vsqr", this);
     vsqr.set_config(configuration);
@@ -80,6 +92,11 @@ class system_environment  extends uvmf_environment_base #(
 // pragma uvmf custom connect_phase_pre_super begin
 // pragma uvmf custom connect_phase_pre_super end
     super.connect_phase(phase);
+    s1.block_1_ap1.connect(sys_pred.sys_apb_ae);
+    s1.block_1_ap2.connect(sys_pred.sys_axi_1_ae);
+    s1.block_1_ap3.connect(sys_pred.sys_axi_2_ae);
+    sys_pred.sys_pre_to_sco_ap.connect(sys_sb.sys_sco_from_pre_ae);
+    b3.axi_slave_ap.connect(sys_sb.sys_axi_ae);
     // pragma uvmf custom reg_model_connect_phase begin
     // pragma uvmf custom reg_model_connect_phase end
   endfunction

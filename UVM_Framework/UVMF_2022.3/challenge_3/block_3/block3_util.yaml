@@ -3,29 +3,10 @@ uvmf:
     block_3_predictor:
       analysis_exports:
       - name: wb_ae
-        type: 'wb_m_transaction #(.WB_DATA_WIDTH(WB_DATA_WIDTH), .WB_ADDR_WIDTH(WB_ADDR_WIDTH))'
+        type: 'wb_m_transaction'
       analysis_ports:
       - name: pre_to_sco_ap
-        type: 'axi_transaction #(.DATA_WIDTH(DATA_WIDTH), .ADDR_WIDTH(ADDR_WIDTH), .X(X))'
-      parameters:
-      - name: WB_ADDR_WIDTH
-        type: int
-        value: '32'
-      - name: WB_DATA_WIDTH
-        type: int
-        value: '32'
-      - name: AW_WIDTH
-        type: int
-        value: '32'
-      - name: DATA_WIDTH
-        type: int
-        value: '32'
-      - name: LEN
-        type: int
-        value: '32'
-      - name: X
-        type: int
-        value: '16'
+        type: 'axi_s_transaction'
       type: predictor
     block_3_scoreboard:
       analysis_exports:

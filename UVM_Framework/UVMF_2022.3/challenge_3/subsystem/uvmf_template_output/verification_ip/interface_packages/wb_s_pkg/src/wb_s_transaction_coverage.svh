@@ -15,16 +15,16 @@
 //----------------------------------------------------------------------
 //
 class wb_s_transaction_coverage #(
-      int WB_ADDR_width = 32,
-      int WB_DATA_width = 16
+      int WB_ADDR_WIDTH = 32,
+      int WB_DATA_WIDTH = 16
       ) extends uvm_subscriber #(.T(wb_s_transaction #(
-                                            .WB_ADDR_width(WB_ADDR_width),
-                                            .WB_DATA_width(WB_DATA_width)
+                                            .WB_ADDR_WIDTH(WB_ADDR_WIDTH),
+                                            .WB_DATA_WIDTH(WB_DATA_WIDTH)
                                             )));
 
   `uvm_component_param_utils( wb_s_transaction_coverage #(
-                              WB_ADDR_width,
-                              WB_DATA_width
+                              WB_ADDR_WIDTH,
+                              WB_DATA_WIDTH
                               ))
 
   T coverage_trans;

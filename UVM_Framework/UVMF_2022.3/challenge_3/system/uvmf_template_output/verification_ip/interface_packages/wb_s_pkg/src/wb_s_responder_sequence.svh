@@ -15,17 +15,17 @@
 //----------------------------------------------------------------------
 //
 class wb_s_responder_sequence #(
-      int WB_ADDR_width = 32,
-      int WB_DATA_width = 16
+      int WB_ADDR_WIDTH = 32,
+      int WB_DATA_WIDTH = 16
       )
   extends wb_s_sequence_base #(
-      .WB_ADDR_width(WB_ADDR_width),
-      .WB_DATA_width(WB_DATA_width)
+      .WB_ADDR_WIDTH(WB_ADDR_WIDTH),
+      .WB_DATA_WIDTH(WB_DATA_WIDTH)
       );
 
   `uvm_object_param_utils( wb_s_responder_sequence #(
-                           WB_ADDR_width,
-                           WB_DATA_width
+                           WB_ADDR_WIDTH,
+                           WB_DATA_WIDTH
                            ))
 
   // pragma uvmf custom class_item_additional begin
@@ -37,8 +37,8 @@ class wb_s_responder_sequence #(
 
   task body();
     req=wb_s_transaction#(
-                .WB_ADDR_width(WB_ADDR_width),
-                .WB_DATA_width(WB_DATA_width)
+                .WB_ADDR_WIDTH(WB_ADDR_WIDTH),
+                .WB_DATA_WIDTH(WB_DATA_WIDTH)
                 )::type_id::create("req");
     forever begin
       start_item(req);

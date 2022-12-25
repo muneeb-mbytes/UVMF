@@ -95,7 +95,7 @@ uvmf:
       - dir: output
         name: wstrb
         reset_value: '''bz'
-        width: data_width/8
+        width: DATA_WIDTH/8
       - dir: output
         name: wid
         reset_value: '''bz'
@@ -314,7 +314,7 @@ uvmf:
         iscompare: 'False'
         isrand: 'True'
         name: wstrb
-        type: bit [DATA_WIDTH/8-1]
+        type: bit [DATA_WIDTH/8-1:0]
         unpacked_dimension: ''
       - comment: ''
         iscompare: 'False'

@@ -26,6 +26,10 @@ class subsys_environment  extends uvmf_environment_base #(
    
 
 
+  uvm_analysis_port #(block_1_environment) block_1_ap1;
+  uvm_analysis_port #(block_1_environment) block_1_ap2;
+  uvm_analysis_port #(block_1_environment) block_1_ap3;
+  uvm_analysis_port #(block_2_environment) block_2_ap1;
 
 
 
@@ -69,6 +73,10 @@ class subsys_environment  extends uvmf_environment_base #(
     b1.set_config(configuration.b1_config);
     b2 = b2_t::type_id::create("b2",this);
     b2.set_config(configuration.b2_config);
+    block_1_ap1 = new("block_1_ap1",this);
+    block_1_ap2 = new("block_1_ap2",this);
+    block_1_ap3 = new("block_1_ap3",this);
+    block_2_ap1 = new("block_2_ap1",this);
     sub_pred = sub_pred_t::type_id::create("sub_pred",this);
     sub_pred.configuration = configuration;
     sub_sb = sub_sb_t::type_id::create("sub_sb",this);
@@ -97,6 +105,10 @@ class subsys_environment  extends uvmf_environment_base #(
     b1.axi_master2_ap.connect(sub_pred.subsys_axi_2_ae);
     sub_pred.subsys_pre_to_sco_ap.connect(sub_sb.subsys_sco_from_pre_ae);
     b2.wb_slave_ap.connect(sub_sb.subsys_wb_ae);
+    b1.apb_master_ap.connect(block_1_ap1);
+    b1.axi_master1_ap.connect(block_1_ap2);
+    b1.axi_master2_ap.connect(block_1_ap3);
+    b2.wb_slave_ap.connect(block_2_ap1);
     // pragma uvmf custom reg_model_connect_phase begin
     // pragma uvmf custom reg_model_connect_phase end
   endfunction

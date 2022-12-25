@@ -22,8 +22,8 @@
 package block_1_sequences_pkg;
   import uvm_pkg::*;
   import uvmf_base_pkg::*;
-  import apb_pkg::*;
-  import apb_pkg_hdl::*;
+  import apb_m_pkg::*;
+  import apb_m_pkg_hdl::*;
   import axi_m_pkg::*;
   import axi_m_pkg_hdl::*;
   import spi_s_pkg::*;

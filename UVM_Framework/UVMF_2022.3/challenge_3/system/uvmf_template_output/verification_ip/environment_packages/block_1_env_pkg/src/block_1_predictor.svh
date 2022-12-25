@@ -13,9 +13,9 @@
 //   This analysis component has the following analysis_exports that receive the 
 //   listed transaction type.
 //   
-//   axi_2_ae receives transactions of type  axi_transaction #(.AW_WIDTH(AW_WIDTH), .LEN(LEN), .DATA_WIDTH(DATA_WIDTH), .X(X))
-//   apb_ae receives transactions of type  apb_transaction #(.APB_DATA_WIDTH(APB_DATA_WIDTH), .APB_ADDR_WIDTH(APB_ADDR_WIDTH))
-//   axi_1_ae receives transactions of type  axi_transaction #(.AW_WIDTH(AW_WIDTH), .LEN(LEN), .DATA_WIDTH(DATA_WIDTH), .X(X))
+//   axi_2_ae receives transactions of type  axi_m_transaction
+//   apb_ae receives transactions of type  apb_m_transaction
+//   axi_1_ae receives transactions of type  axi_m_transaction
 //
 //   This analysis component has the following analysis_ports that can broadcast 
 //   the listed transaction type.
@@ -27,25 +27,13 @@
 
 class block_1_predictor #(
   type CONFIG_T,
-  type BASE_T = uvm_component,
-  int APB_DATA_WIDTH = 32,
-  int APB_ADDR_WIDTH = 32,
-  int AW_WIDTH = 32,
-  int DATA_WIDTH = 32,
-  int LEN = 32,
-  int X = 16
+  type BASE_T = uvm_component
   ) extends BASE_T;
 
   // Factory registration of this class
   `uvm_component_param_utils( block_1_predictor #(
                               CONFIG_T,
-                              BASE_T,
-                              APB_DATA_WIDTH,
-                              APB_ADDR_WIDTH,
-                              AW_WIDTH,
-                              DATA_WIDTH,
-                              LEN,
-                              X
+                              BASE_T
                               ))
 
 
@@ -54,35 +42,17 @@ class block_1_predictor #(
 
   
   // Instantiate the analysis exports
-  uvm_analysis_imp_axi_2_ae #(axi_transaction #(.AW_WIDTH(AW_WIDTH), .LEN(LEN), .DATA_WIDTH(DATA_WIDTH), .X(X)), block_1_predictor #(
+  uvm_analysis_imp_axi_2_ae #(axi_m_transaction, block_1_predictor #(
                               .CONFIG_T(CONFIG_T),
-                              .BASE_T(BASE_T),
-                              .APB_DATA_WIDTH(APB_DATA_WIDTH),
-                              .APB_ADDR_WIDTH(APB_ADDR_WIDTH),
-                              .AW_WIDTH(AW_WIDTH),
-                              .DATA_WIDTH(DATA_WIDTH),
-                              .LEN(LEN),
-                              .X(X)
+                              .BASE_T(BASE_T)
                               )) axi_2_ae;
-  uvm_analysis_imp_apb_ae #(apb_transaction #(.APB_DATA_WIDTH(APB_DATA_WIDTH), .APB_ADDR_WIDTH(APB_ADDR_WIDTH)), block_1_predictor #(
+  uvm_analysis_imp_apb_ae #(apb_m_transaction, block_1_predictor #(
                               .CONFIG_T(CONFIG_T),
-                              .BASE_T(BASE_T),
-                              .APB_DATA_WIDTH(APB_DATA_WIDTH),
-                              .APB_ADDR_WIDTH(APB_ADDR_WIDTH),
-                              .AW_WIDTH(AW_WIDTH),
-                              .DATA_WIDTH(DATA_WIDTH),
-                              .LEN(LEN),
-                              .X(X)
+                              .BASE_T(BASE_T)
                               )) apb_ae;
-  uvm_analysis_imp_axi_1_ae #(axi_transaction #(.AW_WIDTH(AW_WIDTH), .LEN(LEN), .DATA_WIDTH(DATA_WIDTH), .X(X)), block_1_predictor #(
+  uvm_analysis_imp_axi_1_ae #(axi_m_transaction, block_1_predictor #(
                               .CONFIG_T(CONFIG_T),
-                              .BASE_T(BASE_T),
-                              .APB_DATA_WIDTH(APB_DATA_WIDTH),
-                              .APB_ADDR_WIDTH(APB_ADDR_WIDTH),
-                              .AW_WIDTH(AW_WIDTH),
-                              .DATA_WIDTH(DATA_WIDTH),
-                              .LEN(LEN),
-                              .X(X)
+                              .BASE_T(BASE_T)
                               )) axi_1_ae;
 
   
@@ -99,9 +69,9 @@ class block_1_predictor #(
   // pre_to_sco_ap.write(pre_to_sco_ap_output_transaction);
 
   // Define transaction handles for debug visibility 
-  axi_transaction #(.AW_WIDTH(AW_WIDTH), .LEN(LEN), .DATA_WIDTH(DATA_WIDTH), .X(X)) axi_2_ae_debug;
-  apb_transaction #(.APB_DATA_WIDTH(APB_DATA_WIDTH), .APB_ADDR_WIDTH(APB_ADDR_WIDTH)) apb_ae_debug;
-  axi_transaction #(.AW_WIDTH(AW_WIDTH), .LEN(LEN), .DATA_WIDTH(DATA_WIDTH), .X(X)) axi_1_ae_debug;
+  axi_m_transaction axi_2_ae_debug;
+  apb_m_transaction apb_ae_debug;
+  axi_m_transaction axi_1_ae_debug;
 
 
   // pragma uvmf custom class_item_additional begin
@@ -129,7 +99,7 @@ class block_1_predictor #(
   // FUNCTION: write_axi_2_ae
   // Transactions received through axi_2_ae initiate the execution of this function.
   // This function performs prediction of DUT output values based on DUT input, configuration and state
-  virtual function void write_axi_2_ae(axi_transaction #(.AW_WIDTH(AW_WIDTH), .LEN(LEN), .DATA_WIDTH(DATA_WIDTH), .X(X)) t);
+  virtual function void write_axi_2_ae(axi_m_transaction t);
     // pragma uvmf custom axi_2_ae_predictor begin
     axi_2_ae_debug = t;
     `uvm_info("PRED", "Transaction Received through axi_2_ae", UVM_MEDIUM)
@@ -153,7 +123,7 @@ class block_1_predictor #(
   // FUNCTION: write_apb_ae
   // Transactions received through apb_ae initiate the execution of this function.
   // This function performs prediction of DUT output values based on DUT input, configuration and state
-  virtual function void write_apb_ae(apb_transaction #(.APB_DATA_WIDTH(APB_DATA_WIDTH), .APB_ADDR_WIDTH(APB_ADDR_WIDTH)) t);
+  virtual function void write_apb_ae(apb_m_transaction t);
     // pragma uvmf custom apb_ae_predictor begin
     apb_ae_debug = t;
     `uvm_info("PRED", "Transaction Received through apb_ae", UVM_MEDIUM)
@@ -177,7 +147,7 @@ class block_1_predictor #(
   // FUNCTION: write_axi_1_ae
   // Transactions received through axi_1_ae initiate the execution of this function.
   // This function performs prediction of DUT output values based on DUT input, configuration and state
-  virtual function void write_axi_1_ae(axi_transaction #(.AW_WIDTH(AW_WIDTH), .LEN(LEN), .DATA_WIDTH(DATA_WIDTH), .X(X)) t);
+  virtual function void write_axi_1_ae(axi_m_transaction t);
     // pragma uvmf custom axi_1_ae_predictor begin
     axi_1_ae_debug = t;
     `uvm_info("PRED", "Transaction Received through axi_1_ae", UVM_MEDIUM)

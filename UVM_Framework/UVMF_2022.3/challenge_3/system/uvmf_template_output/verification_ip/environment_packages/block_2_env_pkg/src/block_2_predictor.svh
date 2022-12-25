@@ -18,7 +18,7 @@
 //   This analysis component has the following analysis_ports that can broadcast 
 //   the listed transaction type.
 //
-//  pre_to_sco_ap broadcasts transactions of type wb_s_transaction #(.WB_ARRD_WIDTH(WB_ADDR_WIDTH), .WB_DATA_WIDTH(WB_DATA_WIDTH)
+//  pre_to_sco_ap broadcasts transactions of type wb_s_transaction
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
 //
@@ -47,13 +47,13 @@ class block_2_predictor #(
 
   
   // Instantiate the analysis ports
-  uvm_analysis_port #(wb_s_transaction #(.WB_ARRD_WIDTH(WB_ADDR_WIDTH), .WB_DATA_WIDTH(WB_DATA_WIDTH)) pre_to_sco_ap;
+  uvm_analysis_port #(wb_s_transaction) pre_to_sco_ap;
 
 
   // Transaction variable for predicted values to be sent out pre_to_sco_ap
   // Once a transaction is sent through an analysis_port, another transaction should
   // be constructed for the next predicted transaction. 
-  typedef wb_s_transaction #(.WB_ARRD_WIDTH(WB_ADDR_WIDTH), .WB_DATA_WIDTH(WB_DATA_WIDTH) pre_to_sco_ap_output_transaction_t;
+  typedef wb_s_transaction pre_to_sco_ap_output_transaction_t;
   pre_to_sco_ap_output_transaction_t pre_to_sco_ap_output_transaction;
   // Code for sending output transaction out through pre_to_sco_ap
   // pre_to_sco_ap.write(pre_to_sco_ap_output_transaction);

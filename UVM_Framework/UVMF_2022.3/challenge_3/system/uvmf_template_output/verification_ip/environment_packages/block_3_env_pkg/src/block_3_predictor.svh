@@ -13,37 +13,25 @@
 //   This analysis component has the following analysis_exports that receive the 
 //   listed transaction type.
 //   
-//   wb_ae receives transactions of type  wb_m_transaction #(.WB_DATA_WIDTH(WB_DATA_WIDTH), .WB_ADDR_WIDTH(WB_ADDR_WIDTH))
+//   wb_ae receives transactions of type  wb_m_transaction
 //
 //   This analysis component has the following analysis_ports that can broadcast 
 //   the listed transaction type.
 //
-//  pre_to_sco_ap broadcasts transactions of type axi_transaction #(.DATA_WIDTH(DATA_WIDTH), .ADDR_WIDTH(ADDR_WIDTH), .X(X))
+//  pre_to_sco_ap broadcasts transactions of type axi_s_transaction
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
 //
 
 class block_3_predictor #(
   type CONFIG_T,
-  type BASE_T = uvm_component,
-  int WB_ADDR_WIDTH = 32,
-  int WB_DATA_WIDTH = 32,
-  int AW_WIDTH = 32,
-  int DATA_WIDTH = 32,
-  int LEN = 32,
-  int X = 16
+  type BASE_T = uvm_component
   ) extends BASE_T;
 
   // Factory registration of this class
   `uvm_component_param_utils( block_3_predictor #(
                               CONFIG_T,
-                              BASE_T,
-                              WB_ADDR_WIDTH,
-                              WB_DATA_WIDTH,
-                              AW_WIDTH,
-                              DATA_WIDTH,
-                              LEN,
-                              X
+                              BASE_T
                               ))
 
 
@@ -52,32 +40,26 @@ class block_3_predictor #(
 
   
   // Instantiate the analysis exports
-  uvm_analysis_imp_wb_ae #(wb_m_transaction #(.WB_DATA_WIDTH(WB_DATA_WIDTH), .WB_ADDR_WIDTH(WB_ADDR_WIDTH)), block_3_predictor #(
+  uvm_analysis_imp_wb_ae #(wb_m_transaction, block_3_predictor #(
                               .CONFIG_T(CONFIG_T),
-                              .BASE_T(BASE_T),
-                              .WB_ADDR_WIDTH(WB_ADDR_WIDTH),
-                              .WB_DATA_WIDTH(WB_DATA_WIDTH),
-                              .AW_WIDTH(AW_WIDTH),
-                              .DATA_WIDTH(DATA_WIDTH),
-                              .LEN(LEN),
-                              .X(X)
+                              .BASE_T(BASE_T)
                               )) wb_ae;
 
   
   // Instantiate the analysis ports
-  uvm_analysis_port #(axi_transaction #(.DATA_WIDTH(DATA_WIDTH), .ADDR_WIDTH(ADDR_WIDTH), .X(X))) pre_to_sco_ap;
+  uvm_analysis_port #(axi_s_transaction) pre_to_sco_ap;
 
 
   // Transaction variable for predicted values to be sent out pre_to_sco_ap
   // Once a transaction is sent through an analysis_port, another transaction should
   // be constructed for the next predicted transaction. 
-  typedef axi_transaction #(.DATA_WIDTH(DATA_WIDTH), .ADDR_WIDTH(ADDR_WIDTH), .X(X)) pre_to_sco_ap_output_transaction_t;
+  typedef axi_s_transaction pre_to_sco_ap_output_transaction_t;
   pre_to_sco_ap_output_transaction_t pre_to_sco_ap_output_transaction;
   // Code for sending output transaction out through pre_to_sco_ap
   // pre_to_sco_ap.write(pre_to_sco_ap_output_transaction);
 
   // Define transaction handles for debug visibility 
-  wb_m_transaction #(.WB_DATA_WIDTH(WB_DATA_WIDTH), .WB_ADDR_WIDTH(WB_ADDR_WIDTH)) wb_ae_debug;
+  wb_m_transaction wb_ae_debug;
 
 
   // pragma uvmf custom class_item_additional begin
@@ -103,7 +85,7 @@ class block_3_predictor #(
   // FUNCTION: write_wb_ae
   // Transactions received through wb_ae initiate the execution of this function.
   // This function performs prediction of DUT output values based on DUT input, configuration and state
-  virtual function void write_wb_ae(wb_m_transaction #(.WB_DATA_WIDTH(WB_DATA_WIDTH), .WB_ADDR_WIDTH(WB_ADDR_WIDTH)) t);
+  virtual function void write_wb_ae(wb_m_transaction t);
     // pragma uvmf custom wb_ae_predictor begin
     wb_ae_debug = t;
     `uvm_info("PRED", "Transaction Received through wb_ae", UVM_MEDIUM)

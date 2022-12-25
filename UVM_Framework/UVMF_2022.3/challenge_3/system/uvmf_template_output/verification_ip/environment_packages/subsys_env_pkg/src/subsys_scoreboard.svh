@@ -12,8 +12,8 @@
 //   This analysis component has the following analysis_exports that receive the 
 //   listed transaction type.
 //   
-//   subsys_sco_from_pre_ae receives transactions of type  wb_s  
-//   subsys_wb_ae receives transactions of type  wb_s  
+//   subsys_sco_from_pre_ae receives transactions of type  block_2_environment  
+//   subsys_wb_ae receives transactions of type  block_2_environment  
 //
 //   This analysis component has the following analysis_ports that can broadcast 
 //   the listed transaction type.
@@ -40,11 +40,11 @@ class subsys_scoreboard #(
 
   
   // Instantiate the analysis exports
-  uvm_analysis_imp_subsys_sco_from_pre_ae #(wb_s, subsys_scoreboard #(
+  uvm_analysis_imp_subsys_sco_from_pre_ae #(block_2_environment, subsys_scoreboard #(
                               .CONFIG_T(CONFIG_T),
                               .BASE_T(BASE_T)
                               )) subsys_sco_from_pre_ae;
-  uvm_analysis_imp_subsys_wb_ae #(wb_s, subsys_scoreboard #(
+  uvm_analysis_imp_subsys_wb_ae #(block_2_environment, subsys_scoreboard #(
                               .CONFIG_T(CONFIG_T),
                               .BASE_T(BASE_T)
                               )) subsys_wb_ae;
@@ -74,7 +74,7 @@ class subsys_scoreboard #(
   // FUNCTION: write_subsys_sco_from_pre_ae
   // Transactions received through subsys_sco_from_pre_ae initiate the execution of this function.
   // This function performs prediction of DUT output values based on DUT input, configuration and state
-  virtual function void write_subsys_sco_from_pre_ae(wb_s t);
+  virtual function void write_subsys_sco_from_pre_ae(block_2_environment t);
     // pragma uvmf custom subsys_sco_from_pre_ae_scoreboard begin
     `uvm_info("PRED", "Transaction Received through subsys_sco_from_pre_ae", UVM_MEDIUM)
     `uvm_info("PRED", {"            Data: ",t.convert2string()}, UVM_FULL)
@@ -89,7 +89,7 @@ class subsys_scoreboard #(
   // FUNCTION: write_subsys_wb_ae
   // Transactions received through subsys_wb_ae initiate the execution of this function.
   // This function performs prediction of DUT output values based on DUT input, configuration and state
-  virtual function void write_subsys_wb_ae(wb_s t);
+  virtual function void write_subsys_wb_ae(block_2_environment t);
     // pragma uvmf custom subsys_wb_ae_scoreboard begin
     `uvm_info("PRED", "Transaction Received through subsys_wb_ae", UVM_MEDIUM)
     `uvm_info("PRED", {"            Data: ",t.convert2string()}, UVM_FULL)

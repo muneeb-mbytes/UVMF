@@ -16,6 +16,20 @@ uvmf:
         - name: "sub_sb"
           type: "subsys_scoreboard"
 
+      analysis_ports :
+        - name: "block_1_ap1"
+          trans_type: "block_1_environment"
+          connected_to: "b1.apb_master_ap"
+        - name: "block_1_ap2"
+          trans_type: "block_1_environment"
+          connected_to: "b1.axi_master1_ap"
+        - name: "block_1_ap3"
+          trans_type: "block_1_environment"
+          connected_to: "b1.axi_master2_ap"
+        - name: "block_2_ap1"
+          trans_type: "block_2_environment"
+          connected_to: "b2.wb_slave_ap"
+      
       tlm_connections:
         - driver: "b1.apb_master_ap"
           receiver: "sub_pred.subsys_apb_ae"
@@ -27,9 +41,8 @@ uvmf:
           receiver: "sub_sb.subsys_sco_from_pre_ae"
         - driver: "b2.wb_slave_ap"
           receiver: "sub_sb.subsys_wb_ae"
-
-
       
-
-
-
+      config_vars :
+        - name: "has_scoreboard"
+          type : "bit"      
+          isrand : "False"

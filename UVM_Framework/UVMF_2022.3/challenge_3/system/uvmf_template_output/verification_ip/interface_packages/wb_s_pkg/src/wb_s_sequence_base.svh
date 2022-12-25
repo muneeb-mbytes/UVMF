@@ -14,32 +14,32 @@
 //----------------------------------------------------------------------
 //
 class wb_s_sequence_base #(
-      int WB_ADDR_width = 32,
-      int WB_DATA_width = 16
+      int WB_ADDR_WIDTH = 32,
+      int WB_DATA_WIDTH = 16
       )   extends uvmf_sequence_base #(
                              .REQ(wb_s_transaction  #(
-                                 .WB_ADDR_width(WB_ADDR_width),
-                                 .WB_DATA_width(WB_DATA_width)
+                                 .WB_ADDR_WIDTH(WB_ADDR_WIDTH),
+                                 .WB_DATA_WIDTH(WB_DATA_WIDTH)
                                  )),
                              .RSP(wb_s_transaction  #(
-                                 .WB_ADDR_width(WB_ADDR_width),
-                                 .WB_DATA_width(WB_DATA_width)
+                                 .WB_ADDR_WIDTH(WB_ADDR_WIDTH),
+                                 .WB_DATA_WIDTH(WB_DATA_WIDTH)
                                  )));
 
   `uvm_object_param_utils( wb_s_sequence_base #(
-                           WB_ADDR_width,
-                           WB_DATA_width
+                           WB_ADDR_WIDTH,
+                           WB_DATA_WIDTH
                            ))
 
   // variables
   typedef wb_s_transaction #(
-                     .WB_ADDR_width(WB_ADDR_width),
-                     .WB_DATA_width(WB_DATA_width)
+                     .WB_ADDR_WIDTH(WB_ADDR_WIDTH),
+                     .WB_DATA_WIDTH(WB_DATA_WIDTH)
                      ) wb_s_transaction_req_t;
   wb_s_transaction_req_t req;
   typedef wb_s_transaction #(
-                     .WB_ADDR_width(WB_ADDR_width),
-                     .WB_DATA_width(WB_DATA_width)
+                     .WB_ADDR_WIDTH(WB_ADDR_WIDTH),
+                     .WB_DATA_WIDTH(WB_DATA_WIDTH)
                      ) wb_s_transaction_rsp_t;
   wb_s_transaction_rsp_t rsp;
 

@@ -4,7 +4,7 @@ uvmf:
       agents:
       - initiator_responder: INITIATOR
         name: apb_master
-        type: apb
+        type: apb_m
       - initiator_responder: INITIATOR
         name: axi_master1
         type: axi_m
@@ -25,7 +25,7 @@ uvmf:
       analysis_ports:
       - connected_to: apb_master.monitored_ap
         name: apb_master_ap
-        trans_type: apb_transaction
+        trans_type: apb_m_transaction
       - connected_to: axi_master1.monitored_ap
         name: axi_master1_ap
         trans_type: axi_m_transaction

@@ -20,7 +20,8 @@ class block_3_environment  extends uvmf_environment_base #(
 
 
 
-  uvm_analysis_port #(wb_m_transaction) block_3_wb;
+  uvm_analysis_port #(wb_m_transaction) wb_master_ap;
+  uvm_analysis_port #(axi_s_transaction) axi_slave_ap;
 
 
   typedef wb_m_agent  wb_master_t;
@@ -66,7 +67,8 @@ class block_3_environment  extends uvmf_environment_base #(
 // pragma uvmf custom build_phase_pre_super begin
 // pragma uvmf custom build_phase_pre_super end
     super.build_phase(phase);
-    block_3_wb = new("block_3_wb",this);
+    wb_master_ap = new("wb_master_ap",this);
+    axi_slave_ap = new("axi_slave_ap",this);
     wb_master = wb_master_t::type_id::create("wb_master",this);
     wb_master.set_config(configuration.wb_master_config);
     axi_slave = axi_slave_t::type_id::create("axi_slave",this);
@@ -97,7 +99,8 @@ class block_3_environment  extends uvmf_environment_base #(
     wb_master.monitored_ap.connect(block_3_pred.wb_ae);
     axi_slave.monitored_ap.connect(block_3_sb.axi_ae);
     block_3_pred.pre_to_sco_ap.connect(block_3_sb.sco_from_pre_ae);
-    wb_master.monitored_ap.connect(block_3_wb);
+    wb_master.monitored_ap.connect(wb_master_ap);
+    axi_slave.monitored_ap.connect(axi_slave_ap);
     // pragma uvmf custom reg_model_connect_phase begin
     // pragma uvmf custom reg_model_connect_phase end
   endfunction

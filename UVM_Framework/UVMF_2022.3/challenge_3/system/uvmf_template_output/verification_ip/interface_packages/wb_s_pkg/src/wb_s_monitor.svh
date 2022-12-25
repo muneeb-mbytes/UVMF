@@ -17,25 +17,25 @@
 //----------------------------------------------------------------------
 //
 class wb_s_monitor #(
-      int WB_ADDR_width = 32,
-      int WB_DATA_width = 16
+      int WB_ADDR_WIDTH = 32,
+      int WB_DATA_WIDTH = 16
       ) extends uvmf_monitor_base #(
                     .CONFIG_T(wb_s_configuration  #(
-                             .WB_ADDR_width(WB_ADDR_width),
-                             .WB_DATA_width(WB_DATA_width)
+                             .WB_ADDR_WIDTH(WB_ADDR_WIDTH),
+                             .WB_DATA_WIDTH(WB_DATA_WIDTH)
                              )),
                     .BFM_BIND_T(virtual wb_s_monitor_bfm  #(
-                             .WB_ADDR_width(WB_ADDR_width),
-                             .WB_DATA_width(WB_DATA_width)
+                             .WB_ADDR_WIDTH(WB_ADDR_WIDTH),
+                             .WB_DATA_WIDTH(WB_DATA_WIDTH)
                              )),
                     .TRANS_T(wb_s_transaction  #(
-                             .WB_ADDR_width(WB_ADDR_width),
-                             .WB_DATA_width(WB_DATA_width)
+                             .WB_ADDR_WIDTH(WB_ADDR_WIDTH),
+                             .WB_DATA_WIDTH(WB_DATA_WIDTH)
                              )));
 
   `uvm_component_param_utils( wb_s_monitor #(
-                              WB_ADDR_width,
-                              WB_DATA_width
+                              WB_ADDR_WIDTH,
+                              WB_DATA_WIDTH
                               ))
 
 // Structure used to pass data from monitor BFM to monitor class in agent.

@@ -91,7 +91,7 @@ end
   tri  wready_i;
   tri  wlast_i;
   tri [DATA_WIDTH-1:0] wdata_i;
-  tri [data_width/8-1:0] wstrb_i;
+  tri [DATA_WIDTH/8-1:0] wstrb_i;
   tri [X-1:0] wid_i;
   tri [X-1:0] wuser_i;
   tri  bwvalid_i;
@@ -309,7 +309,7 @@ end
     //      axi_s_monitor_struct.xyz = wready_i;  //     
     //      axi_s_monitor_struct.xyz = wlast_i;  //     
     //      axi_s_monitor_struct.xyz = wdata_i;  //    [DATA_WIDTH-1:0] 
-    //      axi_s_monitor_struct.xyz = wstrb_i;  //    [data_width/8-1:0] 
+    //      axi_s_monitor_struct.xyz = wstrb_i;  //    [DATA_WIDTH/8-1:0] 
     //      axi_s_monitor_struct.xyz = wid_i;  //    [X-1:0] 
     //      axi_s_monitor_struct.xyz = wuser_i;  //    [X-1:0] 
     //      axi_s_monitor_struct.xyz = bwvalid_i;  //     

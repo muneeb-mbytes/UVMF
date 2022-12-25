@@ -22,9 +22,12 @@ uvmf:
           type: "block_3_scoreboard"
 
       analysis_ports:
-        - name: block_3_wb
+        - name: wb_master_ap
           trans_type: wb_m_transaction
           connected_to: wb_master.monitored_ap
+        - name: axi_slave_ap
+          trans_type: axi_s_transaction
+          connected_to: axi_slave.monitored_ap
 
       tlm_connections:
         - driver: wb_master.monitored_ap

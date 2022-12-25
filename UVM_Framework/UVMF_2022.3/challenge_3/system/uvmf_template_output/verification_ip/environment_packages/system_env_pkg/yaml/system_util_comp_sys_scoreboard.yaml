@@ -1,0 +1,10 @@
+uvmf:
+  util_components:
+    sys_scoreboard:
+      analysis_exports:
+      - name: sys_axi_ae
+        type: block_3_environment
+      - name: sys_sco_from_pre_ae
+        type: block_3_environment
+      existing_library_component: 'True'
+      type: scoreboard

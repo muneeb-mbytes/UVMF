@@ -3,13 +3,13 @@ uvmf:
     subsys_predictor:
       analysis_exports:
       - name: subsys_apb_ae
-        type: apb_m
+        type: block_1_environment
       - name: subsys_axi_1_ae
-        type: apb_m
+        type: block_1_environment
       - name: subsys_axi_2_ae
-        type: apb_m
+        type: block_1_environment
       analysis_ports:
       - name: subsys_pre_to_sco_ap
-        type: wb_s
+        type: block_2_environment
       existing_library_component: 'True'
       type: predictor

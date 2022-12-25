@@ -7,7 +7,7 @@ ${UVM_HOME}/src/uvm_pkg.sv
 -f ${UVMF_HOME}/common/common_sve.f
 
 // BFM Files
--F ${UVMF_VIP_LIBRARY_HOME}/interface_packages/apb_pkg/apb_pkg_sve.F
+-F ${UVMF_VIP_LIBRARY_HOME}/interface_packages/apb_m_pkg/apb_m_pkg_sve.F
 -F ${UVMF_VIP_LIBRARY_HOME}/interface_packages/axi_m_pkg/axi_m_pkg_sve.F
 -F ${UVMF_VIP_LIBRARY_HOME}/interface_packages/spi_s_pkg/spi_s_pkg_sve.F
 

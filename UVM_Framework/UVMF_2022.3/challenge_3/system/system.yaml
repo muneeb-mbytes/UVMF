@@ -10,25 +10,26 @@ uvmf:
           type: "subsys"
         - name: "b3"
           type: "block_3"
-      #analysis_components:
-      #  - name: "sys_pred"
-      #    type: "sys_predictor"
-      #  - name: "sys_sb"
-      #    type: "sys_scoreboard"
-      #tlm_connections:
-      #  - driver: "subsys.b1.apb_master_ap"
-      #    receiver: "sub_pred.subsys_apb_ae"
-      #  - driver: "subsys.b1.axi_master1_ap"
-      #    receiver: "sub_pred.subsys_axi_1_ae"
-      #  - driver: "subsys.b1.axi_master2_ap"
-      #    receiver: "sub_pred.subsys_axi_2_ae"
-      #  - driver: "sub_pred.pred_to_sco_ap"
-      #    receiver: "sub_sb.pred_ae"
-      #  - driver: "b2.wb_slave_ap"
-      #   receiver: "sub_sb.block2_ae"
-
-
       
-
-
-
+      analysis_components:
+        - name: "sys_pred"
+          type: "sys_predictor"
+        - name: "sys_sb"
+          type: "sys_scoreboard"
+      
+      tlm_connections:
+        - driver: "s1.block_1_ap1"
+          receiver: "sys_pred.sys_apb_ae"
+        - driver: "s1.block_1_ap2"
+          receiver: "sys_pred.sys_axi_1_ae"
+        - driver: "s1.block_1_ap3"
+          receiver: "sys_pred.sys_axi_2_ae"
+        - driver: "sys_pred.sys_pre_to_sco_ap"
+          receiver: "sys_sb.sys_sco_from_pre_ae"
+        - driver: "b3.axi_slave_ap"
+          receiver: "sys_sb.sys_axi_ae"
+      
+      config_vars :
+        - name: "has_scoreboard"
+          type : "bit"      
+          isrand : "False"

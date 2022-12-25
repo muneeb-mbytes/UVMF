@@ -34,7 +34,7 @@ rand block_1_env_sequence_base_t block_1_env_seq;
 
   // UVMF_CHANGE_ME : Instantiate, construct, and start sequences as needed to create stimulus scenarios.
   // Instantiate sequences here
-  typedef apb_random_sequence  apb_master_random_seq_t;
+  typedef apb_m_random_sequence  apb_master_random_seq_t;
   apb_master_random_seq_t apb_master_random_seq;
   typedef axi_m_random_sequence  axi_master1_random_seq_t;
   axi_master1_random_seq_t axi_master1_random_seq;
@@ -43,7 +43,7 @@ rand block_1_env_sequence_base_t block_1_env_seq;
   // pragma uvmf custom sequences end
 
   // Sequencer handles for each active interface in the environment
-  typedef apb_transaction  apb_master_transaction_t;
+  typedef apb_m_transaction  apb_master_transaction_t;
   uvm_sequencer #(apb_master_transaction_t)  apb_master_sequencer; 
   typedef axi_m_transaction  axi_master1_transaction_t;
   uvm_sequencer #(axi_master1_transaction_t)  axi_master1_sequencer; 
@@ -55,7 +55,7 @@ rand block_1_env_sequence_base_t block_1_env_seq;
   block_1_env_configuration_t top_configuration;
 
   // Configuration handles to access interface BFM's
-  apb_configuration  apb_master_config;
+  apb_m_configuration  apb_master_config;
   axi_m_configuration  axi_master1_config;
   axi_m_configuration  axi_master2_config;
   spi_s_configuration  spi_slave_config;
@@ -75,8 +75,8 @@ rand block_1_env_sequence_base_t block_1_env_seq;
     end
 
     // Retrieve config handles for all agents
-    if( !uvm_config_db #( apb_configuration )::get( null , UVMF_CONFIGURATIONS , apb_master_BFM , apb_master_config ) ) 
-      `uvm_fatal("CFG" , "uvm_config_db #( apb_configuration )::get cannot find resource apb_master_BFM" )
+    if( !uvm_config_db #( apb_m_configuration )::get( null , UVMF_CONFIGURATIONS , apb_master_BFM , apb_master_config ) ) 
+      `uvm_fatal("CFG" , "uvm_config_db #( apb_m_configuration )::get cannot find resource apb_master_BFM" )
     if( !uvm_config_db #( axi_m_configuration )::get( null , UVMF_CONFIGURATIONS , axi_master1_BFM , axi_master1_config ) ) 
       `uvm_fatal("CFG" , "uvm_config_db #( axi_m_configuration )::get cannot find resource axi_master1_BFM" )
     if( !uvm_config_db #( axi_m_configuration )::get( null , UVMF_CONFIGURATIONS , axi_master2_BFM , axi_master2_config ) ) 

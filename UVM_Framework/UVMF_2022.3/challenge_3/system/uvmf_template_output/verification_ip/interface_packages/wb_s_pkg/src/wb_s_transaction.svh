@@ -15,13 +15,13 @@
 //----------------------------------------------------------------------
 //
 class wb_s_transaction #(
-      int WB_ADDR_width = 32,
-      int WB_DATA_width = 16
+      int WB_ADDR_WIDTH = 32,
+      int WB_DATA_WIDTH = 16
       ) extends uvmf_transaction_base;
 
   `uvm_object_param_utils( wb_s_transaction #(
-                           WB_ADDR_width,
-                           WB_DATA_width
+                           WB_ADDR_WIDTH,
+                           WB_DATA_WIDTH
                            ))
 
   rand bit [WB_DATA_WIDTH-1:0] data ;
@@ -131,8 +131,8 @@ class wb_s_transaction #(
   //
   virtual function bit do_compare (uvm_object rhs, uvm_comparer comparer);
     wb_s_transaction #(
-        .WB_ADDR_width(WB_ADDR_width),
-        .WB_DATA_width(WB_DATA_width)
+        .WB_ADDR_WIDTH(WB_ADDR_WIDTH),
+        .WB_DATA_WIDTH(WB_DATA_WIDTH)
         ) RHS;
     if (!$cast(RHS,rhs)) return 0;
     // pragma uvmf custom do_compare begin
@@ -150,8 +150,8 @@ class wb_s_transaction #(
   //
   virtual function void do_copy (uvm_object rhs);
     wb_s_transaction #(
-        .WB_ADDR_width(WB_ADDR_width),
-        .WB_DATA_width(WB_DATA_width)
+        .WB_ADDR_WIDTH(WB_ADDR_WIDTH),
+        .WB_DATA_WIDTH(WB_DATA_WIDTH)
         ) RHS;
     assert($cast(RHS,rhs));
     // pragma uvmf custom do_copy begin

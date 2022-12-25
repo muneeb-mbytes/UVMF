@@ -34,8 +34,8 @@ interface  spi_m_if
   input logic rst,
   output logic  sclk,
   output logic  ss,
-  output logic [bit [7:0]-1:0] mosi,
-  input logic [bit [7:0]-1:0] miso
+  output logic [7:0] mosi,
+  input logic [7:0] miso
   );
 
 modport monitor_port 

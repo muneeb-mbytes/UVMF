@@ -6,6 +6,6 @@ uvmf:
         type: spi_m_transaction
       analysis_ports:
       - name: pre_to_sco_ap
-        type: 'wb_s_transaction #(.WB_ARRD_WIDTH(WB_ADDR_WIDTH), .WB_DATA_WIDTH(WB_DATA_WIDTH)'
+        type: wb_s_transaction
       existing_library_component: 'True'
       type: predictor

@@ -1,0 +1,7 @@
+needs:
+  - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg.compile
+  - ./apb_m_common.compile
+incdir:
+  - .
+src:
+  - apb_m_pkg.sv

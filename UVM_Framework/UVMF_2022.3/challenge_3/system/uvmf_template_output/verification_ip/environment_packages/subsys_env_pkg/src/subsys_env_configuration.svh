@@ -18,6 +18,7 @@ extends uvmf_environment_configuration_base;
 
   `uvm_object_utils( subsys_env_configuration )
 
+  bit has_scoreboard;
 
 //Constraints for the configuration variables:
 
@@ -25,6 +26,7 @@ extends uvmf_environment_configuration_base;
   covergroup subsys_configuration_cg;
     // pragma uvmf custom covergroup begin
     option.auto_bin_max=1024;
+    coverpoint has_scoreboard;
     // pragma uvmf custom covergroup end
   endgroup
 
@@ -95,7 +97,7 @@ rand b2_config_t b2_config;
   virtual function string convert2string();
     // pragma uvmf custom convert2string begin
     return {
-     
+     $sformatf("has_scoreboard:0x%x ",has_scoreboard),
 
      "\n", b1_config.convert2string,
      "\n", b2_config.convert2string

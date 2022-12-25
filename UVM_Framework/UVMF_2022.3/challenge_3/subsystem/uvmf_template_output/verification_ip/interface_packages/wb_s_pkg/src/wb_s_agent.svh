@@ -12,34 +12,34 @@
 //----------------------------------------------------------------------
 //
 class wb_s_agent #(
-     int WB_ADDR_width = 32,
-     int WB_DATA_width = 16
+     int WB_ADDR_WIDTH = 32,
+     int WB_DATA_WIDTH = 16
      ) extends uvmf_parameterized_agent #(
                     .CONFIG_T(wb_s_configuration #(
-                              .WB_ADDR_width(WB_ADDR_width),
-                              .WB_DATA_width(WB_DATA_width)
+                              .WB_ADDR_WIDTH(WB_ADDR_WIDTH),
+                              .WB_DATA_WIDTH(WB_DATA_WIDTH)
                               )),
                     .DRIVER_T(wb_s_driver #(
-                              .WB_ADDR_width(WB_ADDR_width),
-                              .WB_DATA_width(WB_DATA_width)
+                              .WB_ADDR_WIDTH(WB_ADDR_WIDTH),
+                              .WB_DATA_WIDTH(WB_DATA_WIDTH)
                               )),
                     .MONITOR_T(wb_s_monitor #(
-                               .WB_ADDR_width(WB_ADDR_width),
-                               .WB_DATA_width(WB_DATA_width)
+                               .WB_ADDR_WIDTH(WB_ADDR_WIDTH),
+                               .WB_DATA_WIDTH(WB_DATA_WIDTH)
                                )),
                     .COVERAGE_T(wb_s_transaction_coverage #(
-                                .WB_ADDR_width(WB_ADDR_width),
-                                .WB_DATA_width(WB_DATA_width)
+                                .WB_ADDR_WIDTH(WB_ADDR_WIDTH),
+                                .WB_DATA_WIDTH(WB_DATA_WIDTH)
                                 )),
                     .TRANS_T(wb_s_transaction #(
-                             .WB_ADDR_width(WB_ADDR_width),
-                             .WB_DATA_width(WB_DATA_width)
+                             .WB_ADDR_WIDTH(WB_ADDR_WIDTH),
+                             .WB_DATA_WIDTH(WB_DATA_WIDTH)
                              ))
                     );
 
   `uvm_component_param_utils( wb_s_agent #(
-                              WB_ADDR_width,
-                              WB_DATA_width
+                              WB_ADDR_WIDTH,
+                              WB_DATA_WIDTH
                               ))
 
 // pragma uvmf custom class_item_additional begin

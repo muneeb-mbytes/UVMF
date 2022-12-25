@@ -66,7 +66,7 @@ typedef struct packed  { \
   bit wready ; \
   bit wlast ; \
   bit [DATA_WIDTH-1:0] wdata ; \
-  bit [DATA_WIDTH/8-1] wstrb ; \
+  bit [DATA_WIDTH/8-1:0] wstrb ; \
   bit [X-1:0] wid ; \
   bit [X-1:0] wuser ; \
   bit bwvalid ; \
@@ -223,7 +223,7 @@ typedef struct packed  { \
   bit wready ; \
   bit wlast ; \
   bit [DATA_WIDTH-1:0] wdata ; \
-  bit [DATA_WIDTH/8-1] wstrb ; \
+  bit [DATA_WIDTH/8-1:0] wstrb ; \
   bit [X-1:0] wid ; \
   bit [X-1:0] wuser ; \
   bit bwvalid ; \
@@ -380,7 +380,7 @@ typedef struct packed  { \
   bit wready ; \
   bit wlast ; \
   bit [DATA_WIDTH-1:0] wdata ; \
-  bit [DATA_WIDTH/8-1] wstrb ; \
+  bit [DATA_WIDTH/8-1:0] wstrb ; \
   bit [X-1:0] wid ; \
   bit [X-1:0] wuser ; \
   bit bwvalid ; \

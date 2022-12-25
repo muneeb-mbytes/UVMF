@@ -58,8 +58,8 @@ import wb_s_pkg_hdl::*;
 `include "src/wb_s_macros.svh"
 
 interface wb_s_driver_bfm #(
-  int WB_ADDR_width = 32,
-  int WB_DATA_width = 16
+  int WB_ADDR_WIDTH = 32,
+  int WB_DATA_WIDTH = 16
   )
   (wb_s_if bus);
   // The following pragma and additional ones in-lined further below are for running this BFM on Veloce
@@ -75,7 +75,7 @@ import uvm_pkg::*;
 `include "uvm_macros.svh"
 initial begin : bfm_vs_agent_parameter_debug
   `uvm_info("CFG", 
-      $psprintf("The BFM at '%m' has the following parameters: WB_ADDR_width=%x WB_DATA_width=%x ", WB_ADDR_width,WB_DATA_width),
+      $psprintf("The BFM at '%m' has the following parameters: WB_ADDR_WIDTH=%x WB_DATA_WIDTH=%x ", WB_ADDR_WIDTH,WB_DATA_WIDTH),
       UVM_DEBUG)
 end
 `endif
@@ -155,8 +155,8 @@ end
 
   // Proxy handle to UVM driver
   wb_s_pkg::wb_s_driver #(
-    .WB_ADDR_width(WB_ADDR_width),
-    .WB_DATA_width(WB_DATA_width)
+    .WB_ADDR_WIDTH(WB_ADDR_WIDTH),
+    .WB_DATA_WIDTH(WB_DATA_WIDTH)
     )  proxy;
   // pragma tbx oneway proxy.my_function_name_in_uvm_driver                 
 

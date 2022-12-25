@@ -14,28 +14,28 @@
 //----------------------------------------------------------------------
 //
 class wb_s_configuration #(
-      int WB_ADDR_width = 32,
-      int WB_DATA_width = 16
+      int WB_ADDR_WIDTH = 32,
+      int WB_DATA_WIDTH = 16
       ) extends uvmf_parameterized_agent_configuration_base #(
       .DRIVER_BFM_BIND_T(virtual wb_s_driver_bfm #(
-                          .WB_ADDR_width(WB_ADDR_width),
-                          .WB_DATA_width(WB_DATA_width)
+                          .WB_ADDR_WIDTH(WB_ADDR_WIDTH),
+                          .WB_DATA_WIDTH(WB_DATA_WIDTH)
                           )),
       .MONITOR_BFM_BIND_T( virtual wb_s_monitor_bfm #(
-                          .WB_ADDR_width(WB_ADDR_width),
-                          .WB_DATA_width(WB_DATA_width)
+                          .WB_ADDR_WIDTH(WB_ADDR_WIDTH),
+                          .WB_DATA_WIDTH(WB_DATA_WIDTH)
                           )));
 
   `uvm_object_param_utils( wb_s_configuration #(
-                           WB_ADDR_width,
-                           WB_DATA_width
+                           WB_ADDR_WIDTH,
+                           WB_DATA_WIDTH
                            ))
 
 
   // Sequencer handle populated by agent
   uvm_sequencer #(wb_s_transaction #(
-       .WB_ADDR_width(WB_ADDR_width),
-       .WB_DATA_width(WB_DATA_width)
+       .WB_ADDR_WIDTH(WB_ADDR_WIDTH),
+       .WB_DATA_WIDTH(WB_DATA_WIDTH)
        ) ) sequencer;
 
   //Constraints for the configuration variables:
@@ -125,8 +125,8 @@ class wb_s_configuration #(
 
     // This configuration places itself into the uvm_config_db for the agent, identified by the agent_path variable, to retrieve.  
     uvm_config_db #( wb_s_configuration  #(
-                             .WB_ADDR_width(WB_ADDR_width),
-                             .WB_DATA_width(WB_DATA_width)
+                             .WB_ADDR_WIDTH(WB_ADDR_WIDTH),
+                             .WB_DATA_WIDTH(WB_DATA_WIDTH)
                              )
                     )::set( null ,agent_path,UVMF_AGENT_CONFIG, this );
 
@@ -134,8 +134,8 @@ class wb_s_configuration #(
     // configuration variables and the interface through the bfm api class rather than directly accessing the BFM.  This is useful for 
     // accessingthe BFM when using Veloce
     uvm_config_db #( wb_s_configuration  #(
-                             .WB_ADDR_width(WB_ADDR_width),
-                             .WB_DATA_width(WB_DATA_width)
+                             .WB_ADDR_WIDTH(WB_ADDR_WIDTH),
+                             .WB_DATA_WIDTH(WB_DATA_WIDTH)
                              )
                     )::set( null ,UVMF_CONFIGURATIONS, interface_name, this );
 
@@ -147,7 +147,7 @@ class wb_s_configuration #(
 // All of the messages from this feature have a UVM messaging id value of "CFG"
 // The transcript or run.log can be parsed to ensure BFM parameter settings match its corresponding agents parameter settings.
     `uvm_info("CFG", 
-              $psprintf("The agent at '%s' is using interface named %s has the following parameters: WB_ADDR_width=%x WB_DATA_width=%x ", agent_path, interface_name, WB_ADDR_width ,WB_DATA_width ),
+              $psprintf("The agent at '%s' is using interface named %s has the following parameters: WB_ADDR_WIDTH=%x WB_DATA_WIDTH=%x ", agent_path, interface_name, WB_ADDR_WIDTH ,WB_DATA_WIDTH ),
               UVM_DEBUG)
 
     // pragma uvmf custom initialize begin
@@ -190,8 +190,8 @@ class wb_s_configuration #(
   // ****************************************************************************
   // FUNCTION: get_sequencer
   function uvm_sequencer #(wb_s_transaction#(
-       .WB_ADDR_width(WB_ADDR_width),
-       .WB_DATA_width(WB_DATA_width)
+       .WB_ADDR_WIDTH(WB_ADDR_WIDTH),
+       .WB_DATA_WIDTH(WB_DATA_WIDTH)
        )) get_sequencer();
     return sequencer;
   endfunction

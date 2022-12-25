@@ -71,8 +71,8 @@ end
   logic rst_i;
   tri  sclk_i;
   tri  ss_i;
-  tri [bit [7:0]-1:0] mosi_i;
-  tri [bit [7:0]-1:0] miso_i;
+  tri [7:0] mosi_i;
+  tri [7:0] miso_i;
   assign sck_i = bus.sck;
   assign rst_i = bus.rst;
   assign sclk_i = bus.sclk;
@@ -160,8 +160,8 @@ end
     //    All available input signals listed.
     //      spi_m_monitor_struct.xyz = sclk_i;  //     
     //      spi_m_monitor_struct.xyz = ss_i;  //     
-    //      spi_m_monitor_struct.xyz = mosi_i;  //    [bit [7:0]-1:0] 
-    //      spi_m_monitor_struct.xyz = miso_i;  //    [bit [7:0]-1:0] 
+    //      spi_m_monitor_struct.xyz = mosi_i;  //    [7:0] 
+    //      spi_m_monitor_struct.xyz = miso_i;  //    [7:0] 
     // pragma uvmf custom do_monitor begin
     // UVMF_CHANGE_ME : Implement protocol monitoring.  The commented reference code 
     // below are examples of how to capture signal values and assign them to 

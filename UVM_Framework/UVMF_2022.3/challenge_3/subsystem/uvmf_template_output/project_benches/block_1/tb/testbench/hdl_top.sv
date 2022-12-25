@@ -59,7 +59,7 @@ import uvmf_base_pkg_hdl::*;
   // The signal bundle, _if, contains signals to be connected to the DUT.
   // The monitor, monitor_bfm, observes the bus, _if, and captures transactions.
   // The driver, driver_bfm, drives transactions onto the bus, _if.
-  apb_if  apb_master_bus(
+  apb_m_if  apb_master_bus(
      // pragma uvmf custom apb_master_bus_connections begin
      .pclk(clk), .presetn(rst)
      // pragma uvmf custom apb_master_bus_connections end
@@ -79,11 +79,11 @@ import uvmf_base_pkg_hdl::*;
      .sck(clk), .rst(rst)
      // pragma uvmf custom spi_slave_bus_connections end
      );
-  apb_monitor_bfm  apb_master_mon_bfm(apb_master_bus.monitor_port);
+  apb_m_monitor_bfm  apb_master_mon_bfm(apb_master_bus.monitor_port);
   axi_m_monitor_bfm  axi_master1_mon_bfm(axi_master1_bus.monitor_port);
   axi_m_monitor_bfm  axi_master2_mon_bfm(axi_master2_bus.monitor_port);
   spi_s_monitor_bfm  spi_slave_mon_bfm(spi_slave_bus.monitor_port);
-  apb_driver_bfm  apb_master_drv_bfm(apb_master_bus.initiator_port);
+  apb_m_driver_bfm  apb_master_drv_bfm(apb_master_bus.initiator_port);
   axi_m_driver_bfm  axi_master1_drv_bfm(axi_master1_bus.initiator_port);
   axi_m_driver_bfm  axi_master2_drv_bfm(axi_master2_bus.initiator_port);
 
@@ -101,11 +101,11 @@ import uvmf_base_pkg_hdl::*;
     // They are placed into the uvm_config_db using the string names defined in the parameters package.
     // The string names are passed to the agent configurations by test_top through the top level configuration.
     // They are retrieved by the agents configuration class for use by the agent.
-    uvm_config_db #( virtual apb_monitor_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , apb_master_BFM , apb_master_mon_bfm ); 
+    uvm_config_db #( virtual apb_m_monitor_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , apb_master_BFM , apb_master_mon_bfm ); 
     uvm_config_db #( virtual axi_m_monitor_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , axi_master1_BFM , axi_master1_mon_bfm ); 
     uvm_config_db #( virtual axi_m_monitor_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , axi_master2_BFM , axi_master2_mon_bfm ); 
     uvm_config_db #( virtual spi_s_monitor_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , spi_slave_BFM , spi_slave_mon_bfm ); 
-    uvm_config_db #( virtual apb_driver_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , apb_master_BFM , apb_master_drv_bfm  );
+    uvm_config_db #( virtual apb_m_driver_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , apb_master_BFM , apb_master_drv_bfm  );
     uvm_config_db #( virtual axi_m_driver_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , axi_master1_BFM , axi_master1_drv_bfm  );
     uvm_config_db #( virtual axi_m_driver_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , axi_master2_BFM , axi_master2_drv_bfm  );
   end

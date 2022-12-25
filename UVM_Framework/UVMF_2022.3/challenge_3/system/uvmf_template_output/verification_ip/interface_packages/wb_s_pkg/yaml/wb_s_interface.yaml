@@ -11,10 +11,10 @@ uvmf:
       hvl_pkg_parameters: []
       hvl_typedefs: []
       parameters:
-      - name: WB_ADDR_width
+      - name: WB_ADDR_WIDTH
         type: int
         value: '32'
-      - name: WB_DATA_width
+      - name: WB_DATA_WIDTH
         type: int
         value: '16'
       ports:

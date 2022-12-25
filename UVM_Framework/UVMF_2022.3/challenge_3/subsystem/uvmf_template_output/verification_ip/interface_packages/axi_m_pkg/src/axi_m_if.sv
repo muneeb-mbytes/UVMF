@@ -95,7 +95,7 @@ interface  axi_m_if #(
   input logic  wready,
   output logic  wlast,
   output logic [DATA_WIDTH-1:0] wdata,
-  output logic [data_width/8-1:0] wstrb,
+  output logic [DATA_WIDTH/8-1:0] wstrb,
   output logic [X-1:0] wid,
   output logic [X-1:0] wuser,
   input logic  bwvalid,

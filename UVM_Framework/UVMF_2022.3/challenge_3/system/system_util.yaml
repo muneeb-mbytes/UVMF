@@ -1,19 +1,24 @@
 uvmf:
   util_components:
-    "subsys_predictor":
-      - type: "predictor"
+    sys_predictor:
       analysis_exports:
-        - name: "subsys_ae"
-          type: "block_1_pred"
+        - name: "sys_apb_ae"
+          type: "subsys_environment"
+        - name: "sys_axi_1_ae"
+          type: "subsys_environment"
+        - name: "sys_axi_2_ae"
+          type: "subsys_environment"
+      
       analysis_ports:
-        - name: "subsys_ap"
-          type: "subsys_scoreboard"
-    "subsys_scoreboard":
-      - type: "scoreboard"
-      analysis_ports: 
-        - name: "subsys_sb_ap"
-          type: "block_2_sb"
-
-
-        
+        - name: "sys_pre_to_sco_ap"
+          type: "block_3_scoreboard"
+      existing_library_component: 'True'
+      type: predictor
+    sys_scoreboard:
+      analysis_exports: 
+        - name: "sys_axi_ae"
+          type: "block_3_environment"
+        - name: "sys_sco_from_pre_ae"
+          type: "block_3_environment"
+      type: "scoreboard"
 

@@ -153,8 +153,8 @@ end
   reg  wlast_o = 'bz;
   tri [DATA_WIDTH-1:0] wdata_i;
   reg [DATA_WIDTH-1:0] wdata_o = 'bz;
-  tri [data_width/8-1:0] wstrb_i;
-  reg [data_width/8-1:0] wstrb_o = 'bz;
+  tri [DATA_WIDTH/8-1:0] wstrb_i;
+  reg [DATA_WIDTH/8-1:0] wstrb_o = 'bz;
   tri [X-1:0] wid_i;
   reg [X-1:0] wid_o = 'bz;
   tri [X-1:0] wuser_i;
@@ -427,7 +427,7 @@ end
        //   bit wready ;
        //   bit wlast ;
        //   bit [DATA_WIDTH-1:0] wdata ;
-       //   bit [DATA_WIDTH/8-1] wstrb ;
+       //   bit [DATA_WIDTH/8-1:0] wstrb ;
        //   bit [X-1:0] wid ;
        //   bit [X-1:0] wuser ;
        //   bit bwvalid ;
@@ -473,7 +473,7 @@ end
        //   bit wready ;
        //   bit wlast ;
        //   bit [DATA_WIDTH-1:0] wdata ;
-       //   bit [DATA_WIDTH/8-1] wstrb ;
+       //   bit [DATA_WIDTH/8-1:0] wstrb ;
        //   bit [X-1:0] wid ;
        //   bit [X-1:0] wuser ;
        //   bit bwvalid ;
@@ -543,7 +543,7 @@ end
        //      wvalid_o <= axi_m_initiator_struct.xyz;  //     
        //      wlast_o <= axi_m_initiator_struct.xyz;  //     
        //      wdata_o <= axi_m_initiator_struct.xyz;  //    [DATA_WIDTH-1:0] 
-       //      wstrb_o <= axi_m_initiator_struct.xyz;  //    [data_width/8-1:0] 
+       //      wstrb_o <= axi_m_initiator_struct.xyz;  //    [DATA_WIDTH/8-1:0] 
        //      wid_o <= axi_m_initiator_struct.xyz;  //    [X-1:0] 
        //      wuser_o <= axi_m_initiator_struct.xyz;  //    [X-1:0] 
        //      bwready_o <= axi_m_initiator_struct.xyz;  //     
@@ -608,7 +608,7 @@ bit first_transfer=1;
   //   bit wready ;
   //   bit wlast ;
   //   bit [DATA_WIDTH-1:0] wdata ;
-  //   bit [DATA_WIDTH/8-1] wstrb ;
+  //   bit [DATA_WIDTH/8-1:0] wstrb ;
   //   bit [X-1:0] wid ;
   //   bit [X-1:0] wuser ;
   //   bit bwvalid ;
@@ -654,7 +654,7 @@ bit first_transfer=1;
   //   bit wready ;
   //   bit wlast ;
   //   bit [DATA_WIDTH-1:0] wdata ;
-  //   bit [DATA_WIDTH/8-1] wstrb ;
+  //   bit [DATA_WIDTH/8-1:0] wstrb ;
   //   bit [X-1:0] wid ;
   //   bit [X-1:0] wuser ;
   //   bit bwvalid ;
@@ -704,7 +704,7 @@ bit first_transfer=1;
        //      axi_m_responder_struct.xyz = wvalid_i;  //     
        //      axi_m_responder_struct.xyz = wlast_i;  //     
        //      axi_m_responder_struct.xyz = wdata_i;  //    [DATA_WIDTH-1:0] 
-       //      axi_m_responder_struct.xyz = wstrb_i;  //    [data_width/8-1:0] 
+       //      axi_m_responder_struct.xyz = wstrb_i;  //    [DATA_WIDTH/8-1:0] 
        //      axi_m_responder_struct.xyz = wid_i;  //    [X-1:0] 
        //      axi_m_responder_struct.xyz = wuser_i;  //    [X-1:0] 
        //      axi_m_responder_struct.xyz = bwready_i;  //     

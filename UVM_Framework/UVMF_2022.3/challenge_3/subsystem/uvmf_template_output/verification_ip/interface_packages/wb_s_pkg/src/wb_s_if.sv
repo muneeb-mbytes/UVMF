@@ -35,8 +35,8 @@ import uvmf_base_pkg_hdl::*;
 import wb_s_pkg_hdl::*;
 
 interface  wb_s_if #(
-  int WB_ADDR_width = 32,
-  int WB_DATA_width = 16
+  int WB_ADDR_WIDTH = 32,
+  int WB_DATA_WIDTH = 16
   )
 
   (

@@ -13,13 +13,13 @@
 //----------------------------------------------------------------------
 //
 class wb_s2reg_adapter #(
-      int WB_ADDR_width = 32,
-      int WB_DATA_width = 16
+      int WB_ADDR_WIDTH = 32,
+      int WB_DATA_WIDTH = 16
       ) extends uvm_reg_adapter;
 
   `uvm_object_param_utils( wb_s2reg_adapter #(
-                           WB_ADDR_width,
-                           WB_DATA_width
+                           WB_ADDR_WIDTH,
+                           WB_DATA_WIDTH
                            ))
   
   // pragma uvmf custom class_item_additional begin
@@ -54,11 +54,11 @@ class wb_s2reg_adapter #(
   virtual function uvm_sequence_item reg2bus(const ref uvm_reg_bus_op rw);
 
     wb_s_transaction #(
-                    .WB_ADDR_width(WB_ADDR_width),
-                    .WB_DATA_width(WB_DATA_width)
+                    .WB_ADDR_WIDTH(WB_ADDR_WIDTH),
+                    .WB_DATA_WIDTH(WB_DATA_WIDTH)
                     ) trans_h = wb_s_transaction #(
-                             .WB_ADDR_width(WB_ADDR_width),
-                             .WB_DATA_width(WB_DATA_width)
+                             .WB_ADDR_WIDTH(WB_ADDR_WIDTH),
+                             .WB_DATA_WIDTH(WB_DATA_WIDTH)
                              )::type_id::create("trans_h");
     
     // pragma uvmf custom reg2bus begin
@@ -84,8 +84,8 @@ class wb_s2reg_adapter #(
   virtual function void bus2reg(uvm_sequence_item bus_item,
                                 ref uvm_reg_bus_op rw);
     wb_s_transaction #(
-        .WB_ADDR_width(WB_ADDR_width),
-        .WB_DATA_width(WB_DATA_width)
+        .WB_ADDR_WIDTH(WB_ADDR_WIDTH),
+        .WB_DATA_WIDTH(WB_DATA_WIDTH)
         ) trans_h;
     if (!$cast(trans_h, bus_item)) begin
       `uvm_fatal("ADAPT","Provided bus_item is not of the correct type")

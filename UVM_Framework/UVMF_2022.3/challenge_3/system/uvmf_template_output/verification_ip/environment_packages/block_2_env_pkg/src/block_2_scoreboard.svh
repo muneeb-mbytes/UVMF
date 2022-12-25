@@ -12,8 +12,8 @@
 //   This analysis component has the following analysis_exports that receive the 
 //   listed transaction type.
 //   
-//   sco_from_pre_ae receives transactions of type  wb_s_transaction #(.WB_ARRD_WIDTH(WB_ADDR_WIDTH), .WB_DATA_WIDTH(WB_DATA_WIDTH)  
-//   wb_ae receives transactions of type  wb_s_transaction #(.WB_ARRD_WIDTH(WB_ADDR_WIDTH), .WB_DATA_WIDTH(WB_DATA_WIDTH)  
+//   sco_from_pre_ae receives transactions of type  wb_s_transaction  
+//   wb_ae receives transactions of type  wb_s_transaction  
 //
 //   This analysis component has the following analysis_ports that can broadcast 
 //   the listed transaction type.
@@ -40,11 +40,11 @@ class block_2_scoreboard #(
 
   
   // Instantiate the analysis exports
-  uvm_analysis_imp_sco_from_pre_ae #(wb_s_transaction #(.WB_ARRD_WIDTH(WB_ADDR_WIDTH), .WB_DATA_WIDTH(WB_DATA_WIDTH), block_2_scoreboard #(
+  uvm_analysis_imp_sco_from_pre_ae #(wb_s_transaction, block_2_scoreboard #(
                               .CONFIG_T(CONFIG_T),
                               .BASE_T(BASE_T)
                               )) sco_from_pre_ae;
-  uvm_analysis_imp_wb_ae #(wb_s_transaction #(.WB_ARRD_WIDTH(WB_ADDR_WIDTH), .WB_DATA_WIDTH(WB_DATA_WIDTH), block_2_scoreboard #(
+  uvm_analysis_imp_wb_ae #(wb_s_transaction, block_2_scoreboard #(
                               .CONFIG_T(CONFIG_T),
                               .BASE_T(BASE_T)
                               )) wb_ae;
@@ -74,7 +74,7 @@ class block_2_scoreboard #(
   // FUNCTION: write_sco_from_pre_ae
   // Transactions received through sco_from_pre_ae initiate the execution of this function.
   // This function performs prediction of DUT output values based on DUT input, configuration and state
-  virtual function void write_sco_from_pre_ae(wb_s_transaction #(.WB_ARRD_WIDTH(WB_ADDR_WIDTH), .WB_DATA_WIDTH(WB_DATA_WIDTH) t);
+  virtual function void write_sco_from_pre_ae(wb_s_transaction t);
     // pragma uvmf custom sco_from_pre_ae_scoreboard begin
     `uvm_info("PRED", "Transaction Received through sco_from_pre_ae", UVM_MEDIUM)
     `uvm_info("PRED", {"            Data: ",t.convert2string()}, UVM_FULL)
@@ -89,7 +89,7 @@ class block_2_scoreboard #(
   // FUNCTION: write_wb_ae
   // Transactions received through wb_ae initiate the execution of this function.
   // This function performs prediction of DUT output values based on DUT input, configuration and state
-  virtual function void write_wb_ae(wb_s_transaction #(.WB_ARRD_WIDTH(WB_ADDR_WIDTH), .WB_DATA_WIDTH(WB_DATA_WIDTH) t);
+  virtual function void write_wb_ae(wb_s_transaction t);
     // pragma uvmf custom wb_ae_scoreboard begin
     `uvm_info("PRED", "Transaction Received through wb_ae", UVM_MEDIUM)
     `uvm_info("PRED", {"            Data: ",t.convert2string()}, UVM_FULL)

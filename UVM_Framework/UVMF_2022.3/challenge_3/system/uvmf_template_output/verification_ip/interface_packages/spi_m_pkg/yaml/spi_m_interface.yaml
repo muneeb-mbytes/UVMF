@@ -23,11 +23,11 @@ uvmf:
       - dir: output
         name: mosi
         reset_value: '''b0'
-        width: bit [7:0]
+        width: '8'
       - dir: input
         name: miso
         reset_value: '''b0'
-        width: bit [7:0]
+        width: '8'
       reset: rst
       reset_assertion_level: 'True'
       transaction_constraints: []

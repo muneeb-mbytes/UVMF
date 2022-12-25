@@ -46,7 +46,7 @@ vlog -sv -timescale 1ps/1ps -suppress 2223 -suppress 2286 +incdir+$env(UVMF_HOME
 ###################################################################
 ## UVMF INTERFACE COMPILATION
 ###################################################################
-do $env(UVMF_VIP_LIBRARY_HOME)/interface_packages/apb_pkg/compile.do
+do $env(UVMF_VIP_LIBRARY_HOME)/interface_packages/apb_m_pkg/compile.do
 do $env(UVMF_VIP_LIBRARY_HOME)/interface_packages/axi_m_pkg/compile.do
 do $env(UVMF_VIP_LIBRARY_HOME)/interface_packages/spi_s_pkg/compile.do
 

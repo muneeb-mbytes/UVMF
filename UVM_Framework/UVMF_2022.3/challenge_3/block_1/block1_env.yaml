@@ -19,7 +19,7 @@ uvmf:
     "block_1" :
       agents :
         - name: "apb_master" 
-          type: "apb"
+          type: "apb_m"
           initiator_responder: "INITIATOR"
         - name: "axi_master1"
           type: "axi_m"
@@ -30,14 +30,16 @@ uvmf:
         - name: "spi_slave"
           type: "spi_s"
           initiator_responder: "RESPONDER"
+      
       analysis_components :
         - name: "block_1_pred"
           type: "block_1_predictor"
         - name: "block_1_sb"
           type: "block_1_scoreboard"
+      
       analysis_ports :
         - name: "apb_master_ap"
-          trans_type: "apb_transaction"
+          trans_type: "apb_m_transaction"
           connected_to: "apb_master.monitored_ap"
         - name: "axi_master1_ap"
           trans_type: "axi_m_transaction"
@@ -48,6 +50,19 @@ uvmf:
         - name: "spi_slave_ap"
           trans_type: "spi_s_transaction"
           connected_to: "spi_slave.monitored_ap"
+      #  - name: "block_1_ap1"
+      #    trans_type: "apb_m_transaction"
+      #    connected_to: "apb_master.monitored_ap"
+      #  - name: "block_1_ap2"
+      #    trans_type: "axi_m_transaction"
+      #    connected_to: "axi_master1.monitored_ap"
+      #  - name: "block_1_ap3"
+      #    trans_type: "axi_m_transaction"
+      #    connected_to: "axi_master2.monitored_ap"
+      #  - name: "block_2_ap1"
+      #    trans_type: "spi_s_transaction"
+      #    connected_to: "spi_slave.monitored_ap"
+        
       tlm_connections: 
         - driver:   "spi_slave.monitored_ap"
           receiver: "block_1_sb.spi_ae"
@@ -59,6 +74,7 @@ uvmf:
           receiver: "block_1_pred.axi_2_ae"
         - driver:   "block_1_pred.pre_to_sco_ap"
           receiver: "block_1_sb.sco_from_pre_ae"
+
       config_vars :
         - name: "has_scoreboard"
           type : "bit"      

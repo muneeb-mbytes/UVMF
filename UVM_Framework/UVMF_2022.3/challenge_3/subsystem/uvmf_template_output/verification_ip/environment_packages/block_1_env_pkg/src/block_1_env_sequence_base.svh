@@ -39,7 +39,7 @@ class block_1_env_sequence_base #(
     // configuration.spi_slave_config.sequencer
 
 
-    typedef apb_random_sequence apb_master_random_sequence_t;
+    typedef apb_m_random_sequence apb_master_random_sequence_t;
     apb_master_random_sequence_t apb_master_rand_seq;
 
     typedef axi_m_random_sequence axi_master1_random_sequence_t;

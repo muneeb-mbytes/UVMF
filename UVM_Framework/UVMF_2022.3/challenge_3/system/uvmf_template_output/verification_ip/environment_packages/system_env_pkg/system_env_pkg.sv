@@ -13,6 +13,8 @@
 //     - <system_configuration.svh>
 //     - <system_environment.svh>
 //     - <system_env_sequence_base.svh>
+//     - <sys_predictor.svh>
+//     - <sys_scoreboard.svh>
 //
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
@@ -25,6 +27,11 @@ package system_env_pkg;
   import subsys_env_pkg::*;
   import block_3_env_pkg::*;
  
+  `uvm_analysis_imp_decl(_sys_apb_ae)
+  `uvm_analysis_imp_decl(_sys_axi_2_ae)
+  `uvm_analysis_imp_decl(_sys_axi_1_ae)
+  `uvm_analysis_imp_decl(_sys_axi_ae)
+  `uvm_analysis_imp_decl(_sys_sco_from_pre_ae)
 
   // pragma uvmf custom package_imports_additional begin
   // pragma uvmf custom package_imports_additional end
@@ -33,6 +40,8 @@ package system_env_pkg;
 
   `include "src/system_env_typedefs.svh"
   `include "src/system_env_configuration.svh"
+  `include "src/sys_predictor.svh"
+  `include "src/sys_scoreboard.svh"
   `include "src/system_environment.svh"
   `include "src/system_env_sequence_base.svh"
 

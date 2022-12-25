@@ -75,7 +75,7 @@ include $(UVMF_HOME)/scripts/Makefile
 
 
 # Include all requisite interface package targets for this bench
-include $(UVMF_VIP_LIBRARY_HOME)/interface_packages/apb_pkg/Makefile
+include $(UVMF_VIP_LIBRARY_HOME)/interface_packages/apb_m_pkg/Makefile
 include $(UVMF_VIP_LIBRARY_HOME)/interface_packages/axi_m_pkg/Makefile
 include $(UVMF_VIP_LIBRARY_HOME)/interface_packages/spi_s_pkg/Makefile
 
@@ -177,7 +177,7 @@ comp_hvl : comp_hvl_core
 
 
 comp_hvl_core :   \
-	 comp_apb_pkg  comp_axi_m_pkg  comp_spi_s_pkg  \
+	 comp_apb_m_pkg  comp_axi_m_pkg  comp_spi_s_pkg  \
 	comp_block_1_env_pkg \
 	comp_block_1_parameters_pkg comp_block_1_sequence_pkg comp_block_1_tests_pkg 
 
@@ -185,7 +185,7 @@ comp_uvmf_core : comp_uvm_pkg comp_uvmf_base_pkg
 
 make_build: comp_block_1_dut comp_uvmf_core comp_hvl comp_test_bench  
 
-hvl_build:  q_comp_apb_pkg  q_comp_axi_m_pkg  q_comp_spi_s_pkg  comp_block_1_env_pkg comp_block_1_sequence_pkg comp_block_1_tests_pkg hvl_comp_testbench link optimize
+hvl_build:  q_comp_apb_m_pkg  q_comp_axi_m_pkg  q_comp_spi_s_pkg  comp_block_1_env_pkg comp_block_1_sequence_pkg comp_block_1_tests_pkg hvl_comp_testbench link optimize
 
 
 vinfo_build: comp_block_1_vhdl_dut  build_hdl_vinfo build_hvl_vinfo $(VINFO_TGT)

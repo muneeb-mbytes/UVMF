@@ -45,7 +45,7 @@ class axi_m_transaction #(
   bit wready ;
   bit wlast ;
   rand bit [DATA_WIDTH-1:0] wdata ;
-  rand bit [DATA_WIDTH/8-1] wstrb ;
+  rand bit [DATA_WIDTH/8-1:0] wstrb ;
   bit [X-1:0] wid ;
   rand bit [X-1:0] wuser ;
   bit bwvalid ;

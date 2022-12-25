@@ -31,7 +31,7 @@ extends uvmf_environment_configuration_base;
   endgroup
 
 
-    typedef apb_configuration apb_master_config_t;
+    typedef apb_m_configuration apb_master_config_t;
     rand apb_master_config_t apb_master_config;
 
     typedef axi_m_configuration axi_master1_config_t;

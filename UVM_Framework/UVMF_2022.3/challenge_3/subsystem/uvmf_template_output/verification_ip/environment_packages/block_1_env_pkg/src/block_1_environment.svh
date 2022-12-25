@@ -20,13 +20,13 @@ class block_1_environment  extends uvmf_environment_base #(
 
 
 
-  uvm_analysis_port #(apb_transaction) apb_master_ap;
+  uvm_analysis_port #(apb_m_transaction) apb_master_ap;
   uvm_analysis_port #(axi_m_transaction) axi_master1_ap;
   uvm_analysis_port #(axi_m_transaction) axi_master2_ap;
   uvm_analysis_port #(spi_s_transaction) spi_slave_ap;
 
 
-  typedef apb_agent  apb_master_t;
+  typedef apb_m_agent  apb_master_t;
   apb_master_t apb_master;
 
   typedef axi_m_agent  axi_master1_t;

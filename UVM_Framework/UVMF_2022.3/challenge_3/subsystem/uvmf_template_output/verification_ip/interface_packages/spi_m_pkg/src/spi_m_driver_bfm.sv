@@ -90,16 +90,16 @@ end
   // directionality in the config file was from the point-of-view of the INITIATOR
 
   // INITIATOR mode input signals
-  tri [bit [7:0]-1:0] miso_i;
-  reg [bit [7:0]-1:0] miso_o = 'b0;
+  tri [7:0] miso_i;
+  reg [7:0] miso_o = 'b0;
 
   // INITIATOR mode output signals
   tri  sclk_i;
   reg  sclk_o = 'b0;
   tri  ss_i;
   reg  ss_o = 'b0;
-  tri [bit [7:0]-1:0] mosi_i;
-  reg [bit [7:0]-1:0] mosi_o = 'b0;
+  tri [7:0] mosi_i;
+  reg [7:0] mosi_o = 'b0;
 
   // Bi-directional signals
   
@@ -211,7 +211,7 @@ end
        //    How to assign a responder struct member, named xyz, from a signal.   
        //    All available initiator input and inout signals listed.
        //    Initiator input signals
-       //      spi_m_responder_struct.xyz = miso_i;  //    [bit [7:0]-1:0] 
+       //      spi_m_responder_struct.xyz = miso_i;  //    [7:0] 
        //    Initiator inout signals
        //    How to assign a signal from an initiator struct member named xyz.   
        //    All available initiator output and inout signals listed.
@@ -219,7 +219,7 @@ end
        //    Initiator output signals
        //      sclk_o <= spi_m_initiator_struct.xyz;  //     
        //      ss_o <= spi_m_initiator_struct.xyz;  //     
-       //      mosi_o <= spi_m_initiator_struct.xyz;  //    [bit [7:0]-1:0] 
+       //      mosi_o <= spi_m_initiator_struct.xyz;  //    [7:0] 
        //    Initiator inout signals
     // Initiate a transfer using the data received.
     @(posedge sck_i);
@@ -267,13 +267,13 @@ bit first_transfer=1;
        //    Responder input signals
        //      spi_m_responder_struct.xyz = sclk_i;  //     
        //      spi_m_responder_struct.xyz = ss_i;  //     
-       //      spi_m_responder_struct.xyz = mosi_i;  //    [bit [7:0]-1:0] 
+       //      spi_m_responder_struct.xyz = mosi_i;  //    [7:0] 
        //    Responder inout signals
        //    How to assign a signal, named xyz, from an initiator struct member.   
        //    All available responder output and inout signals listed.
        //    Notice the _o.  Those are storage variables that allow for procedural assignment.
        //    Responder output signals
-       //      miso_o <= spi_m_initiator_struct.xyz;  //    [bit [7:0]-1:0] 
+       //      miso_o <= spi_m_initiator_struct.xyz;  //    [7:0] 
        //    Responder inout signals
     
   @(posedge sck_i);
