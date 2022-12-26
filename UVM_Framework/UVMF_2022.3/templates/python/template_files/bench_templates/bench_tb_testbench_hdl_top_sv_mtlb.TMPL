@@ -1,3 +1,6 @@
+`ifndef {{name|upper}}_INCLUDED_
+`define {{name|upper}}_INCLUDED_
+
 {% set fname = "{{bench_location}}/{{name}}/tb/testbench/hdl_top_mtlb.sv" %}
 {% set conditional = "mtlbReady" %}
 {% extends "base_template.TMPL" %}
@@ -145,8 +148,8 @@ import uvmf_base_pkg_hdl::*;
   end
 
 endmodule
-
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
+`endif
 
 {% endblock %}

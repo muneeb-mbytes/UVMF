@@ -1,3 +1,6 @@
+`ifndef {{name|upper}}_INCLUDED_
+`define {{name|upper}}_INCLUDED_
+
 {% set fname = "{{bench_location}}/{{name}}/tb/tests/{{name}}_tests_pkg.sv" %}
 {% extends "base_template.TMPL" %}
 
@@ -64,8 +67,8 @@ package {{name}}_tests_pkg;
   // pragma uvmf custom package_item_additional end
 
 endpackage
-
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
+`endif
 
 {% endblock %}

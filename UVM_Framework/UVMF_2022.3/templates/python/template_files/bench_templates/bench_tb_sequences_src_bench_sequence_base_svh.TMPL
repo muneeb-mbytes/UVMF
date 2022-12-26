@@ -1,3 +1,6 @@
+`ifndef {{name|upper}}_INCLUDED_
+`define {{name|upper}}_INCLUDED_
+
 {% set fname = "{{bench_location}}/{{name}}/tb/sequences/{{src_dir}}{{name}}_bench_sequence_base.svh" %}
 {% extends "base_template.TMPL" %}
 
@@ -214,5 +217,5 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

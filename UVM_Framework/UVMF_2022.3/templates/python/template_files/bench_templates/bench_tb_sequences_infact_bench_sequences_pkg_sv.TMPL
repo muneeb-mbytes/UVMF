@@ -1,3 +1,6 @@
+`ifndef {{name|upper}}_INCLUDED_
+`define {{name|upper}}_INCLUDED_
+
 {% set fname = "{{bench_location}}/{{name}}/tb/sequences/{{name}}_infact_sequences_pkg.sv" %}
 {% set conditional = "infact_enabled" %}
 {% extends "base_template.TMPL" %}
@@ -67,7 +70,7 @@ package {{name}}_infact_sequences_pkg;
   // pragma uvmf custom package_item_additional end
 
 endpackage
-
+`endif
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
 
