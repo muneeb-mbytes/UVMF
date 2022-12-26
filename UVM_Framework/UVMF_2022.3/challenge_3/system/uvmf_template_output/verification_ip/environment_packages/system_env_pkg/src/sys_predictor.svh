@@ -20,7 +20,7 @@
 //   This analysis component has the following analysis_ports that can broadcast 
 //   the listed transaction type.
 //
-//  sys_pre_to_sco_ap broadcasts transactions of type block_3_scoreboard
+//  sys_pre_to_sco_ap broadcasts transactions of type block_3_environment
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
 //
@@ -57,13 +57,13 @@ class sys_predictor #(
 
   
   // Instantiate the analysis ports
-  uvm_analysis_port #(block_3_scoreboard) sys_pre_to_sco_ap;
+  uvm_analysis_port #(block_3_environment) sys_pre_to_sco_ap;
 
 
   // Transaction variable for predicted values to be sent out sys_pre_to_sco_ap
   // Once a transaction is sent through an analysis_port, another transaction should
   // be constructed for the next predicted transaction. 
-  typedef block_3_scoreboard sys_pre_to_sco_ap_output_transaction_t;
+  typedef block_3_environment sys_pre_to_sco_ap_output_transaction_t;
   sys_pre_to_sco_ap_output_transaction_t sys_pre_to_sco_ap_output_transaction;
   // Code for sending output transaction out through sys_pre_to_sco_ap
   // sys_pre_to_sco_ap.write(sys_pre_to_sco_ap_output_transaction);

@@ -10,7 +10,19 @@ uvmf:
         parameters: []
         type: subsys_scoreboard
       analysis_exports: []
-      analysis_ports: []
+      analysis_ports:
+      - connected_to: b1.apb_master_ap
+        name: block_1_ap1
+        trans_type: block_1_environment
+      - connected_to: b1.axi_master1_ap
+        name: block_1_ap2
+        trans_type: block_1_environment
+      - connected_to: b1.axi_master2_ap
+        name: block_1_ap3
+        trans_type: block_1_environment
+      - connected_to: b2.wb_slave_ap
+        name: block_2_ap1
+        trans_type: block_2_environment
       config_constraints: []
       config_vars:
       - comment: ''

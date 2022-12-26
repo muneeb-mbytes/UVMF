@@ -10,6 +10,6 @@ uvmf:
         type: subsys_environment
       analysis_ports:
       - name: sys_pre_to_sco_ap
-        type: block_3_scoreboard
+        type: block_3_environment
       existing_library_component: 'True'
       type: predictor
