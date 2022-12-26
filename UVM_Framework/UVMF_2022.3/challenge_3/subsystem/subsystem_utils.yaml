@@ -3,22 +3,22 @@ uvmf:
     subsys_predictor:
       analysis_exports:
         - name: "subsys_apb_ae"
-          type: "block_1_environment"
+          type: "apb_m_transaction"
         - name: "subsys_axi_1_ae"
-          type: "block_1_environment"
+          type: "axi_m_transaction"
         - name: "subsys_axi_2_ae"
-          type: "block_1_environment"
+          type: "axi_m_transaction"
       analysis_ports:
         - name: "subsys_pre_to_sco_ap"
-          type: "block_2_environment"
+          type: "wb_s_transaction"
       existing_library_component: 'True'
       type: predictor
     subsys_scoreboard:
       analysis_exports: 
         - name: "subsys_wb_ae"
-          type: "block_2_environment"
+          type: "wb_s_transaction"
         - name: "subsys_sco_from_pre_ae"
-          type: "block_2_environment"
+          type: "wb_s_transaction"
       type: scoreboard
 
 

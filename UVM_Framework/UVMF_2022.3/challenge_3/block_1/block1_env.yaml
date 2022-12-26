@@ -21,12 +21,15 @@ uvmf:
         - name: "apb_master" 
           type: "apb_m"
           initiator_responder: "INITIATOR"
+
         - name: "axi_master1"
           type: "axi_m"
           initiator_responder: "INITIATOR"
+
         - name: "axi_master2"
           type: "axi_m"
           initiator_responder: "INITIATOR"
+
         - name: "spi_slave"
           type: "spi_s"
           initiator_responder: "RESPONDER"
