@@ -1,3 +1,5 @@
+`ifndef {{name|upper}}_ENV_SCOREBOARD
+`define {{name|upper}}_ENV_SCOREBOARD
 {% set fname = "{{bench_location}}/{{name}}/tb/sequences/{{name}}_infact_sequences_pkg.sv" %}
 {% set conditional = "infact_enabled" %}
 {% extends "base_template.TMPL" %}
@@ -70,5 +72,5 @@ endpackage
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

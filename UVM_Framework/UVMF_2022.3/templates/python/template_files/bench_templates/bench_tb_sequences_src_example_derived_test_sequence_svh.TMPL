@@ -1,3 +1,5 @@
+`ifndef {{name|upper}}_ENV_SCOREBOARD
+`define {{name|upper}}_ENV_SCOREBOARD
 {% set fname = "{{bench_location}}/{{name}}/tb/sequences/{{src_dir}}example_derived_test_sequence.svh" %}
 {% extends "base_template.TMPL" %}
 
@@ -26,5 +28,5 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}
