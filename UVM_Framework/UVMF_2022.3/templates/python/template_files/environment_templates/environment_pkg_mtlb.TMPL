@@ -1,5 +1,5 @@
-`ifndif {{name}|upper}_included_
-`define {{name}|upper}_included_
+`ifndef {{name|upper}}_INCLUDED_
+`define {{name|upper}}_INCLUDED_
 {% set fname = "{{vip_location}}/{{environment_location}}/{{name}}_env_pkg/{{name}}_env_pkg_mtlb.sv" %}
 {% set conditional = "mtlbReady" %}
 {% extends "base_template.TMPL" %}
