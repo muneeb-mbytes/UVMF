@@ -1,3 +1,6 @@
+`ifndef {{name|upper}}_INCLUDED_
+`define {{name|upper}}_INCLUDED_
+
 {% set fname = "{{bench_location}}/{{name}}/tb/tests/{{src_dir}}test_top.svh" %}
 {% extends "base_template.TMPL" %}
 
@@ -138,4 +141,5 @@ endclass
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
 
+`endif
 {% endblock %}
