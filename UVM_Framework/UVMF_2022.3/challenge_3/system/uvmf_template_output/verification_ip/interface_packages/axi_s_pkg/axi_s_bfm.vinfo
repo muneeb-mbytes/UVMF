@@ -1,6 +1,0 @@
-@use $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg_hdl.vinfo
-@use axi_s_pkg_hdl.vinfo
-+incdir+@vinfodir
-src/axi_s_if.sv
-src/axi_s_driver_bfm.sv
-src/axi_s_monitor_bfm.sv
