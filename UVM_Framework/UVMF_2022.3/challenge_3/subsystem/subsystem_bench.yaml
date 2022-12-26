@@ -6,8 +6,17 @@ uvmf:
       clock_half_period: "5ns"
       reset_assertion_level: "True"
       reset_duration: "200ns"
-      active_passive: 
+      
+      active_passive:
+        - bfm_name: "b1_apb_master"
+          value: "ACTIVE"
+        - bfm_name: "b1_axi_master1"
+          value: "ACTIVE"
+        - bfm_name: "b1_axi_master2"
+          value: "ACTIVE"
         - bfm_name: "b1_spi_slave"
           value: "PASSIVE"
         - bfm_name: "b2_spi_master"
           value: "PASSIVE"
+        - bfm_name: "b2_wb_slave"
+          value: "ACTIVE"
