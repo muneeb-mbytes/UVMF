@@ -1,3 +1,0 @@
-needs:
-  - spi_s_hvl.compile
-  - spi_s_hdl.compile

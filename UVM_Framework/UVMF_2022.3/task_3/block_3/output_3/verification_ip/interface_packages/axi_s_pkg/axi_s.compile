@@ -1,3 +1,0 @@
-needs:
-  - axi_s_hvl.compile
-  - axi_s_hdl.compile

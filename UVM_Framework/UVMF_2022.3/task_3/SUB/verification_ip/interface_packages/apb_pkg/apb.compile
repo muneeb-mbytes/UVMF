@@ -1,3 +1,0 @@
-needs:
-  - apb_hvl.compile
-  - apb_hdl.compile

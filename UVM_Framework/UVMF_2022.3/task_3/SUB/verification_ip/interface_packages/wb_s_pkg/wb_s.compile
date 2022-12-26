@@ -1,3 +1,0 @@
-needs:
-  - wb_s_hvl.compile
-  - wb_s_hdl.compile
