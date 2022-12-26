@@ -1,3 +1,4 @@
+`ifndef {{name|upper}}_ENVIRONMENT_OKG_VINFO.TMPL
 {% set fname = "{{vip_location}}/{{environment_location}}/{{name}}_env_pkg/{{name}}_env_pkg.vinfo" %}
 {% block description %}
 {% endblock %}
@@ -14,4 +15,5 @@ registers/{{regModel.regModelPkg}}.sv
 {% endfor %}
 +incdir+@vinfodir
 {{name}}_env_pkg.sv
+`endif
 {% endblock %}

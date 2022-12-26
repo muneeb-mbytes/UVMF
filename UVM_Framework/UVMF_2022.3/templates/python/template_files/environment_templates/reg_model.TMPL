@@ -1,3 +1,5 @@
+`ifndef {{name|upper}}_ENV_REG
+`define {{name|upper}}_ENV_REG
 {% set fname = "{{vip_location}}/{{environment_location}}/{{env_name}}_env_pkg/registers/{{regModelPkg}}.sv" %}
 {% set conditional = "reg_model" %}
 {% extends "base_template.TMPL" %}
@@ -203,5 +205,5 @@ endpackage
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

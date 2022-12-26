@@ -1,3 +1,5 @@
+`ifndef {{name|upper}}_ENV_TYPEDEFS
+`define {{name|upper}}_ENV_TYPEDEFS
 {% set fname = "{{vip_location}}/{{environment_location}}/{{name}}_env_pkg/{{src_dir}}{{name}}_env_typedefs.svh" %}
 {% extends "base_template.TMPL" %}
 
@@ -20,6 +22,6 @@ typedef {{types.type}} {{types.name}};
 
   // pragma uvmf custom additional begin
   // pragma uvmf custom additional end
-
+`endif
 {% endblock %}
 ~                
