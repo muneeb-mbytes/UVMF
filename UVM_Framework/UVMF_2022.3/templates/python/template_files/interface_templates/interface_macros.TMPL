@@ -1,3 +1,5 @@
+`ifndef {{name|upper}}_MACROS
+`define {{name|upper}}_MACROS
 {% set fname = "{{vip_location}}/{{interface_location}}/{{name}}_pkg/{{src_dir}}{{name}}_macros.svh" %}
 {% extends "base_template.TMPL" %}
 
@@ -147,4 +149,5 @@ typedef struct packed  { \
 {% endif %}
 // pragma uvmf custom additional begin
 // pragma uvmf custom additional end
+`endif
 {% endblock %}

@@ -1,3 +1,5 @@
+`ifndef {{name|upper}}_PKG_HDL 
+`define {{name|upper}}_PKG_HDL
 {% set fname = "{{vip_location}}/{{interface_location}}/{{name}}_pkg/{{name}}_pkg_hdl.sv" %}
 {% extends "base_template.TMPL" %}
 
@@ -37,5 +39,5 @@ endpackage
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}
