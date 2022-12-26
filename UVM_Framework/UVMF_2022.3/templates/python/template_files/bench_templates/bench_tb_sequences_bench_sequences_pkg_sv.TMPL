@@ -1,3 +1,7 @@
+`ifndef {{name|upper}}_TB_SEQUENCES_BENCH_SEQUENCES_PKG_SV
+`define {{name|upper}}_TB_SEQUENCES_BENCH_SEQUENCES_PKG_SV
+
+
 {% set fname = "{{bench_location}}/{{name}}/tb/sequences/{{name}}_sequences_pkg.sv" %}
 {% extends "base_template.TMPL" %}
 
@@ -65,5 +69,5 @@ endpackage
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

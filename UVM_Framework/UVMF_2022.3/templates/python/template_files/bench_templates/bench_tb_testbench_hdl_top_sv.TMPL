@@ -1,3 +1,5 @@
+`ifndef {{name|upper}}_TB_TESTBENCH_HDL_TOP_SV
+`define {{name|upper}}_TB_TESTBENCH_HDL_TOP_SV
 {% set fname = "{{bench_location}}/{{name}}/tb/testbench/hdl_top.sv" %}
 {% extends "base_template.TMPL" %}
 
@@ -139,5 +141,5 @@ endmodule
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

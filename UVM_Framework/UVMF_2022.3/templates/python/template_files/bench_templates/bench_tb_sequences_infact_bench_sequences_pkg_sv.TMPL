@@ -1,3 +1,9 @@
+`ifndef {{name|upper}}_TB_SEQUENCES_INFACT_BENCH_SEQUENCES_PKG_SV
+`define {{name|upper}}_TB_SEQUENCES_INFACT_BENCH_SEQUENCES_PKG_SV
+
+
+`def {{name|upper}}_TB_SEQUENCES_BENCH_SEQUENCES_PKG_SV_MTLB
+
 {% set fname = "{{bench_location}}/{{name}}/tb/sequences/{{name}}_infact_sequences_pkg.sv" %}
 {% set conditional = "infact_enabled" %}
 {% extends "base_template.TMPL" %}
@@ -70,5 +76,5 @@ endpackage
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}
