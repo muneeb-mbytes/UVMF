@@ -72,6 +72,7 @@ import uvmf_base_pkg_hdl::*;
   spi_m_monitor_bfm  spi_master_mon_bfm(spi_master_bus.monitor_port);
   wb_s_monitor_bfm  wb_slave_mon_bfm(wb_slave_bus.monitor_port);
   spi_m_driver_bfm  spi_master_drv_bfm(spi_master_bus.initiator_port);
+  wb_s_driver_bfm  wb_slave_drv_bfm(wb_slave_bus.responder_port);
 
   // pragma uvmf custom dut_instantiation begin
   // UVMF_CHANGE_ME : Add DUT and connect to signals in _bus interfaces listed above
@@ -90,6 +91,7 @@ import uvmf_base_pkg_hdl::*;
     uvm_config_db #( virtual spi_m_monitor_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , spi_master_BFM , spi_master_mon_bfm ); 
     uvm_config_db #( virtual wb_s_monitor_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , wb_slave_BFM , wb_slave_mon_bfm ); 
     uvm_config_db #( virtual spi_m_driver_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , spi_master_BFM , spi_master_drv_bfm  );
+    uvm_config_db #( virtual wb_s_driver_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , wb_slave_BFM , wb_slave_drv_bfm  );
   end
 
 endmodule

@@ -39,7 +39,7 @@ uvmf_active_passive_t interface_activities[] = {
     ACTIVE /* apb_master     [0] */ , 
     ACTIVE /* axi_master1     [1] */ , 
     ACTIVE /* axi_master2     [2] */ , 
-    PASSIVE /* spi_slave     [3] */   };
+    ACTIVE /* spi_slave     [3] */   };
 
   // pragma uvmf custom class_item_additional begin
   // pragma uvmf custom class_item_additional end

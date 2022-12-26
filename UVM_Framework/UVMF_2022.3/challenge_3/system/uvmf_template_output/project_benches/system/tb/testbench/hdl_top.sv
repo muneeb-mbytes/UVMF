@@ -110,10 +110,6 @@ import uvmf_base_pkg_hdl::*;
   apb_m_driver_bfm  s1_b1_apb_master_drv_bfm(s1_b1_apb_master_bus.initiator_port);
   axi_m_driver_bfm  s1_b1_axi_master1_drv_bfm(s1_b1_axi_master1_bus.initiator_port);
   axi_m_driver_bfm  s1_b1_axi_master2_drv_bfm(s1_b1_axi_master2_bus.initiator_port);
-  spi_s_driver_bfm  s1_b1_spi_slave_drv_bfm(s1_b1_spi_slave_bus.responder_port);
-  spi_m_driver_bfm  s1_b2_spi_master_drv_bfm(s1_b2_spi_master_bus.initiator_port);
-  wb_s_driver_bfm  s1_b2_wb_slave_drv_bfm(s1_b2_wb_slave_bus.responder_port);
-  wb_m_driver_bfm  b3_wb_master_drv_bfm(b3_wb_master_bus.initiator_port);
   axi_s_driver_bfm  b3_axi_slave_drv_bfm(b3_axi_slave_bus.responder_port);
 
   // pragma uvmf custom dut_instantiation begin
@@ -141,10 +137,6 @@ import uvmf_base_pkg_hdl::*;
     uvm_config_db #( virtual apb_m_driver_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , s1_b1_apb_master_BFM , s1_b1_apb_master_drv_bfm  );
     uvm_config_db #( virtual axi_m_driver_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , s1_b1_axi_master1_BFM , s1_b1_axi_master1_drv_bfm  );
     uvm_config_db #( virtual axi_m_driver_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , s1_b1_axi_master2_BFM , s1_b1_axi_master2_drv_bfm  );
-    uvm_config_db #( virtual spi_s_driver_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , s1_b1_spi_slave_BFM , s1_b1_spi_slave_drv_bfm  );
-    uvm_config_db #( virtual spi_m_driver_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , s1_b2_spi_master_BFM , s1_b2_spi_master_drv_bfm  );
-    uvm_config_db #( virtual wb_s_driver_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , s1_b2_wb_slave_BFM , s1_b2_wb_slave_drv_bfm  );
-    uvm_config_db #( virtual wb_m_driver_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , b3_wb_master_BFM , b3_wb_master_drv_bfm  );
     uvm_config_db #( virtual axi_s_driver_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , b3_axi_slave_BFM , b3_axi_slave_drv_bfm  );
   end
 

@@ -9,13 +9,13 @@ uvmf:
       - bfm_name: s1_b1_axi_master2
         value: ACTIVE
       - bfm_name: s1_b1_spi_slave
-        value: ACTIVE
+        value: PASSIVE
       - bfm_name: s1_b2_spi_master
-        value: ACTIVE
+        value: PASSIVE
       - bfm_name: s1_b2_wb_slave
-        value: ACTIVE
+        value: PASSIVE
       - bfm_name: b3_wb_master
-        value: ACTIVE
+        value: PASSIVE
       - bfm_name: b3_axi_slave
         value: ACTIVE
       active_passive_default: ACTIVE

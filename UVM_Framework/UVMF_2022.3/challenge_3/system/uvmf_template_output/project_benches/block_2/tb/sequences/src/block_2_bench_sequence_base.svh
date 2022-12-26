@@ -36,11 +36,15 @@ rand block_2_env_sequence_base_t block_2_env_seq;
   // Instantiate sequences here
   typedef spi_m_random_sequence  spi_master_random_seq_t;
   spi_master_random_seq_t spi_master_random_seq;
+  typedef wb_s_responder_sequence  wb_slave_responder_seq_t;
+  wb_slave_responder_seq_t wb_slave_responder_seq;
   // pragma uvmf custom sequences end
 
   // Sequencer handles for each active interface in the environment
   typedef spi_m_transaction  spi_master_transaction_t;
   uvm_sequencer #(spi_master_transaction_t)  spi_master_sequencer; 
+  typedef wb_s_transaction  wb_slave_transaction_t;
+  uvm_sequencer #(wb_slave_transaction_t)  wb_slave_sequencer; 
 
 
   // Top level environment configuration handle
@@ -72,6 +76,7 @@ rand block_2_env_sequence_base_t block_2_env_seq;
 
     // Assign the sequencer handles from the handles within agent configurations
     spi_master_sequencer = spi_master_config.get_sequencer();
+    wb_slave_sequencer = wb_slave_config.get_sequencer();
 
 
 
@@ -89,12 +94,14 @@ rand block_2_env_sequence_base_t block_2_env_seq;
     block_2_env_seq = block_2_env_sequence_base_t::type_id::create("block_2_env_seq");
 
     spi_master_random_seq     = spi_master_random_seq_t::type_id::create("spi_master_random_seq");
+    wb_slave_responder_seq  = wb_slave_responder_seq_t::type_id::create("wb_slave_responder_seq");
     fork
       spi_master_config.wait_for_reset();
       wb_slave_config.wait_for_reset();
     join
     // Start RESPONDER sequences here
     fork
+      wb_slave_responder_seq.start(wb_slave_sequencer);
     join_none
     // Start INITIATOR sequences here
     fork

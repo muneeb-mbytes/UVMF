@@ -1,0 +1,12 @@
+uvmf:
+  benches:
+    "block_2" :
+      top_env: "block_2"
+      clock_half_period: "5ns"
+      reset_assertion_level: "True"
+      reset_duration: "200ns"
+      active_passive: 
+        - bfm_name: "spi_master" 
+          value: "ACTIVE"
+        - bfm_name: "wb_slave" 
+          value: "ACTIVE"

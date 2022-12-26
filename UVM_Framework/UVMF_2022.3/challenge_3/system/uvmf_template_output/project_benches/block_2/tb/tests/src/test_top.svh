@@ -35,7 +35,7 @@ class test_top extends uvmf_test_base #(.CONFIG_T(block_2_env_configuration_t),
 
 uvmf_active_passive_t interface_activities[] = { 
     ACTIVE /* spi_master     [0] */ , 
-    PASSIVE /* wb_slave     [1] */   };
+    ACTIVE /* wb_slave     [1] */   };
 
   // pragma uvmf custom class_item_additional begin
   // pragma uvmf custom class_item_additional end

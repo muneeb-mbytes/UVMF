@@ -86,6 +86,7 @@ import uvmf_base_pkg_hdl::*;
   apb_m_driver_bfm  apb_master_drv_bfm(apb_master_bus.initiator_port);
   axi_m_driver_bfm  axi_master1_drv_bfm(axi_master1_bus.initiator_port);
   axi_m_driver_bfm  axi_master2_drv_bfm(axi_master2_bus.initiator_port);
+  spi_s_driver_bfm  spi_slave_drv_bfm(spi_slave_bus.responder_port);
 
   // pragma uvmf custom dut_instantiation begin
   // UVMF_CHANGE_ME : Add DUT and connect to signals in _bus interfaces listed above
@@ -108,6 +109,7 @@ import uvmf_base_pkg_hdl::*;
     uvm_config_db #( virtual apb_m_driver_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , apb_master_BFM , apb_master_drv_bfm  );
     uvm_config_db #( virtual axi_m_driver_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , axi_master1_BFM , axi_master1_drv_bfm  );
     uvm_config_db #( virtual axi_m_driver_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , axi_master2_BFM , axi_master2_drv_bfm  );
+    uvm_config_db #( virtual spi_s_driver_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , spi_slave_BFM , spi_slave_drv_bfm  );
   end
 
 endmodule

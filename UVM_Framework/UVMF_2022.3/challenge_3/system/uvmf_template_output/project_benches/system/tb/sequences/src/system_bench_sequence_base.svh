@@ -40,14 +40,6 @@ rand system_env_sequence_base_t system_env_seq;
   s1_b1_axi_master1_random_seq_t s1_b1_axi_master1_random_seq;
   typedef axi_m_random_sequence  s1_b1_axi_master2_random_seq_t;
   s1_b1_axi_master2_random_seq_t s1_b1_axi_master2_random_seq;
-  typedef spi_s_responder_sequence  s1_b1_spi_slave_responder_seq_t;
-  s1_b1_spi_slave_responder_seq_t s1_b1_spi_slave_responder_seq;
-  typedef spi_m_random_sequence  s1_b2_spi_master_random_seq_t;
-  s1_b2_spi_master_random_seq_t s1_b2_spi_master_random_seq;
-  typedef wb_s_responder_sequence  s1_b2_wb_slave_responder_seq_t;
-  s1_b2_wb_slave_responder_seq_t s1_b2_wb_slave_responder_seq;
-  typedef wb_m_random_sequence  b3_wb_master_random_seq_t;
-  b3_wb_master_random_seq_t b3_wb_master_random_seq;
   typedef axi_s_responder_sequence  b3_axi_slave_responder_seq_t;
   b3_axi_slave_responder_seq_t b3_axi_slave_responder_seq;
   // pragma uvmf custom sequences end
@@ -59,14 +51,6 @@ rand system_env_sequence_base_t system_env_seq;
   uvm_sequencer #(s1_b1_axi_master1_transaction_t)  s1_b1_axi_master1_sequencer; 
   typedef axi_m_transaction  s1_b1_axi_master2_transaction_t;
   uvm_sequencer #(s1_b1_axi_master2_transaction_t)  s1_b1_axi_master2_sequencer; 
-  typedef spi_s_transaction  s1_b1_spi_slave_transaction_t;
-  uvm_sequencer #(s1_b1_spi_slave_transaction_t)  s1_b1_spi_slave_sequencer; 
-  typedef spi_m_transaction  s1_b2_spi_master_transaction_t;
-  uvm_sequencer #(s1_b2_spi_master_transaction_t)  s1_b2_spi_master_sequencer; 
-  typedef wb_s_transaction  s1_b2_wb_slave_transaction_t;
-  uvm_sequencer #(s1_b2_wb_slave_transaction_t)  s1_b2_wb_slave_sequencer; 
-  typedef wb_m_transaction  b3_wb_master_transaction_t;
-  uvm_sequencer #(b3_wb_master_transaction_t)  b3_wb_master_sequencer; 
   typedef axi_s_transaction  b3_axi_slave_transaction_t;
   uvm_sequencer #(b3_axi_slave_transaction_t)  b3_axi_slave_sequencer; 
 
@@ -120,10 +104,6 @@ rand system_env_sequence_base_t system_env_seq;
     s1_b1_apb_master_sequencer = s1_b1_apb_master_config.get_sequencer();
     s1_b1_axi_master1_sequencer = s1_b1_axi_master1_config.get_sequencer();
     s1_b1_axi_master2_sequencer = s1_b1_axi_master2_config.get_sequencer();
-    s1_b1_spi_slave_sequencer = s1_b1_spi_slave_config.get_sequencer();
-    s1_b2_spi_master_sequencer = s1_b2_spi_master_config.get_sequencer();
-    s1_b2_wb_slave_sequencer = s1_b2_wb_slave_config.get_sequencer();
-    b3_wb_master_sequencer = b3_wb_master_config.get_sequencer();
     b3_axi_slave_sequencer = b3_axi_slave_config.get_sequencer();
 
 
@@ -144,10 +124,6 @@ rand system_env_sequence_base_t system_env_seq;
     s1_b1_apb_master_random_seq     = s1_b1_apb_master_random_seq_t::type_id::create("s1_b1_apb_master_random_seq");
     s1_b1_axi_master1_random_seq     = s1_b1_axi_master1_random_seq_t::type_id::create("s1_b1_axi_master1_random_seq");
     s1_b1_axi_master2_random_seq     = s1_b1_axi_master2_random_seq_t::type_id::create("s1_b1_axi_master2_random_seq");
-    s1_b1_spi_slave_responder_seq  = s1_b1_spi_slave_responder_seq_t::type_id::create("s1_b1_spi_slave_responder_seq");
-    s1_b2_spi_master_random_seq     = s1_b2_spi_master_random_seq_t::type_id::create("s1_b2_spi_master_random_seq");
-    s1_b2_wb_slave_responder_seq  = s1_b2_wb_slave_responder_seq_t::type_id::create("s1_b2_wb_slave_responder_seq");
-    b3_wb_master_random_seq     = b3_wb_master_random_seq_t::type_id::create("b3_wb_master_random_seq");
     b3_axi_slave_responder_seq  = b3_axi_slave_responder_seq_t::type_id::create("b3_axi_slave_responder_seq");
     fork
       s1_b1_apb_master_config.wait_for_reset();
@@ -161,8 +137,6 @@ rand system_env_sequence_base_t system_env_seq;
     join
     // Start RESPONDER sequences here
     fork
-      s1_b1_spi_slave_responder_seq.start(s1_b1_spi_slave_sequencer);
-      s1_b2_wb_slave_responder_seq.start(s1_b2_wb_slave_sequencer);
       b3_axi_slave_responder_seq.start(b3_axi_slave_sequencer);
     join_none
     // Start INITIATOR sequences here
@@ -170,8 +144,6 @@ rand system_env_sequence_base_t system_env_seq;
       repeat (25) s1_b1_apb_master_random_seq.start(s1_b1_apb_master_sequencer);
       repeat (25) s1_b1_axi_master1_random_seq.start(s1_b1_axi_master1_sequencer);
       repeat (25) s1_b1_axi_master2_random_seq.start(s1_b1_axi_master2_sequencer);
-      repeat (25) s1_b2_spi_master_random_seq.start(s1_b2_spi_master_sequencer);
-      repeat (25) b3_wb_master_random_seq.start(b3_wb_master_sequencer);
     join
 
 system_env_seq.start(top_configuration.vsqr);

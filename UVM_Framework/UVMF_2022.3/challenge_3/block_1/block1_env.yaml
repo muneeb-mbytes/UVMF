@@ -1,20 +1,4 @@
 uvmf:
-  benches:
-    "block_1" :
-      ## Specify the top-level block
-      top_env: "block_1"
-      clock_half_period: "5ns"
-      reset_assertion_level: "True"
-      reset_duration: "200ns"
-      active_passive: 
-        - bfm_name: "apb_master" 
-          value: "ACTIVE"
-        - bfm_name: "axi_master1" 
-          value: "ACTIVE"
-        - bfm_name: "axi_master2" 
-          value: "ACTIVE"
-        - bfm_name: "spi_slave" 
-          value: "PASSIVE"
   environments:
     "block_1" :
       agents :
@@ -53,24 +37,13 @@ uvmf:
         - name: "spi_slave_ap"
           trans_type: "spi_s_transaction"
           connected_to: "spi_slave.monitored_ap"
-      #  - name: "block_1_ap1"
-      #    trans_type: "apb_m_transaction"
-      #    connected_to: "apb_master.monitored_ap"
-      #  - name: "block_1_ap2"
-      #    trans_type: "axi_m_transaction"
-      #    connected_to: "axi_master1.monitored_ap"
-      #  - name: "block_1_ap3"
-      #    trans_type: "axi_m_transaction"
-      #    connected_to: "axi_master2.monitored_ap"
-      #  - name: "block_2_ap1"
-      #    trans_type: "spi_s_transaction"
-      #    connected_to: "spi_slave.monitored_ap"
         
       tlm_connections: 
         - driver:   "spi_slave.monitored_ap"
           receiver: "block_1_sb.spi_ae"
         - driver:   "apb_master.monitored_ap"
           receiver: "block_1_pred.apb_ae"
+        
         - driver:   "axi_master1.monitored_ap"
           receiver: "block_1_pred.axi_1_ae"
         - driver:   "axi_master2.monitored_ap"

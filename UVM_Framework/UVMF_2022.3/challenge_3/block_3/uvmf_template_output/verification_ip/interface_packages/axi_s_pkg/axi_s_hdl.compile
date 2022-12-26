@@ -1,9 +1,0 @@
-needs:
-  - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg_hdl.compile
-  - ./axi_s_common.compile
-incdir:
-  - .
-src:
-  - src/axi_s_if.sv
-  - src/axi_s_monitor_bfm.sv
-  - src/axi_s_driver_bfm.sv

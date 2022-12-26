@@ -1,9 +1,0 @@
-needs:
-  - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg_hdl.compile
-  - ./apb_m_common.compile
-incdir:
-  - .
-src:
-  - src/apb_m_if.sv
-  - src/apb_m_monitor_bfm.sv
-  - src/apb_m_driver_bfm.sv

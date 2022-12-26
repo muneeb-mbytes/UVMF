@@ -5,7 +5,7 @@ uvmf:
       - bfm_name: spi_master
         value: ACTIVE
       - bfm_name: wb_slave
-        value: PASSIVE
+        value: ACTIVE
       active_passive_default: ACTIVE
       clock_half_period: 5ns
       clock_phase_offset: 9ns

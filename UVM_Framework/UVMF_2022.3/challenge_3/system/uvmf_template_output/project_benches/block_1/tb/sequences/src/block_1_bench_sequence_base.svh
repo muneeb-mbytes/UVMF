@@ -40,6 +40,8 @@ rand block_1_env_sequence_base_t block_1_env_seq;
   axi_master1_random_seq_t axi_master1_random_seq;
   typedef axi_m_random_sequence  axi_master2_random_seq_t;
   axi_master2_random_seq_t axi_master2_random_seq;
+  typedef spi_s_responder_sequence  spi_slave_responder_seq_t;
+  spi_slave_responder_seq_t spi_slave_responder_seq;
   // pragma uvmf custom sequences end
 
   // Sequencer handles for each active interface in the environment
@@ -49,6 +51,8 @@ rand block_1_env_sequence_base_t block_1_env_seq;
   uvm_sequencer #(axi_master1_transaction_t)  axi_master1_sequencer; 
   typedef axi_m_transaction  axi_master2_transaction_t;
   uvm_sequencer #(axi_master2_transaction_t)  axi_master2_sequencer; 
+  typedef spi_s_transaction  spi_slave_transaction_t;
+  uvm_sequencer #(spi_slave_transaction_t)  spi_slave_sequencer; 
 
 
   // Top level environment configuration handle
@@ -88,6 +92,7 @@ rand block_1_env_sequence_base_t block_1_env_seq;
     apb_master_sequencer = apb_master_config.get_sequencer();
     axi_master1_sequencer = axi_master1_config.get_sequencer();
     axi_master2_sequencer = axi_master2_config.get_sequencer();
+    spi_slave_sequencer = spi_slave_config.get_sequencer();
 
 
 
@@ -107,6 +112,7 @@ rand block_1_env_sequence_base_t block_1_env_seq;
     apb_master_random_seq     = apb_master_random_seq_t::type_id::create("apb_master_random_seq");
     axi_master1_random_seq     = axi_master1_random_seq_t::type_id::create("axi_master1_random_seq");
     axi_master2_random_seq     = axi_master2_random_seq_t::type_id::create("axi_master2_random_seq");
+    spi_slave_responder_seq  = spi_slave_responder_seq_t::type_id::create("spi_slave_responder_seq");
     fork
       apb_master_config.wait_for_reset();
       axi_master1_config.wait_for_reset();
@@ -115,6 +121,7 @@ rand block_1_env_sequence_base_t block_1_env_seq;
     join
     // Start RESPONDER sequences here
     fork
+      spi_slave_responder_seq.start(spi_slave_sequencer);
     join_none
     // Start INITIATOR sequences here
     fork
