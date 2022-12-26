@@ -1,8 +1,0 @@
-@use $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg.vinfo
-@use $UVMF_VIP_LIBRARY_HOME/interface_packages/apb_pkg/apb_pkg.vinfo
-@use $UVMF_VIP_LIBRARY_HOME/interface_packages/axi_m_pkg/axi_m_pkg.vinfo
-@use $UVMF_VIP_LIBRARY_HOME/interface_packages/spi_s_pkg/spi_s_pkg.vinfo
-@use $UVMF_VIP_LIBRARY_HOME/environment_packages/block_1_env_pkg/block_1_env_pkg.vinfo
-@use $UVMF_PROJECT_DIR/tb/parameters/block_1_parameters_pkg.vinfo
-+incdir+@vinfodir
-block_1_sequences_pkg.sv

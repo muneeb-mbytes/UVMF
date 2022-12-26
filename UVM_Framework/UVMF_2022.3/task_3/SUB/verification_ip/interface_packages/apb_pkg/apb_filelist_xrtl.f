@@ -1,3 +1,0 @@
-$UVMF_VIP_LIBRARY_HOME/interface_packages/apb_pkg/src/apb_if.sv
-$UVMF_VIP_LIBRARY_HOME/interface_packages/apb_pkg/src/apb_monitor_bfm.sv
-$UVMF_VIP_LIBRARY_HOME/interface_packages/apb_pkg/src/apb_driver_bfm.sv

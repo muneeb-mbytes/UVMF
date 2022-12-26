@@ -46,9 +46,9 @@ import uvmf_base_pkg_hdl::*;
   // Instantiate a rst driver
   // tbx clkgen
   initial begin
-    rst = 0; 
+    rst = 1; 
     #200ns;
-    rst =  1; 
+    rst =  0; 
   end
 // pragma uvmf custom reset_generator end
 
@@ -98,8 +98,6 @@ import uvmf_base_pkg_hdl::*;
   apb_m_driver_bfm  b1_apb_master_drv_bfm(b1_apb_master_bus.initiator_port);
   axi_m_driver_bfm  b1_axi_master1_drv_bfm(b1_axi_master1_bus.initiator_port);
   axi_m_driver_bfm  b1_axi_master2_drv_bfm(b1_axi_master2_bus.initiator_port);
-  spi_s_driver_bfm  b1_spi_slave_drv_bfm(b1_spi_slave_bus.responder_port);
-  spi_m_driver_bfm  b2_spi_master_drv_bfm(b2_spi_master_bus.initiator_port);
   wb_s_driver_bfm  b2_wb_slave_drv_bfm(b2_wb_slave_bus.responder_port);
 
   // pragma uvmf custom dut_instantiation begin
@@ -125,8 +123,6 @@ import uvmf_base_pkg_hdl::*;
     uvm_config_db #( virtual apb_m_driver_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , b1_apb_master_BFM , b1_apb_master_drv_bfm  );
     uvm_config_db #( virtual axi_m_driver_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , b1_axi_master1_BFM , b1_axi_master1_drv_bfm  );
     uvm_config_db #( virtual axi_m_driver_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , b1_axi_master2_BFM , b1_axi_master2_drv_bfm  );
-    uvm_config_db #( virtual spi_s_driver_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , b1_spi_slave_BFM , b1_spi_slave_drv_bfm  );
-    uvm_config_db #( virtual spi_m_driver_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , b2_spi_master_BFM , b2_spi_master_drv_bfm  );
     uvm_config_db #( virtual wb_s_driver_bfm  )::set( null , UVMF_VIRTUAL_INTERFACES , b2_wb_slave_BFM , b2_wb_slave_drv_bfm  );
   end
 

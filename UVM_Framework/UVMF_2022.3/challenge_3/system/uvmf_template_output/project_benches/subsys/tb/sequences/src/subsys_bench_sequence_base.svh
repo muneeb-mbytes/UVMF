@@ -40,10 +40,6 @@ rand subsys_env_sequence_base_t subsys_env_seq;
   b1_axi_master1_random_seq_t b1_axi_master1_random_seq;
   typedef axi_m_random_sequence  b1_axi_master2_random_seq_t;
   b1_axi_master2_random_seq_t b1_axi_master2_random_seq;
-  typedef spi_s_responder_sequence  b1_spi_slave_responder_seq_t;
-  b1_spi_slave_responder_seq_t b1_spi_slave_responder_seq;
-  typedef spi_m_random_sequence  b2_spi_master_random_seq_t;
-  b2_spi_master_random_seq_t b2_spi_master_random_seq;
   typedef wb_s_responder_sequence  b2_wb_slave_responder_seq_t;
   b2_wb_slave_responder_seq_t b2_wb_slave_responder_seq;
   // pragma uvmf custom sequences end
@@ -55,10 +51,6 @@ rand subsys_env_sequence_base_t subsys_env_seq;
   uvm_sequencer #(b1_axi_master1_transaction_t)  b1_axi_master1_sequencer; 
   typedef axi_m_transaction  b1_axi_master2_transaction_t;
   uvm_sequencer #(b1_axi_master2_transaction_t)  b1_axi_master2_sequencer; 
-  typedef spi_s_transaction  b1_spi_slave_transaction_t;
-  uvm_sequencer #(b1_spi_slave_transaction_t)  b1_spi_slave_sequencer; 
-  typedef spi_m_transaction  b2_spi_master_transaction_t;
-  uvm_sequencer #(b2_spi_master_transaction_t)  b2_spi_master_sequencer; 
   typedef wb_s_transaction  b2_wb_slave_transaction_t;
   uvm_sequencer #(b2_wb_slave_transaction_t)  b2_wb_slave_sequencer; 
 
@@ -106,8 +98,6 @@ rand subsys_env_sequence_base_t subsys_env_seq;
     b1_apb_master_sequencer = b1_apb_master_config.get_sequencer();
     b1_axi_master1_sequencer = b1_axi_master1_config.get_sequencer();
     b1_axi_master2_sequencer = b1_axi_master2_config.get_sequencer();
-    b1_spi_slave_sequencer = b1_spi_slave_config.get_sequencer();
-    b2_spi_master_sequencer = b2_spi_master_config.get_sequencer();
     b2_wb_slave_sequencer = b2_wb_slave_config.get_sequencer();
 
 
@@ -128,8 +118,6 @@ rand subsys_env_sequence_base_t subsys_env_seq;
     b1_apb_master_random_seq     = b1_apb_master_random_seq_t::type_id::create("b1_apb_master_random_seq");
     b1_axi_master1_random_seq     = b1_axi_master1_random_seq_t::type_id::create("b1_axi_master1_random_seq");
     b1_axi_master2_random_seq     = b1_axi_master2_random_seq_t::type_id::create("b1_axi_master2_random_seq");
-    b1_spi_slave_responder_seq  = b1_spi_slave_responder_seq_t::type_id::create("b1_spi_slave_responder_seq");
-    b2_spi_master_random_seq     = b2_spi_master_random_seq_t::type_id::create("b2_spi_master_random_seq");
     b2_wb_slave_responder_seq  = b2_wb_slave_responder_seq_t::type_id::create("b2_wb_slave_responder_seq");
     fork
       b1_apb_master_config.wait_for_reset();
@@ -141,7 +129,6 @@ rand subsys_env_sequence_base_t subsys_env_seq;
     join
     // Start RESPONDER sequences here
     fork
-      b1_spi_slave_responder_seq.start(b1_spi_slave_sequencer);
       b2_wb_slave_responder_seq.start(b2_wb_slave_sequencer);
     join_none
     // Start INITIATOR sequences here
@@ -149,7 +136,6 @@ rand subsys_env_sequence_base_t subsys_env_seq;
       repeat (25) b1_apb_master_random_seq.start(b1_apb_master_sequencer);
       repeat (25) b1_axi_master1_random_seq.start(b1_axi_master1_sequencer);
       repeat (25) b1_axi_master2_random_seq.start(b1_axi_master2_sequencer);
-      repeat (25) b2_spi_master_random_seq.start(b2_spi_master_sequencer);
     join
 
 subsys_env_seq.start(top_configuration.vsqr);
