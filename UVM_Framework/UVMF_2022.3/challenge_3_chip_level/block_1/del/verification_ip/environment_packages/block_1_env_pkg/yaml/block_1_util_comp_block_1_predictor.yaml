@@ -1,0 +1,15 @@
+uvmf:
+  util_components:
+    block_1_predictor:
+      analysis_exports:
+      - name: apb_master_agent_ae
+        type: apb_master_transaction
+      - name: axi_master_agent_2_ae
+        type: axi_master_transaction
+      - name: axi_master_agent_1_ae
+        type: axi_master_transaction
+      analysis_ports:
+      - name: block_1_sb_ap
+        type: spi_slave_transaction
+      existing_library_component: 'True'
+      type: predictor

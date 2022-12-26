@@ -1,0 +1,3 @@
+needs:
+  - wb_slave_hvl.compile
+  - wb_slave_hdl.compile

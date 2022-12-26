@@ -1,0 +1,60 @@
+
+uvmf:
+  interfaces:
+    spi_slave:
+      clock: "clk"
+      reset: "rst"
+      reset_assertion_level: "False"
+      veloce_ready: "False"
+
+      config_vars:
+        - name: "has_coverage"
+          type: "bit"
+          value: "1"
+
+        - name: "is_active"
+          type: "bit"
+          value: "0"
+ 
+        - name: "no_of_slaves"
+          type: "bit[3:0]"
+          value: "1"
+
+      hdl_typedefs: []
+      hvl_typedefs: []
+
+      
+      transaction_vars:
+        - name: "sck"
+          type: "bit"
+          isrand: "False"
+          iscompare: "True"
+        - name: "mosi"
+          type: "bit"
+          isrand: "True"
+          iscompare: "True"
+        - name: "miso"
+          type: "bit"
+          isrand: "False"
+          iscompare: "True"
+
+        - name: "cs"
+          type: "bit"
+          isrand: "True"
+          iscompare: "True"
+
+      ports:
+        - name: "sck"
+          dir: "output"
+          width: "1"
+        - name: "mosi"
+          dir: "output"
+          width: "1"
+        - name: "cs"
+          dir: "output"
+          width: "1"
+        - name: "miso"
+          dir: "input"
+          width: "1"
+
+

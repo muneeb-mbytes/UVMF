@@ -1,0 +1,7 @@
+needs:
+  - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg.compile
+  - ./wb_slave_common.compile
+incdir:
+  - .
+src:
+  - wb_slave_pkg.sv

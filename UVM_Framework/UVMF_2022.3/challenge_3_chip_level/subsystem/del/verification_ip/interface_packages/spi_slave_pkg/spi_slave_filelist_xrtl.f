@@ -1,0 +1,3 @@
+$UVMF_VIP_LIBRARY_HOME/interface_packages/spi_slave_pkg/src/spi_slave_if.sv
+$UVMF_VIP_LIBRARY_HOME/interface_packages/spi_slave_pkg/src/spi_slave_monitor_bfm.sv
+$UVMF_VIP_LIBRARY_HOME/interface_packages/spi_slave_pkg/src/spi_slave_driver_bfm.sv

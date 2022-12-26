@@ -1,0 +1,25 @@
+uvmf:
+  util_components:
+    sub_system_predictor:
+      type: predictor
+      analysis_ports:
+        - name: sub_sys_pred_ap
+          type: 'wb_slave_transaction'
+        #type: ''
+      analysis_exports:
+        - name: apb_master_agent_ae
+          type: 'apb_master_transaction'
+          #type: ''
+        - name: axi_master_agent_1_ae 
+          type: 'axi_master_transaction'
+          #type: ''
+        - name: axi_master_agent_2_ae 
+          type: 'axi_master_transaction'
+          #type: ''
+    sub_system_scoreboard:
+      type: scoreboard
+      analysis_exports:
+      - name: "sub_sys_sb_expected_ae"
+        type: "wb_slave_transaction"
+      - name: "sub_sys_sb_actual_ae" 
+        type: "wb_slave_transaction"

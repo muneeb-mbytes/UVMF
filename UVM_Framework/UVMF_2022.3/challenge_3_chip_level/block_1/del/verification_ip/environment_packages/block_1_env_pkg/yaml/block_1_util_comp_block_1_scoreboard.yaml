@@ -1,0 +1,10 @@
+uvmf:
+  util_components:
+    block_1_scoreboard:
+      analysis_exports:
+      - name: spi_slave_sb_ae
+        type: spi_slave_transaction
+      - name: spi_slave_pred_sb_ae
+        type: spi_slave_transaction
+      existing_library_component: 'True'
+      type: scoreboard

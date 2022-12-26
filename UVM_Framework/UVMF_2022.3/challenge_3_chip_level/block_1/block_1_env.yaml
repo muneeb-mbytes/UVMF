@@ -1,0 +1,50 @@
+uvmf:
+  environments:
+    "block_1":
+      agents:
+      - name: "apb_master_agent"
+        type: "apb_master"
+        initiator_responder: "INITIATOR"
+      - name: "axi_master_agent_1"
+        type: "axi_master"
+        initiator_responder: "INITIATOR"
+      - name: "axi_master_agent_2"
+        type: "axi_master"
+        initiator_responder: "INITIATOR"
+      - name: "spi_slave_agent"
+        type: "spi_slave"
+        initiator_responder: "RESPONDER"
+   
+      analysis_ports:
+        - name: "apb_master_ap"
+          trans_type: "apb_master_transaction" 
+          connected_to: "apb_master_agent.monitored_ap" 
+        - name: "axi_master_1_ap"
+          trans_type: "axi_master_transaction" 
+          connected_to: "axi_master_agent_1.monitored_ap" 
+        - name: "axi_master_2_ap"
+          trans_type: "axi_master_transaction" 
+          connected_to: "axi_master_agent_2.monitored_ap" 
+      analysis_components:
+      - name: "block_1_pred"
+        type: "block_1_predictor"
+      - name: "block_1_sb"
+        type: "block_1_scoreboard"
+    
+      tlm_connections:
+      - driver: "apb_master_agent.monitored_ap"            # connection 00
+        receiver: "block_1_pred.apb_master_agent_ae"
+      - driver: "axi_master_agent_1.monitored_ap"            # connection 00
+        receiver: "block_1_pred.axi_master_agent_1_ae"
+      - driver: "axi_master_agent_2.monitored_ap"            # connection 00
+        receiver: "block_1_pred.axi_master_agent_2_ae"
+      - driver: "block_1_pred.block_1_sb_ap"                   # connection 01
+        receiver: "block_1_sb.spi_slave_pred_sb_ae"
+      - driver: "spi_slave_agent.monitored_ap"           # connection 02
+        receiver: "block_1_sb.spi_slave_sb_ae"
+      config_vars:
+      - name: "has_scoreboard"
+        type: "bit"
+        isrand: "False"
+        value: "1'b1"
+

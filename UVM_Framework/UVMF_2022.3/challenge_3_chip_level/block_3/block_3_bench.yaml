@@ -1,0 +1,11 @@
+uvmf:
+  benches:
+    "block_3":
+      active_passive:
+      - bfm_name: "wb_master_agent"
+        value: "ACTIVE"
+      - bfm_name: "axi_slave_agent"
+        value: "PASSIVE"
+      veloce_ready: "True"
+      top_env: "block_3"
+      

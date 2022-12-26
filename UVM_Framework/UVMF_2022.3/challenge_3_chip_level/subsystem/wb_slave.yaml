@@ -1,0 +1,93 @@
+uvmf:
+  interfaces:
+    wb_slave:
+      clock: "clk"
+      reset: "rst"
+      reset_assertion_level: "False"
+      veloce_ready: "False"
+
+      config_vars:
+        - name: "has_coverage"
+          type: "bit"
+          value: "1"
+
+        - name: "is_active"
+          type: "bit"
+          value: "0"
+ 
+      # - name: "no_of_slaves"
+      #   type: "bit[3:0]"
+      #   value: "1"
+
+      hdl_typedefs: []
+      hvl_typedefs: []
+      parameters:
+         - name: ADDR_WIDTH
+           type: "bit"
+           value: "32"
+         - name: DATA_WIDTH
+           type: "bit"
+           value: "32"
+
+      
+      transaction_vars:
+        - name: "adr_i"
+          type: "bit[ADDR_WIDTH-1:0]"
+          isrand: "False"
+          iscompare: "True"
+        - name: "dat_o"
+          type: "bit[DATA_WIDTH-1:0]"
+          isrand: "True"
+          iscompare: "True"
+        - name: "dat_i"
+          type: "bit[DATA_WIDTH-1:0]"
+          isrand: "False"
+          iscompare: "True"
+        - name: "we_i"
+          type: "bit"
+          isrand: "False"
+          iscompare: "True"
+
+        - name: "sel_i"
+          type: "bit[7:0]"
+          isrand: "False"
+          iscompare: "True"
+        - name: "stb_i"
+          type: "bit[(DATA_WIDTH/8)-1:0]"
+          isrand: "False"
+          iscompare: "True"
+        - name: "ack_o"
+          type: "bit"
+          isrand: "False"
+          iscompare: "True"
+        - name: "cyc_i"
+          type: "bit"
+          isrand: "False"
+          iscompare: "True"
+
+
+      ports:
+        - name: "adr_i"
+          dir: "input"
+          width: "ADDR_WIDTH"
+        - name: "dat_i"
+          dir: "input"
+          width: "DATA_WIDTH"
+        - name: "dat_o"
+          dir: "output"
+          width: "DATA_WIDTH"
+        - name: "we_i"
+          dir: "input"
+          width: "1"
+        - name: "sel_i"
+          dir: "input"
+          width: "8"
+        - name: "stb_i"
+          dir: "input"
+          width: "8"
+        - name: "ack_o"
+          dir: "output"
+          width: "1"
+        - name: "cyc_i"
+          dir: "input"
+          width: "1"

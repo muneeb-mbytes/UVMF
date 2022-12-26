@@ -1,0 +1,75 @@
+uvmf:
+  interfaces:
+    spi_master:
+      clock: clk
+      config_constraints: []
+      config_vars:
+      - comment: ''
+        isrand: 'False'
+        name: has_coverage
+        type: bit
+        value: '1'
+      - comment: ''
+        isrand: 'False'
+        name: is_active
+        type: bit
+        value: '1'
+      - comment: ''
+        isrand: 'False'
+        name: no_of_slaves
+        type: bit[3:0]
+        value: '1'
+      existing_library_component: 'True'
+      gen_inbound_streaming_driver: 'False'
+      hdl_pkg_parameters: []
+      hdl_typedefs: []
+      hvl_pkg_parameters: []
+      hvl_typedefs: []
+      parameters: []
+      ports:
+      - dir: output
+        name: sck
+        reset_value: '''bz'
+        width: '1'
+      - dir: output
+        name: mosi
+        reset_value: '''bz'
+        width: '1'
+      - dir: output
+        name: cs
+        reset_value: '''bz'
+        width: '1'
+      - dir: input
+        name: miso
+        reset_value: '''bz'
+        width: '1'
+      reset: rst
+      reset_assertion_level: 'False'
+      transaction_constraints: []
+      transaction_vars:
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: sck
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'True'
+        name: mosi
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: miso
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'True'
+        name: cs
+        type: bit
+        unpacked_dimension: ''
+      use_dpi_link: 'False'
+      veloce_ready: 'False'

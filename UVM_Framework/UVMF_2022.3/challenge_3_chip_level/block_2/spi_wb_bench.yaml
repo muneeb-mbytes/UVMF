@@ -1,0 +1,10 @@
+uvmf:
+  benches:
+    "spi_wb" :
+      top_env: "spi_wb"
+      reset_duration: "100ns"
+      active_passive: 
+       - bfm_name: "spi_master_h"
+         value: "ACTIVE" 
+       - bfm_name: "wb_slave_h"
+         value: "PASSIVE" 

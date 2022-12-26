@@ -1,0 +1,3 @@
+needs:
+  - axi_master_hvl.compile
+  - axi_master_hdl.compile

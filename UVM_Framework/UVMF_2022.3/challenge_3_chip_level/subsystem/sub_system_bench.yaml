@@ -1,0 +1,10 @@
+uvmf:
+  benches:
+    "sub_system":
+      top_env: "sub_system"
+      veloce_ready: "False"
+      active_passive:
+        - bfm_name: "block_1_env_spi_slave_agent"
+          value: "PASSIVE"
+        - bfm_name: "block_2_env_spi_master_h"
+          value: "PASSIVE"

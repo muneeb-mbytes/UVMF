@@ -1,0 +1,58 @@
+uvmf:
+  environments:
+    spi_wb:
+      agents:
+        - name: "spi_master_h"
+          type: "spi_master"
+          initiator_responder: "INITIATOR"
+        - name: "wb_slave_h"
+          type: "wb_slave"
+          initiator_responder: "RESPONDER"
+
+      analysis_components:
+        - name: "spi_wb_pred_h"
+          type: "spi_wb_predictor"
+
+      analysis_ports: 
+        - name: "spi_master_ap"
+          trans_type: "spi_master_transaction"
+          connected_to: "spi_master_h.monitored_ap"
+       
+        - name: "wb_slave_ap"
+          trans_type: "wb_slave_transaction"
+          connected_to: "wb_slave_h.monitored_ap"
+
+         #analysis_exports:
+         #- name: "spi_wb_pred_ae"
+         #type: "spi_master_transaction"
+         #connected_to: "spi_wb_pred_h.spi_wb_pred_ae"
+      config_vars:
+        - name: "has_predictor"
+          type: "bit"
+          isrand: "False"
+          value: "1"
+
+      scoreboards: 
+        - name: "spi_wb_sb"
+          sb_type: "uvmf_in_order_scoreboard"
+          trans_type: "wb_slave_transaction" 
+
+      tlm_connections:
+        - driver: "spi_master_h.monitored_ap"
+          receiver: "spi_wb_pred_h.spi_wb_pred_ae"
+        - driver: "spi_wb_pred_h.spi_wb_pred_ap"
+          receiver: "spi_wb_sb.expected_analysis_export"
+        - driver: "wb_slave_h.monitored_ap"
+          receiver: "spi_wb_sb.actual_analysis_export"
+
+  util_components:
+    spi_wb_predictor:
+      type: "predictor"
+      analysis_exports:
+       - name: "spi_wb_pred_ae"
+         type: "spi_master_transaction"
+         #         connected_to: "spi_master_h.monitored_ap"
+      analysis_ports:
+        - name: "spi_wb_pred_ap"
+          type: "wb_slave_transaction"
+        # connected_to: "spi_wb_sb.expected_analysis_export"

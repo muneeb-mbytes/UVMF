@@ -1,0 +1,1 @@
+$UVMF_VIP_LIBRARY_HOME/interface_packages/apb_master_pkg/apb_master_pkg.sv

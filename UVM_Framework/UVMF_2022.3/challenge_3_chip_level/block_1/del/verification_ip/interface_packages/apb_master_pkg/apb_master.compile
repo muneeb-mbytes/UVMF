@@ -1,0 +1,3 @@
+needs:
+  - apb_master_hvl.compile
+  - apb_master_hdl.compile

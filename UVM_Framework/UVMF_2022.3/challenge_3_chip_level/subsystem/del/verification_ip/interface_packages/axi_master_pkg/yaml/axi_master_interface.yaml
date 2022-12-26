@@ -1,0 +1,344 @@
+uvmf:
+  interfaces:
+    axi_master:
+      clock: clk
+      config_constraints: []
+      config_vars: []
+      existing_library_component: 'True'
+      gen_inbound_streaming_driver: 'False'
+      hdl_pkg_parameters: []
+      hdl_typedefs: []
+      hvl_pkg_parameters: []
+      hvl_typedefs: []
+      parameters:
+      - name: ADDR_WIDTH
+        type: int
+        value: '32'
+      - name: DATA_WIDTH
+        type: int
+        value: '32'
+      - name: RESP_WIDTH
+        type: int
+        value: '2'
+      - name: ID_WIDTH
+        type: int
+        value: '4'
+      - name: STRB_WIDTH
+        type: int
+        value: '4'
+      - name: LEN_WIDTH
+        type: int
+        value: '8'
+      - name: SIZE_WIDTH
+        type: int
+        value: '3'
+      - name: BURST_WIDTH
+        type: int
+        value: '2'
+      ports:
+      - dir: output
+        name: awvalid
+        reset_value: '''bz'
+        width: '1'
+      - dir: input
+        name: awready
+        reset_value: '''bz'
+        width: '1'
+      - dir: output
+        name: awid
+        reset_value: '''bz'
+        width: ID_WIDTH
+      - dir: output
+        name: awlen
+        reset_value: '''bz'
+        width: LEN_WIDTH
+      - dir: output
+        name: awsize
+        reset_value: '''bz'
+        width: SIZE_WIDTH
+      - dir: output
+        name: awaddr
+        reset_value: '''bz'
+        width: ADDR_WIDTH
+      - dir: output
+        name: awburst
+        reset_value: '''bz'
+        width: BURST_WIDTH
+      - dir: output
+        name: wvalid
+        reset_value: '''bz'
+        width: '1'
+      - dir: input
+        name: wready
+        reset_value: '''bz'
+        width: '1'
+      - dir: output
+        name: wid
+        reset_value: '''bz'
+        width: ID_WIDTH
+      - dir: output
+        name: wdata
+        reset_value: '''bz'
+        width: DATA_WIDTH
+      - dir: output
+        name: wstrb
+        reset_value: '''bz'
+        width: STRB_WIDTH
+      - dir: output
+        name: wlast
+        reset_value: '''bz'
+        width: '1'
+      - dir: output
+        name: bready
+        reset_value: '''bz'
+        width: '1'
+      - dir: input
+        name: bvalid
+        reset_value: '''bz'
+        width: '1'
+      - dir: input
+        name: bid
+        reset_value: '''bz'
+        width: ID_WIDTH
+      - dir: input
+        name: bresp
+        reset_value: '''bz'
+        width: RESP_WIDTH
+      - dir: output
+        name: arvalid
+        reset_value: '''bz'
+        width: '1'
+      - dir: input
+        name: arready
+        reset_value: '''bz'
+        width: '1'
+      - dir: output
+        name: arid
+        reset_value: '''bz'
+        width: ID_WIDTH
+      - dir: output
+        name: arlen
+        reset_value: '''bz'
+        width: LEN_WIDTH
+      - dir: output
+        name: arsize
+        reset_value: '''bz'
+        width: SIZE_WIDTH
+      - dir: output
+        name: araddr
+        reset_value: '''bz'
+        width: ADDR_WIDTH
+      - dir: output
+        name: arburst
+        reset_value: '''bz'
+        width: BURST_WIDTH
+      - dir: input
+        name: rvalid
+        reset_value: '''bz'
+        width: '1'
+      - dir: output
+        name: rready
+        reset_value: '''bz'
+        width: '1'
+      - dir: input
+        name: rid
+        reset_value: '''bz'
+        width: ID_WIDTH
+      - dir: input
+        name: rdata
+        reset_value: '''bz'
+        width: DATA_WIDTH
+      - dir: input
+        name: rlast
+        reset_value: '''bz'
+        width: '1'
+      - dir: output
+        name: rresp
+        reset_value: '''bz'
+        width: RESP_WIDTH
+      reset: rst
+      reset_assertion_level: 'False'
+      transaction_constraints: []
+      transaction_vars:
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'True'
+        name: awvalid
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: awready
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'True'
+        name: awid
+        type: bit [ID_WIDTH-1:0]
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'True'
+        name: awlen
+        type: bit [LEN_WIDTH-1:0]
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'True'
+        name: awsize
+        type: bit [SIZE_WIDTH-1:0]
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'True'
+        name: awaddr
+        type: bit [ADDR_WIDTH-1:0]
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'True'
+        name: awburst
+        type: bit [BURST_WIDTH-1:0]
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'True'
+        name: wvalid
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: wready
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'True'
+        name: wid
+        type: bit [ID_WIDTH-1:0]
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'True'
+        name: wdata
+        type: bit [DATA_WIDTH-1:0]
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'True'
+        name: wstrb
+        type: bit [STRB_WIDTH-1:0]
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: wlast
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: bready
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: bvalid
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: bid
+        type: bit [ID_WIDTH-1:0]
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: bresp
+        type: bit [RESP_WIDTH-1:0]
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: arvalid
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: arready
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: arid
+        type: bit [ID_WIDTH-1:0]
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: arlen
+        type: bit [LEN_WIDTH-1:0]
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: arsize
+        type: bit [SIZE_WIDTH-1:0]
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: araddr
+        type: bit [ADDR_WIDTH-1:0]
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: arburst
+        type: bit [BURST_WIDTH-1:0]
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: rvalid
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: rready
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: rid
+        type: bit [ID_WIDTH-1:0]
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: rdata
+        type: bit [DATA_WIDTH-1:0]
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: rlast
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: rresp
+        type: bit [RESP_WIDTH-1:0]
+        unpacked_dimension: ''
+      use_dpi_link: 'False'
+      veloce_ready: 'False'

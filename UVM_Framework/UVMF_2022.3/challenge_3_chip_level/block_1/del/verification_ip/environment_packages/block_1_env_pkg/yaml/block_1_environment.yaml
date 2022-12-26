@@ -1,0 +1,64 @@
+uvmf:
+  environments:
+    block_1:
+      agents:
+      - initiator_responder: INITIATOR
+        name: apb_master_agent
+        type: apb_master
+      - initiator_responder: INITIATOR
+        name: axi_master_agent_1
+        type: axi_master
+      - initiator_responder: INITIATOR
+        name: axi_master_agent_2
+        type: axi_master
+      - initiator_responder: RESPONDER
+        name: spi_slave_agent
+        type: spi_slave
+      analysis_components:
+      - name: block_1_pred
+        parameters: []
+        type: block_1_predictor
+      - name: block_1_sb
+        parameters: []
+        type: block_1_scoreboard
+      analysis_exports: []
+      analysis_ports:
+      - connected_to: apb_master_agent.monitored_ap
+        name: apb_master_ap
+        trans_type: apb_master_transaction
+      - connected_to: axi_master_agent_1.monitored_ap
+        name: axi_master_1_ap
+        trans_type: axi_master_transaction
+      - connected_to: axi_master_agent_2.monitored_ap
+        name: axi_master_2_ap
+        trans_type: axi_master_transaction
+      config_constraints: []
+      config_vars:
+      - comment: ''
+        isrand: 'False'
+        name: has_scoreboard
+        type: bit
+        value: 1'b1
+      existing_library_component: 'True'
+      hvl_pkg_parameters: []
+      non_uvmf_components: []
+      parameters: []
+      qvip_memory_agents: []
+      scoreboards: []
+      subenvs: []
+      tlm_connections:
+      - driver: apb_master_agent.monitored_ap
+        receiver: block_1_pred.apb_master_agent_ae
+        validate: 'True'
+      - driver: axi_master_agent_1.monitored_ap
+        receiver: block_1_pred.axi_master_agent_1_ae
+        validate: 'True'
+      - driver: axi_master_agent_2.monitored_ap
+        receiver: block_1_pred.axi_master_agent_2_ae
+        validate: 'True'
+      - driver: block_1_pred.block_1_sb_ap
+        receiver: block_1_sb.spi_slave_pred_sb_ae
+        validate: 'True'
+      - driver: spi_slave_agent.monitored_ap
+        receiver: block_1_sb.spi_slave_sb_ae
+        validate: 'True'

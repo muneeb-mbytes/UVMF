@@ -1,0 +1,257 @@
+uvmf:
+  interfaces:
+    axi_slave:
+      clock: "clk"
+      reset: "rst"
+      reset_assertion_level: 'False'
+      veloce_ready: "True"
+      parameters:
+        - name: "ADDR_WIDTH"
+          type: 'int'
+          value: '32'
+        - name: "DATA_WIDTH"
+          type: 'int'
+          value: '32'
+        - name: "RESP_WIDTH"
+          type: 'int'
+          value: '2'
+        - name: "ID_WIDTH"
+          type: 'int'
+          value: '4'
+        - name: "STRB_WIDTH"
+          type: 'int'
+          value: '4'
+        - name: "LEN_WIDTH"
+          type: 'int'
+          value: '8'
+        - name: "SIZE_WIDTH"
+          type: 'int'
+          value: '3'
+        - name: "BURST_WIDTH"
+          type: 'int'
+          value: '2'
+      ports:
+        - name: "awvalid"
+          dir: "input"
+          width: "1"
+        - name: "awready"
+          dir: "output"
+          width: "1"
+        - name: "awid"
+          dir: "input"
+          width: "ID_WIDTH"
+        - name: "awlen"
+          dir: "input"
+          width: "LEN_WIDTH"
+        - name: "awsize"
+          dir: "input"
+          width: "SIZE_WIDTH"
+        - name: "awaddr"
+          dir: "input"
+          width: "ADDR_WIDTH"
+        - name: "awburst"
+          dir: "input"
+          width: "BURST_WIDTH"
+            #/////////////////////////////////////////
+        - name: "wvalid"
+          dir: "input"
+          width: "1"
+        - name: "wready"
+          dir: "output"
+          width: "1"
+        - name: "wid"
+          dir: "input"
+          width: "ID_WIDTH"
+        - name: "wdata"
+          dir: "input"
+          width: "DATA_WIDTH"
+        - name: "wstrb"
+          dir: "input"
+          width: "STRB_WIDTH"
+        - name: "wlast"
+          dir: "input"
+          width: "1"
+            # //////////////////////////////////////////
+        - name: "bready"
+          dir: "input"
+          width: "1"
+        - name: "bvalid"
+          dir: "output"
+          width: "1"
+        - name: "bid"
+          dir: "output"
+          width: "ID_WIDTH"
+        - name: "bresp"
+          dir: "input"
+          width: "RESP_WIDTH"
+            #///////////////////////////////////////////////
+        - name: "arvalid"
+          dir: "input"
+          width: "1"
+        - name: "arready"
+          dir: "output"
+          width: "1"
+        - name: "arid"
+          dir: "input"
+          width: "ID_WIDTH"
+        - name: "arlen"
+          dir: "input"
+          width: "LEN_WIDTH"
+        - name: "arsize"
+          dir: "input"
+          width: "SIZE_WIDTH"
+        - name: "araddr"
+          dir: "input"
+          width: "ADDR_WIDTH"
+        - name: "arburst"
+          dir: "input"
+          width: "BURST_WIDTH"
+            #////////////////////////////////////////////////////
+        - name: "rvalid"
+          dir: "output"
+          width: "1"
+        - name: "rready"
+          dir: "input"
+          width: "1"
+        - name: "rid"
+          dir: "output"
+          width: "ID_WIDTH"
+        - name: "rdata"
+          dir: "output"
+          width: "DATA_WIDTH"
+        - name: "rlast"
+          dir: "output"
+          width: "1"
+        - name: "rresp"
+          dir: "input"
+          width: "RESP_WIDTH"
+            #//////////////////////////////////////////////////////////
+      transaction_vars:
+        - name: "awvalid"
+          type: "bit"
+          iscompare: 'True'
+          isrand: 'False'
+        - name: "awready"
+          type: "bit"
+          iscompare: 'True'
+          isrand: 'False'
+        - name: "awid"
+          type: "bit [ID_WIDTH-1:0]"
+          iscompare: 'True'
+          isrand: 'False'
+        - name: "awlen"
+          type: "bit [LEN_WIDTH-1:0]"
+          iscompare: 'True'
+          isrand: 'False'
+        - name: "awsize"
+          type: "bit [SIZE_WIDTH-1:0]"
+          iscompare: 'True'
+          isrand: 'False'
+        - name: "awaddr"
+          type: "bit [ADDR_WIDTH-1:0]"
+          iscompare: 'True'
+          isrand: 'False'
+        - name: "awburst"
+          type: "bit [BURST_WIDTH-1:0]"
+          iscompare: 'True'
+          isrand: 'False'
+            #////////////////////////////////////////////////////////////////
+        - name: "wvalid"
+          type: "bit"
+          iscompare: 'True'
+          isrand: 'False'
+        - name: "wready"
+          type: "bit"
+          iscompare: 'True'
+          isrand: 'False'
+        - name: "wid"
+          type: "bit [ID_WIDTH-1:0]"
+          iscompare: 'True'
+          isrand: 'False'
+        - name: "wdata"
+          type: "bit [DATA_WIDTH-1:0]"
+          iscompare: 'True'
+          isrand: 'False'
+        - name: "wstrb"
+          type: "bit [STRB_WIDTH-1:0]"
+          iscompare: 'True'
+          isrand: 'False'
+        - name: "wlast"
+          type: "bit"
+          iscompare: 'True'
+          isrand: 'False'
+
+            #////////////////////////////////////////////////////////////
+
+        - name: "bready"
+          type: "bit"
+          iscompare: 'True'
+          isrand: 'False'
+        - name: "bvalid"
+          type: "bit"
+          iscompare: 'True'
+          isrand: 'False'
+        - name: "bid"
+          type: "bit"
+          iscompare: 'True'
+          isrand: 'False'
+        - name: "bresp"
+          type: "bit [RESP_WIDTH-1:0]"
+          iscompare: 'True'
+          isrand: 'False'
+            #////////////////////////////////////////////////////////////
+        - name: "arvalid"
+          type: "bit"
+          iscompare: 'True'
+          isrand: 'False'
+        - name: "arready"
+          type: "bit"
+          iscompare: 'True'
+          isrand: 'False'
+        - name: "arid"
+          type: "bit [ID_WIDTH-1:0]"
+          iscompare: 'True'
+          isrand: 'False'
+        - name: "arlen"
+          type: "bit [LEN_WIDTH-1:0]"
+          iscompare: 'True'
+          isrand: 'False'
+        - name: "arsize"
+          type: "bit [SIZE_WIDTH-1:0]"
+          iscompare: 'True'
+          isrand: 'False'
+        - name: "araddr"
+          type: "bit [ADDR_WIDTH-1:0]"
+          iscompare: 'True'
+          isrand: 'False'
+        - name: "arburst"
+          type: "bit [BURST_WIDTH-1:0]"
+            # //////////////////////////////////////////
+
+
+        - name: "rvalid"
+          type: "bit"
+          iscompare: 'True'
+          isrand: 'False'
+        - name: "rready"
+          type: "bit"
+          iscompare: 'True'
+          isrand: 'False'
+        - name: "rid"
+          type: "bit [ID_WIDTH-1:0]"
+          iscompare: 'True'
+          isrand: 'False'
+        - name: "rdata"
+          type: "bit [DATA_WIDTH-1:0]"
+          iscompare: 'True'
+          isrand: 'False'
+        - name: "rlast"
+          type: "bit"
+          iscompare: 'True'
+          isrand: 'False'
+        - name: "rresp"
+          type: "bit [RESP_WIDTH-1:0]"
+          iscompare: 'True'
+          isrand: 'False'
+            #/////////////////////////////////////////////////
+
