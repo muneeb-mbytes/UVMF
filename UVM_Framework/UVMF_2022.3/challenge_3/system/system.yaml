@@ -1,8 +1,4 @@
 uvmf:
-  benches:
-    "system":
-      ## Specify the top-level block
-      top_env: "system"
   environments:
     "system":
       subenvs:
@@ -11,6 +7,13 @@ uvmf:
         - name: "b3"
           type: "block_3"
       
+      imports:
+        - name: apb_m_pkg
+        - name: axi_m_pkg
+        - name: axi_s_pkg
+        - name: block_1_env_pkg
+        - name: block_2_env_pkg
+
       analysis_components:
         - name: "sys_pred"
           type: "sys_predictor"

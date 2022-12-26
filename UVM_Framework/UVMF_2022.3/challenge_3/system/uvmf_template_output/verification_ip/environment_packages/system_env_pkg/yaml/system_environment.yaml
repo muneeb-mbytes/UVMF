@@ -20,6 +20,12 @@ uvmf:
         value: ''
       existing_library_component: 'True'
       hvl_pkg_parameters: []
+      imports:
+      - name: apb_m_pkg
+      - name: axi_m_pkg
+      - name: axi_s_pkg
+      - name: block_1_env_pkg
+      - name: block_2_env_pkg
       non_uvmf_components: []
       parameters: []
       qvip_memory_agents: []

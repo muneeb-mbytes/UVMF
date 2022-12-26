@@ -1,17 +1,4 @@
 uvmf:
-  benches:
-    "subsys" :
-      ## Specify the top-level block
-      top_env: "subsys"
-      clock_half_period: "5ns"
-      reset_assertion_level: "True"
-      reset_duration: "200ns"
-      active_passive: 
-        - bfm_name: "b1_spi_slave"
-          value: "PASSIVE"
-        - bfm_name: "b2_spi_master"
-          value: "PASSIVE"
-
   environments:
     "subsys":
       subenvs:
@@ -19,6 +6,7 @@ uvmf:
           type: "block_1"
         - name: "b2"
           type: "block_2"
+
       analysis_components:
         - name: "sub_pred"
           type: "subsys_predictor"

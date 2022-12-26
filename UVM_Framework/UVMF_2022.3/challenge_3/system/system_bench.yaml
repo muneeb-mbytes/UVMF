@@ -1,0 +1,5 @@
+uvmf:
+  benches:
+    "system":
+      ## Specify the top-level block
+      top_env: "system"

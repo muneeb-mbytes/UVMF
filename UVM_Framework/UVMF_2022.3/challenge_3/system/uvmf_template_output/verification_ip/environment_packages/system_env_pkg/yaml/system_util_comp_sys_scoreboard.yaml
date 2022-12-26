@@ -3,8 +3,8 @@ uvmf:
     sys_scoreboard:
       analysis_exports:
       - name: sys_axi_ae
-        type: block_3_environment
+        type: axi_s_transaction
       - name: sys_sco_from_pre_ae
-        type: block_3_environment
+        type: axi_s_transaction
       existing_library_component: 'True'
       type: scoreboard

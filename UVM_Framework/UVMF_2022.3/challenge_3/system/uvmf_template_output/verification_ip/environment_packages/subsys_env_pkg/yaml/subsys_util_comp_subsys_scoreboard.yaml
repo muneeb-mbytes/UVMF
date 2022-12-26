@@ -3,8 +3,8 @@ uvmf:
     subsys_scoreboard:
       analysis_exports:
       - name: subsys_sco_from_pre_ae
-        type: block_2_environment
+        type: wb_s_transaction
       - name: subsys_wb_ae
-        type: block_2_environment
+        type: wb_s_transaction
       existing_library_component: 'True'
       type: scoreboard

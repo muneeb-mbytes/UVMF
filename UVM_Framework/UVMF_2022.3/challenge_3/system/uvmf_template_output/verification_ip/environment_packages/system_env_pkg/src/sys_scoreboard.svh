@@ -12,8 +12,8 @@
 //   This analysis component has the following analysis_exports that receive the 
 //   listed transaction type.
 //   
-//   sys_axi_ae receives transactions of type  block_3_environment  
-//   sys_sco_from_pre_ae receives transactions of type  block_3_environment  
+//   sys_axi_ae receives transactions of type  axi_s_transaction  
+//   sys_sco_from_pre_ae receives transactions of type  axi_s_transaction  
 //
 //   This analysis component has the following analysis_ports that can broadcast 
 //   the listed transaction type.
@@ -40,11 +40,11 @@ class sys_scoreboard #(
 
   
   // Instantiate the analysis exports
-  uvm_analysis_imp_sys_axi_ae #(block_3_environment, sys_scoreboard #(
+  uvm_analysis_imp_sys_axi_ae #(axi_s_transaction, sys_scoreboard #(
                               .CONFIG_T(CONFIG_T),
                               .BASE_T(BASE_T)
                               )) sys_axi_ae;
-  uvm_analysis_imp_sys_sco_from_pre_ae #(block_3_environment, sys_scoreboard #(
+  uvm_analysis_imp_sys_sco_from_pre_ae #(axi_s_transaction, sys_scoreboard #(
                               .CONFIG_T(CONFIG_T),
                               .BASE_T(BASE_T)
                               )) sys_sco_from_pre_ae;
@@ -74,7 +74,7 @@ class sys_scoreboard #(
   // FUNCTION: write_sys_axi_ae
   // Transactions received through sys_axi_ae initiate the execution of this function.
   // This function performs prediction of DUT output values based on DUT input, configuration and state
-  virtual function void write_sys_axi_ae(block_3_environment t);
+  virtual function void write_sys_axi_ae(axi_s_transaction t);
     // pragma uvmf custom sys_axi_ae_scoreboard begin
     `uvm_info("PRED", "Transaction Received through sys_axi_ae", UVM_MEDIUM)
     `uvm_info("PRED", {"            Data: ",t.convert2string()}, UVM_FULL)
@@ -89,7 +89,7 @@ class sys_scoreboard #(
   // FUNCTION: write_sys_sco_from_pre_ae
   // Transactions received through sys_sco_from_pre_ae initiate the execution of this function.
   // This function performs prediction of DUT output values based on DUT input, configuration and state
-  virtual function void write_sys_sco_from_pre_ae(block_3_environment t);
+  virtual function void write_sys_sco_from_pre_ae(axi_s_transaction t);
     // pragma uvmf custom sys_sco_from_pre_ae_scoreboard begin
     `uvm_info("PRED", "Transaction Received through sys_sco_from_pre_ae", UVM_MEDIUM)
     `uvm_info("PRED", {"            Data: ",t.convert2string()}, UVM_FULL)

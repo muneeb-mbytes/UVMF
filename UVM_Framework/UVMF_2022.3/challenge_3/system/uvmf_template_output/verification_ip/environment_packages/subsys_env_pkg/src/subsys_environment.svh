@@ -26,10 +26,10 @@ class subsys_environment  extends uvmf_environment_base #(
    
 
 
-  uvm_analysis_port #(block_1_environment) block_1_ap1;
-  uvm_analysis_port #(block_1_environment) block_1_ap2;
-  uvm_analysis_port #(block_1_environment) block_1_ap3;
-  uvm_analysis_port #(block_2_environment) block_2_ap1;
+  uvm_analysis_port #(apb_m_transaction) block_1_ap1;
+  uvm_analysis_port #(axi_m_transaction) block_1_ap2;
+  uvm_analysis_port #(axi_m_transaction) block_1_ap3;
+  uvm_analysis_port #(wb_s_transaction) block_2_ap1;
 
 
 
