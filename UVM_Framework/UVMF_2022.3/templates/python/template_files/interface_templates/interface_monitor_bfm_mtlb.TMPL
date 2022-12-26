@@ -29,8 +29,9 @@
 //
 //----------------------------------------------------------------------
 {% endblock %}
-
 {% block contents %}
+`ifndef {{name|upper}}_MONITOR_BFM
+`define {{name|upper}}_MONITOR_BFM
 import uvmf_base_pkg_hdl::*;
 import {{name}}_pkg_hdl::*;
 {% if veloceReady %}
@@ -262,5 +263,5 @@ endinterface
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

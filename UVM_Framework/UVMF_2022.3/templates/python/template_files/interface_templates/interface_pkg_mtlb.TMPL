@@ -33,6 +33,8 @@
 {% endblock %}
 
 {% block contents %}
+`ifndef {{name|upper}}_PKG_MATLAB
+`define {{name|upper}}_PKG_MATLAB
 package {{name}}_pkg;
   
    import uvm_pkg::*;
@@ -114,5 +116,5 @@ endpackage
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

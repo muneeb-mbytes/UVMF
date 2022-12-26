@@ -42,8 +42,9 @@
 //
 //----------------------------------------------------------------------
 {% endblock %}
-
 {% block contents %}
+`ifndef {{name|upper}}_IBS_DRIVER_BFM
+`define {{name|upper}}_IBS_DRIVER_BFM
 import uvmf_base_pkg_hdl::*;
 import {{name}}_pkg_hdl::*;
 {% if not veloceReady %}
@@ -431,5 +432,5 @@ endinterface
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

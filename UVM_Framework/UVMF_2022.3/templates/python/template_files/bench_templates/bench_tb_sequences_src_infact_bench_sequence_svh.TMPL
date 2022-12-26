@@ -12,7 +12,8 @@
 {% endblock %}
 
 {% block contents %}
-
+`ifndef INFACT_{{name|upper}}_BENCH_SEQUENCE_BASE
+`define INFACT_{{name|upper}}_BENCH_SEQUENCE_BASE
 class infact_{{name}}_bench_sequence_base extends {{name}}_bench_sequence_base;
 
   `uvm_object_utils( infact_{{name}}_bench_sequence_base );
@@ -80,5 +81,5 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

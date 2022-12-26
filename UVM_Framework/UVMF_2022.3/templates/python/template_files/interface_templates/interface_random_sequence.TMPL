@@ -13,6 +13,8 @@
 //----------------------------------------------------------------------
 {% endblock %}
 {% block contents %}
+`ifndef {{name|upper}}_RANDOM_SEQUENCE
+`define {{name|upper}}_RANDOM_SEQUENCE
 class {{name}}_random_sequence {{macro.paramDeclare(paramDefs)|indent(6)}}
   extends {{name}}_sequence_base {{macro.paramUse(paramDefs)|indent(6)}};
 
@@ -48,5 +50,5 @@ endclass: {{name}}_random_sequence
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

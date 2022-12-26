@@ -29,6 +29,8 @@
 {% endblock %}
 {% block contents %}
 
+`ifndef {{name|upper}}
+`define {{name|upper}}
 
 class {{name}} {{macro.paramDeclare(parameters)|indent(2)}} extends BASE_T;
 
@@ -166,8 +168,8 @@ class {{name}} {{macro.paramDeclare(parameters)|indent(2)}} extends BASE_T;
   endfunction  
 {% endfor %}
 endclass 
-
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
 
+`endif
 {% endblock %}

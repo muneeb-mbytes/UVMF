@@ -13,7 +13,8 @@
 {% endblock %}
 
 {% block contents %}
-
+`ifndef {{name|upper}}_BENCH_SEQUENCE_BASE
+`define {{name|upper}}_BENCH_SEQUENCE_BASE
 
 typedef {{env_name}}_env_configuration {{macro.paramUseNested(envParamDefs)|indent(8)}} {{env_name}}_env_configuration_t;
 
@@ -214,5 +215,5 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

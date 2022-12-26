@@ -12,6 +12,8 @@
 //----------------------------------------------------------------------
 {% endblock %}
 {% block contents %}
+`ifndef {{name|upper}}_SEQUENCE_BASE_MATLAB
+`define {{name|upper}}_SEQUENCE_BASE_MATLAB
 class {{name}}_sequence_base {{macro.paramDeclare(paramDefs)|indent(6)}}   extends uvmf_sequence_base #(
                              .REQ({{name}}_transaction  {{macro.paramUse(paramDefs)|indent(33)}}),
                              .RSP({{name}}_transaction  {{macro.paramUse(paramDefs)|indent(33)}}));
@@ -88,5 +90,5 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

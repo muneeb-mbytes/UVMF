@@ -21,6 +21,8 @@
 
 {% block contents %}
 
+`ifndef {{name|upper}}_TESTS_PKG_MATLAB
+`define {{name|upper}}_TESTS_PKG_MATLAB
 package {{name}}_tests_pkg;
 
    import uvm_pkg::*;
@@ -69,5 +71,5 @@ endpackage
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

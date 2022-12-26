@@ -10,6 +10,8 @@
 //----------------------------------------------------------------------
 {% endblock %}
 {% block contents %}
+`ifndef {{name|upper}}2REG_ADAPTER
+`define {{name|upper}}2REG_ADAPTER
 class {{name}}2reg_adapter {{macro.paramDeclare(paramDefs)|indent(6)}} extends uvm_reg_adapter;
 
 {{macro.objUtils([name,'2reg_adapter']|join(""),paramDefs)}}
@@ -93,5 +95,5 @@ endclass : {{name}}2reg_adapter
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

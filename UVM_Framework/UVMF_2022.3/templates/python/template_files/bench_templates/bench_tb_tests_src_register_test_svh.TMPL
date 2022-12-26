@@ -14,7 +14,8 @@
 {% endblock %}
 
 {% block contents %}
-
+`ifndef REGISTER_TEST
+`define REGISTER_TEST
 class register_test extends test_top;
 
   `uvm_component_utils( register_test );
@@ -51,5 +52,5 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

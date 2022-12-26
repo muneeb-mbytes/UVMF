@@ -17,6 +17,8 @@
 {% endblock %}
 
 {% block contents %}
+`ifndef {{name|upper}}_TRANSACTION_COVERAGE_MATLAB
+`define {{name|upper}}_TRANSACTION_COVERAGE_MATLAB
 class {{name}}_transaction_coverage {{macro.paramDeclare(paramDefs)|indent(6)}} extends uvm_subscriber #(.T({{name}}_transaction {{macro.paramUse(paramDefs)|indent(44)}}));
 
 {{macro.compUtils([name,'_transaction_coverage']|join(""),paramDefs)}}
@@ -72,5 +74,5 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

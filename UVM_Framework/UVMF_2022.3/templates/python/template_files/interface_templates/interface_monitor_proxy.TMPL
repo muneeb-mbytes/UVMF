@@ -12,8 +12,10 @@
 //
 //----------------------------------------------------------------------
 {% endblock %}
-{% block contents %}
 
+{% block contents %}
+`ifndef {{name|upper}}_MONITOR_PROXY
+`define {{name|upper}}_MONITOR_PROXY
 typedef class {{name}}_monitor;
 
 class {{name}}_monitor_proxy {%if paramDefs|length > 0%}      #(
@@ -79,5 +81,5 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

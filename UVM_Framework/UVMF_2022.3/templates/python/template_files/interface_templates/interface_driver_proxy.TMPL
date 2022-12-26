@@ -13,7 +13,8 @@
 //----------------------------------------------------------------------
 {% endblock %}
 {% block contents %}
-
+`ifndef {{name|upper}}_DRIVER_PROXY
+`define {{name|upper}}_DRIVER_PROXY
 class {{name}}_driver_proxy {%if paramDefs|length > 0%}      #(
 {% for param in paramDefs %}      {{param.type}} {{param.name}}{% if param.value != None %} = {{param.value}}{% endif %}{% if not loop.last %},{% endif %}                                
 {% endfor %}      )
@@ -84,5 +85,5 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

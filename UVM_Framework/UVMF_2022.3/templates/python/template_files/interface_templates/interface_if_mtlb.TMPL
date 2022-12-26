@@ -18,8 +18,9 @@
 //
 //----------------------------------------------------------------------
 {% endblock %}
-
 {% block contents %}
+`ifndef {{name|upper}}_IF_MATLAB 
+`define {{name|upper}}_IF_MATLAB
 // This template can be used to connect a DUT to these signals
 //
 {% for sig in sigs %}
@@ -82,5 +83,5 @@ endinterface
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

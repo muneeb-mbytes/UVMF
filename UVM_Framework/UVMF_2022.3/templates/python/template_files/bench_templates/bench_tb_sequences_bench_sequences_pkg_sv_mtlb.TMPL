@@ -22,6 +22,8 @@
 
 {% block contents %}
 
+`ifndef {{name}}_SEQUENCES_PKG_BENCH_MATLAB
+`define {{name}}_SEQUENCES_PKG_BENCH_MATLAB
 package {{name}}_sequences_pkg;
   import uvm_pkg::*;
   import uvmf_base_pkg::*;
@@ -71,5 +73,5 @@ endpackage
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

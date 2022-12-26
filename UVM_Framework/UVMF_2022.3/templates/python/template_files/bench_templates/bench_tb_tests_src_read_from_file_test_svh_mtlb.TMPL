@@ -17,7 +17,8 @@
 {% endblock %}
 
 {% block contents %}
-
+`ifndef READ_FROM_FILE_TEST
+`define READ_FROM_FILE_TEST
 class read_from_file_test extends test_top;
 
   `uvm_component_utils( read_from_file_test );
@@ -36,5 +37,5 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

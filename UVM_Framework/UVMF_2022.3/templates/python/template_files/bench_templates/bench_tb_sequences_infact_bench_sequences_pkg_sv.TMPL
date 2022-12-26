@@ -18,7 +18,8 @@
 {% endblock %}
 
 {% block contents %}
-
+`ifndef {{name|upper}}_INFACT_SEQUENCES_PKG
+`define {{name|upper}}_INFACT_SEQUENCES_PKG
 package {{name}}_infact_sequences_pkg;
   import uvm_pkg::*;
   import uvmf_base_pkg::*;
@@ -70,5 +71,5 @@ endpackage
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

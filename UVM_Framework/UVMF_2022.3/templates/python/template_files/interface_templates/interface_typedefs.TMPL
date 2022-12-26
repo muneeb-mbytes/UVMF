@@ -13,13 +13,14 @@
 
 
 {% block contents %}
-
+`ifndef TYPEDEFS_HVL
+`definr TYPEDEFS_HVL
 {% for types in hvlTypedefs %}
 typedef {{types.type}} {{types.name}};
 {% endfor %}
 
 // pragma uvmf custom additional begin
 // pragma uvmf custom additional end
-
+`endif
 {% endblock %}
 ~                

@@ -12,7 +12,8 @@
 {% endblock %}
 
 {% block contents %}
-
+`ifndef REGISTER_TEST_SEQUENCE
+`define REGISTER_TEST_SEQUENCE
 class register_test_sequence extends {{name}}_bench_sequence_base;
 
   `uvm_object_utils( register_test_sequence );
@@ -82,5 +83,5 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

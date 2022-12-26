@@ -14,7 +14,8 @@
 {% endblock %}
 
 {% block contents %}
-
+`ifndef READ_FROM_FILE_SEQUENCE
+`define READ_FROM_FILE_SEQUENCE
 class read_from_file_sequence extends {{name}}_bench_sequence_base;
 
   `uvm_object_utils( read_from_file_sequence );
@@ -71,5 +72,5 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

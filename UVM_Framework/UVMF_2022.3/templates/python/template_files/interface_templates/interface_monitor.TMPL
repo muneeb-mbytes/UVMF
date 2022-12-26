@@ -13,8 +13,9 @@
 //
 //----------------------------------------------------------------------
 {% endblock %}
-
 {% block contents %}
+`ifndef {{name|upper}}_MONITOR 
+`define {{name|upper}}_MONITOR 
 class {{name}}_monitor {{macro.paramDeclare(paramDefs)|indent(6)}} extends uvmf_monitor_base #(
                     .CONFIG_T({{name}}_configuration  {{macro.paramUse(paramDefs)|indent(29)}}),
                     .BFM_BIND_T({%if useDpiLink %}{{name}}_monitor_proxy {% else %}virtual {{name}}_monitor_bfm {% endif %} {{macro.paramUse(paramDefs)|indent(29)}}),
@@ -102,5 +103,5 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

@@ -10,8 +10,10 @@
 //
 //----------------------------------------------------------------------
 {% endblock %}
-
 {% block contents %}
+
+`ifndef {{name|upper}}_CONFIGURATION
+`define {{name|upper}}_CONFIGURATION
 class {{name}}_configuration {{macro.paramDeclare(paramDefs)|indent(6)}} extends uvmf_parameterized_agent_configuration_base #(
       .DRIVER_BFM_BIND_T({% if useDpiLink %}{{name}}_driver_proxy {% else %}virtual {{name}}_driver_bfm {% endif %}{{macro.paramUse(paramDefs)|indent(26)}}),
       .MONITOR_BFM_BIND_T({% if useDpiLink %} {{name}}_monitor_proxy {% else %} virtual {{name}}_monitor_bfm {% endif %}{{macro.paramUse(paramDefs)|indent(26)}}));
@@ -201,5 +203,5 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

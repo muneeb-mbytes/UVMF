@@ -10,7 +10,8 @@
 {% endblock %}
 
 {% block contents %}
-
+`ifndef {{name|upper}}_PARAMETERS_PKG_BENCH
+`define {{name|upper}}_PARAMETERS_PKG_BENCH
 
 package {{name}}_parameters_pkg;
 
@@ -53,5 +54,5 @@ endpackage
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

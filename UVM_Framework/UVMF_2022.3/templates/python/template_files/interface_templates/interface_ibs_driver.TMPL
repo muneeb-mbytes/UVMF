@@ -13,8 +13,9 @@
 //
 //----------------------------------------------------------------------
 {% endblock %}
-
 {% block contents %}
+`ifndef {{name|upper}}_IBS_DRIVER
+`define {{name|upper}}_IBS_DRIVER
 class {{name}}_ibs_driver {{macro.paramDeclare(paramDefs)|indent(8)}} extends {{name}}_driver {{macro.paramUse(paramDefs)|indent(16)}};
 
 {{macro.compUtils([ name,'_ibs_driver']|join(""),paramDefs)}}
@@ -81,5 +82,5 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

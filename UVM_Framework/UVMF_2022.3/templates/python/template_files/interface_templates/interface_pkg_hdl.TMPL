@@ -15,6 +15,8 @@
 {% endblock %}
 
 {% block contents %}
+`ifndef {{name|upper}}_PKG_HDL 
+`define {{name|upper}}_PKG_HDL 
 package {{name}}_pkg_hdl;
   
   import uvmf_base_pkg_hdl::*;
@@ -37,5 +39,5 @@ endpackage
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

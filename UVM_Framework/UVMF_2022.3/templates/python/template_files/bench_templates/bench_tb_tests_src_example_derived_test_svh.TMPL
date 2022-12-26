@@ -14,7 +14,8 @@
 {% endblock %}
 
 {% block contents %}
-
+`ifndef EXAMPLE_DERIVED_TEST
+`define EXAMPLE_DERIVED_TEST
 class example_derived_test extends test_top;
 
   `uvm_component_utils( example_derived_test );
@@ -39,5 +40,5 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

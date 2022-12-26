@@ -50,7 +50,8 @@
 //
 //----------------------------------------------------------------------
 {% endblock %}
-
+`ifndef {{name|upper}}_DRIVER_BFM 
+`define {{name|upper}}_DRIVER_BFM 
 {% block contents %}
 import uvmf_base_pkg_hdl::*;
 import {{name}}_pkg_hdl::*;
@@ -462,5 +463,5 @@ endinterface
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

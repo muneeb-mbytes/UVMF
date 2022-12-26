@@ -19,6 +19,8 @@
 // ****************************************************************************
 // This sequence constructs a {{name}}_transaction and uses DPI-C to create stimulus values.
 // 
+`ifndef {{name|upper}}_DPI_STIMGEN_SEQUENCE
+`define {{name|upper}}_DPI_STIMGEN_SEQUENCE
 class {{name}}_DPI_stimgen_sequence {%if paramDefs|length > 0%} #(
 {% for param in paramDefs %}      {{param.type}} {{param.name}} = {{param.value}}{% if not loop.last %},{% endif %}                                
 {% endfor %}      )
@@ -156,5 +158,5 @@ endclass: {{name}}_DPI_stimgen_sequence
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

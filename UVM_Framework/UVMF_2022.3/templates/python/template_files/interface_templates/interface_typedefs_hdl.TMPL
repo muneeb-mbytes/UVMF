@@ -13,6 +13,8 @@
 
 
 {% block contents %}                                                                               
+`ifndef TYPEDEFS_HVL
+`definr TYPEDEFS_HVL
 
 {% for types in hdlTypedefs %}
 typedef {{types.type}} {{types.name}};
@@ -20,5 +22,5 @@ typedef {{types.type}} {{types.name}};
 
 // pragma uvmf custom additional begin
 // pragma uvmf custom additional end
-
+`endif
 {% endblock %}

@@ -19,7 +19,8 @@
 */
 {% endblock %}
 {% block contents %}
-
+`ifndef {{name|upper}}_INTERFACE_TC_CPP
+`define {{name|upper}}_INTERFACE_TC_CPP
 #include "dpiheader.h"
 #include "dpi_link.h"
 // pragma uvmf custom header begin
@@ -42,5 +43,5 @@ extern "C" {
 
 // pragma uvmf custom additional begin
 // pragma uvmf custom additional end
-
+`endif
 {% endblock %}

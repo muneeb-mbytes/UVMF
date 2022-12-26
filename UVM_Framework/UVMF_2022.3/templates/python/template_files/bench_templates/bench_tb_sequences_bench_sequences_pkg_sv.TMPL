@@ -17,7 +17,8 @@
 {% endblock %}
 
 {% block contents %}
-
+`ifndef {{name|upper}}_SEQUENCES_PKG_BENCH
+`define {{name|upper}}_SEQUENCES_PKG_BENCH
 package {{name}}_sequences_pkg;
   import uvm_pkg::*;
   import uvmf_base_pkg::*;
@@ -65,5 +66,5 @@ endpackage
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

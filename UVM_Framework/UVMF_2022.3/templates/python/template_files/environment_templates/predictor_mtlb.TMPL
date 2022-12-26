@@ -27,6 +27,8 @@
 //----------------------------------------------------------------------
 {% endblock %}
 {% block contents %}
+`ifndef {{name|upper}}
+`define {{name|upper}}
 
 class {{name}} {{macro.paramDeclare(parameters)|indent(2)}} extends uvm_component;
 
@@ -215,8 +217,8 @@ class {{name}} {{macro.paramDeclare(parameters)|indent(2)}} extends uvm_componen
   endfunction
   
 endclass 
-
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
 
+`endif
 {% endblock %}

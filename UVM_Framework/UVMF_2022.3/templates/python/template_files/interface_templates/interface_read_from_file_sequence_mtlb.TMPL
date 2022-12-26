@@ -19,6 +19,8 @@
 // ****************************************************************************
 // This sequence constructs a {{name}}_transaction and uses file input to create stimulus values.
 // 
+`ifndef {{name|upper}}_READ_FROM_FILE_SEQUENCE
+`define {{name|upper}}_READ_FROM_FILE_SEQUENCE
 class {{name}}_read_from_file_sequence {%if paramDefs|length > 0%} #(
 {% for param in paramDefs %}      {{param.type}} {{param.name}} = {{param.value}}{% if not loop.last %},{% endif %}                                
 {% endfor %}      )
@@ -109,5 +111,5 @@ endclass: {{name}}_read_from_file_sequence
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

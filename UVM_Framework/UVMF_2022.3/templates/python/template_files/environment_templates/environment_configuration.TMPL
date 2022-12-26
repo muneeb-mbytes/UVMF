@@ -12,6 +12,9 @@
 {% endblock %}
 
 {% block contents %}
+`ifndef {{name|upper}}_ENV_CONFIGURATION
+`define {{name|upper}}_ENV_CONFIGURATION
+
 class {{name}}_env_configuration {{macro.paramDeclare(paramDefs)|indent(13)}}
 extends uvmf_environment_configuration_base;
 
@@ -241,5 +244,6 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
+`endif
 
 {% endblock %}

@@ -17,6 +17,8 @@
 {% endblock %}
 
 {% block contents %}
+`ifndef DPI_STIMGEN_TEST
+`define DPI_STIMGEN_TEST
 
 class DPI_stimgen_test extends test_top;
 
@@ -36,5 +38,5 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

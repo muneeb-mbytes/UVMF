@@ -13,7 +13,8 @@
 {% endblock %}
 
 {% block contents %}
-
+`ifndef INFACT_TEST_BASE
+`define INFACT_TEST_BASE
 class infact_test_base extends test_top;
 
   `uvm_component_utils( infact_test_base );
@@ -37,5 +38,5 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

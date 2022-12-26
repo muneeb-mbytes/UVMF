@@ -12,6 +12,8 @@
 //----------------------------------------------------------------------
 {% endblock %}
 {% block contents %}
+`ifndef {{name|upper}}_INFACT_SEQUENCE
+`define {{name|upper}}_INFACT_SEQUENCE
 class {{name}}_infact_sequence {%if paramDefs|length > 0%} #(
 {% for param in paramDefs %}      {{param.type}} {{param.name}}{% if param.value != None %} = {{param.value}}{% endif %}{% if not loop.last %},{% endif %}                                
 {% endfor %}      ) {% endif %}
@@ -40,5 +42,5 @@ endclass: {{name}}_infact_sequence
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

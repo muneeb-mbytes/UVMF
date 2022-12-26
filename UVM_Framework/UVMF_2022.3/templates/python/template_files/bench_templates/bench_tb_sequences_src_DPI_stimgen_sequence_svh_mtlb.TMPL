@@ -14,7 +14,8 @@
 {% endblock %}
 
 {% block contents %}
-
+`ifndef DPI_STIMGEN_SEQUENCE_SEQUENCE
+`define DPI_STIMGEN_SEQUENCE_SEQUENCE
 class DPI_stimgen_sequence extends {{name}}_bench_sequence_base;
 
   `uvm_object_utils( DPI_stimgen_sequence );
@@ -73,5 +74,5 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

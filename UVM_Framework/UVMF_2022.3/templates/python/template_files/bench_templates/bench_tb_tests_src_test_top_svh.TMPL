@@ -18,7 +18,8 @@
 
 typedef {{env_name}}_env_configuration {{macro.paramUseNested(envParamDefs)|indent(8)}}{{env_name}}_env_configuration_t;
 typedef {{env_name}}_environment {{macro.paramUseNested(envParamDefs)|indent(8)}}{{env_name}}_environment_t;
-
+`ifndef TEST_TOP
+`define TEST_TOP
 class test_top extends uvmf_test_base #(.CONFIG_T({{env_name}}_env_configuration_t), 
                                         .ENV_T({{env_name}}_environment_t), 
                                         .TOP_LEVEL_SEQ_T({{name}}_bench_sequence_base));
@@ -137,5 +138,5 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

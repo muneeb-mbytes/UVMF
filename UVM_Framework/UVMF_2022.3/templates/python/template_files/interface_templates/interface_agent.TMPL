@@ -8,8 +8,11 @@
 //
 //----------------------------------------------------------------------
 {% endblock %}
-
 {% block contents %}
+
+`ifndef {{name|upper}}_AGENT
+`define {{name|upper}}_AGENT
+
 class {{name}}_agent {{macro.paramDeclare(paramDefs)|indent(5)}} extends uvmf_parameterized_agent #(
                     .CONFIG_T({{name}}_configuration {{macro.paramUse(paramDefs)|indent(30)}}),
                     .DRIVER_T({{name}}_driver {{macro.paramUse(paramDefs)|indent(30)}}),
@@ -47,7 +50,8 @@ class {{name}}_agent {{macro.paramDeclare(paramDefs)|indent(5)}} extends uvmf_pa
   
 endclass
 
+
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

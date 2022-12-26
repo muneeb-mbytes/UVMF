@@ -29,6 +29,15 @@ package {{regModelPkg}};
    // Class: {{env_name}}_example_reg0
    // 
    //--------------------------------------------------------------------
+   `ifndef {{env_name|upper}}_EXAMPLE_REG0
+   `define {{env_name|upper}}_EXAMPLE_REG0
+   `ifndef {{env_name|upper}}_EXAMPLE_REG1
+   `define {{env_name|upper}}_EXAMPLE_REG1
+   `ifndef {{env_name|upper}}_{{busMap}}_COVERAGE
+   `define {{env_name|upper}}_{{busMap}}_COVERAGE
+   `ifndef {{regBlockClass|upper}}
+   `define {{regBlockClass|upper}}
+
    class {{env_name}}_example_reg0 extends uvm_reg;
       `uvm_object_utils({{env_name}}_example_reg0)
 
@@ -203,5 +212,6 @@ endpackage
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
+`endif
 
 {% endblock %}

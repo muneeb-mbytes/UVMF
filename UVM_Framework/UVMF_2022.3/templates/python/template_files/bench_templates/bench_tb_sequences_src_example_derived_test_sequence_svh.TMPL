@@ -13,7 +13,8 @@
 {% endblock %}
 
 {% block contents %}
-
+`ifndef EXAMPLE_DERIVED_TEST_SEQUENCE
+`define EXAMPLE_DERIVED_TEST_SEQUENCE
 class example_derived_test_sequence extends {{name}}_bench_sequence_base;
 
   `uvm_object_utils( example_derived_test_sequence );
@@ -26,5 +27,5 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

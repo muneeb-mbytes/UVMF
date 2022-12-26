@@ -13,6 +13,8 @@
 {% endblock %}
 
 {% block contents %}
+`ifndef {{name|upper}}_RESPONDER_SEQUENCE
+`define {{name|upper}}_RESPONDER_SEQUENCE
 class {{name}}_responder_sequence {{macro.paramDeclare(paramDefs)|indent(6)}}
   extends {{name}}_sequence_base {{macro.paramUse(paramDefs)|indent(6)}};
 
@@ -45,5 +47,5 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

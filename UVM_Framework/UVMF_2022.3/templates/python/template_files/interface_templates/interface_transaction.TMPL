@@ -13,6 +13,8 @@
 {% endblock %}
 
 {% block contents %}
+`ifndef {{name|upper}}_TRANSACTION
+`define {{name|upper}}_TRANSACTION
 class {{name}}_transaction {{macro.paramDeclare(paramDefs)|indent(6)}} extends uvmf_transaction_base;
 
 {{macro.objUtils([name,'_transaction']|join(""),paramDefs)}}
@@ -193,5 +195,5 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

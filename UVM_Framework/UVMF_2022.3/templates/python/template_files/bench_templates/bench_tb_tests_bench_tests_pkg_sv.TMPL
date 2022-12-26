@@ -16,7 +16,8 @@
 {% endblock %}
 
 {% block contents %}
-
+`ifndef {{name|upper}}_TESTS_PKG
+`define {{name|upper}}_TESTS_PKG
 package {{name}}_tests_pkg;
 
    import uvm_pkg::*;

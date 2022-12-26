@@ -11,6 +11,9 @@
 {% endblock %}
 
 {% block contents %}
+`ifndef {{name|upper}}_ENV_SEQUENCE_BASE
+`define {{name|upper}}_ENV_SEQUENCE_BASE
+
 class {{name}}_env_sequence_base #( 
       type CONFIG_T{% if paramDefs|length > 0 %}{% for param in paramDefs -%}{% if loop.first %},
 {% endif %}
@@ -115,8 +118,8 @@ rand {{sub_env.name}}_sequence_base_t {{sub_env.name}}_seq;
   endtask
 
 endclass
-
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
 
+`endif
 {% endblock %}
