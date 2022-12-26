@@ -1,6 +1,6 @@
 # Setting the path for making "make cli" command works fine.
 
-setenv UVMF_HOME /hwetools/work_area/frontend/vinay_B7/UVMF/UVM_Framework/UVMF_2022.3/
+setenv UVMF_HOME /hwetools/work_area/frontend/mouna/github_course/UVMF/UVM_Framework/UVMF_2022.3/
 
 # This is the command to generate you block_1_level bench
 

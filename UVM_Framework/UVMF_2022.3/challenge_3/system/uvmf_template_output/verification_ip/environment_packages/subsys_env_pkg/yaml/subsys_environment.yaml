@@ -13,16 +13,16 @@ uvmf:
       analysis_ports:
       - connected_to: b1.apb_master_ap
         name: block_1_ap1
-        trans_type: block_1_environment
+        trans_type: apb_m_transaction
       - connected_to: b1.axi_master1_ap
         name: block_1_ap2
-        trans_type: block_1_environment
+        trans_type: axi_m_transaction
       - connected_to: b1.axi_master2_ap
         name: block_1_ap3
-        trans_type: block_1_environment
+        trans_type: axi_m_transaction
       - connected_to: b2.wb_slave_ap
         name: block_2_ap1
-        trans_type: block_2_environment
+        trans_type: wb_s_transaction
       config_constraints: []
       config_vars:
       - comment: ''
@@ -32,6 +32,10 @@ uvmf:
         value: ''
       existing_library_component: 'True'
       hvl_pkg_parameters: []
+      imports:
+      - name: apb_m_pkg
+      - name: axi_m_pkg
+      - name: wb_s_pkg
       non_uvmf_components: []
       parameters: []
       qvip_memory_agents: []

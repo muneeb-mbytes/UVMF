@@ -3,13 +3,13 @@ uvmf:
     sys_predictor:
       analysis_exports:
       - name: sys_apb_ae
-        type: subsys_environment
+        type: apb_m_transaction
       - name: sys_axi_2_ae
-        type: subsys_environment
+        type: axi_m_transaction
       - name: sys_axi_1_ae
-        type: subsys_environment
+        type: axi_m_transaction
       analysis_ports:
       - name: sys_pre_to_sco_ap
-        type: block_3_environment
+        type: axi_s_transaction
       existing_library_component: 'True'
       type: predictor

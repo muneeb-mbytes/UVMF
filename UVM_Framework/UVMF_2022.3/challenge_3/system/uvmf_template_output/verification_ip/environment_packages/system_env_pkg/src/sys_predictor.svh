@@ -13,14 +13,14 @@
 //   This analysis component has the following analysis_exports that receive the 
 //   listed transaction type.
 //   
-//   sys_apb_ae receives transactions of type  subsys_environment
-//   sys_axi_2_ae receives transactions of type  subsys_environment
-//   sys_axi_1_ae receives transactions of type  subsys_environment
+//   sys_apb_ae receives transactions of type  apb_m_transaction
+//   sys_axi_2_ae receives transactions of type  axi_m_transaction
+//   sys_axi_1_ae receives transactions of type  axi_m_transaction
 //
 //   This analysis component has the following analysis_ports that can broadcast 
 //   the listed transaction type.
 //
-//  sys_pre_to_sco_ap broadcasts transactions of type block_3_environment
+//  sys_pre_to_sco_ap broadcasts transactions of type axi_s_transaction
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
 //
@@ -42,36 +42,36 @@ class sys_predictor #(
 
   
   // Instantiate the analysis exports
-  uvm_analysis_imp_sys_apb_ae #(subsys_environment, sys_predictor #(
+  uvm_analysis_imp_sys_apb_ae #(apb_m_transaction, sys_predictor #(
                               .CONFIG_T(CONFIG_T),
                               .BASE_T(BASE_T)
                               )) sys_apb_ae;
-  uvm_analysis_imp_sys_axi_2_ae #(subsys_environment, sys_predictor #(
+  uvm_analysis_imp_sys_axi_2_ae #(axi_m_transaction, sys_predictor #(
                               .CONFIG_T(CONFIG_T),
                               .BASE_T(BASE_T)
                               )) sys_axi_2_ae;
-  uvm_analysis_imp_sys_axi_1_ae #(subsys_environment, sys_predictor #(
+  uvm_analysis_imp_sys_axi_1_ae #(axi_m_transaction, sys_predictor #(
                               .CONFIG_T(CONFIG_T),
                               .BASE_T(BASE_T)
                               )) sys_axi_1_ae;
 
   
   // Instantiate the analysis ports
-  uvm_analysis_port #(block_3_environment) sys_pre_to_sco_ap;
+  uvm_analysis_port #(axi_s_transaction) sys_pre_to_sco_ap;
 
 
   // Transaction variable for predicted values to be sent out sys_pre_to_sco_ap
   // Once a transaction is sent through an analysis_port, another transaction should
   // be constructed for the next predicted transaction. 
-  typedef block_3_environment sys_pre_to_sco_ap_output_transaction_t;
+  typedef axi_s_transaction sys_pre_to_sco_ap_output_transaction_t;
   sys_pre_to_sco_ap_output_transaction_t sys_pre_to_sco_ap_output_transaction;
   // Code for sending output transaction out through sys_pre_to_sco_ap
   // sys_pre_to_sco_ap.write(sys_pre_to_sco_ap_output_transaction);
 
   // Define transaction handles for debug visibility 
-  subsys_environment sys_apb_ae_debug;
-  subsys_environment sys_axi_2_ae_debug;
-  subsys_environment sys_axi_1_ae_debug;
+  apb_m_transaction sys_apb_ae_debug;
+  axi_m_transaction sys_axi_2_ae_debug;
+  axi_m_transaction sys_axi_1_ae_debug;
 
 
   // pragma uvmf custom class_item_additional begin
@@ -99,7 +99,7 @@ class sys_predictor #(
   // FUNCTION: write_sys_apb_ae
   // Transactions received through sys_apb_ae initiate the execution of this function.
   // This function performs prediction of DUT output values based on DUT input, configuration and state
-  virtual function void write_sys_apb_ae(subsys_environment t);
+  virtual function void write_sys_apb_ae(apb_m_transaction t);
     // pragma uvmf custom sys_apb_ae_predictor begin
     sys_apb_ae_debug = t;
     `uvm_info("PRED", "Transaction Received through sys_apb_ae", UVM_MEDIUM)
@@ -123,7 +123,7 @@ class sys_predictor #(
   // FUNCTION: write_sys_axi_2_ae
   // Transactions received through sys_axi_2_ae initiate the execution of this function.
   // This function performs prediction of DUT output values based on DUT input, configuration and state
-  virtual function void write_sys_axi_2_ae(subsys_environment t);
+  virtual function void write_sys_axi_2_ae(axi_m_transaction t);
     // pragma uvmf custom sys_axi_2_ae_predictor begin
     sys_axi_2_ae_debug = t;
     `uvm_info("PRED", "Transaction Received through sys_axi_2_ae", UVM_MEDIUM)
@@ -147,7 +147,7 @@ class sys_predictor #(
   // FUNCTION: write_sys_axi_1_ae
   // Transactions received through sys_axi_1_ae initiate the execution of this function.
   // This function performs prediction of DUT output values based on DUT input, configuration and state
-  virtual function void write_sys_axi_1_ae(subsys_environment t);
+  virtual function void write_sys_axi_1_ae(axi_m_transaction t);
     // pragma uvmf custom sys_axi_1_ae_predictor begin
     sys_axi_1_ae_debug = t;
     `uvm_info("PRED", "Transaction Received through sys_axi_1_ae", UVM_MEDIUM)

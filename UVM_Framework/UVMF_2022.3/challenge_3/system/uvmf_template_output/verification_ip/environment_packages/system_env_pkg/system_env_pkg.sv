@@ -24,6 +24,9 @@ package system_env_pkg;
   import uvm_pkg::*;
   `include "uvm_macros.svh"
   import uvmf_base_pkg::*;
+  import apb_m_pkg::*;
+  import axi_m_pkg::*;
+  import axi_s_pkg::*;
   import subsys_env_pkg::*;
   import block_3_env_pkg::*;
  
