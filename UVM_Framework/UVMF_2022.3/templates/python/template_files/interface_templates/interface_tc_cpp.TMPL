@@ -1,3 +1,7 @@
+`ifndef {{name|upper}}_INCLUDED_ 
+`define {{name|upper}}_INCLUDED_
+
+
 {% set fname = "{{vip_location}}/{{interface_location}}/{{name}}_pkg/{{src_dir}}{{name}}_tc.cpp" %}
 {% set conditional = "dpi_link" %}
 {% block description %}
@@ -42,5 +46,5 @@ extern "C" {
 
 // pragma uvmf custom additional begin
 // pragma uvmf custom additional end
-
+`endif
 {% endblock %}
