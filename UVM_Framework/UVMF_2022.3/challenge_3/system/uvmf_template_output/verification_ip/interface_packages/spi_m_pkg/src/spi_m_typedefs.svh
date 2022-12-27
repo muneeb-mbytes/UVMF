@@ -1,7 +1,5 @@
-`ifndef SPI_M_INCLUDED_
-`define SPI_M_INCLUDED_
-
-
+`ifndef SPI_M_IF_TYPEDEFS
+`define SPI_M_IF_TYPEDEFS
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------

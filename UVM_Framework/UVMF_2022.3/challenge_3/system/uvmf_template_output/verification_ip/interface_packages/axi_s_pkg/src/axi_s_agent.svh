@@ -1,6 +1,5 @@
-`ifndef AXI_S_INCLUDED_
-`define AXI_S_INCLUDED_
-
+`ifndef AXI_S_AGENT
+`define AXI_S_AGENT  
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------

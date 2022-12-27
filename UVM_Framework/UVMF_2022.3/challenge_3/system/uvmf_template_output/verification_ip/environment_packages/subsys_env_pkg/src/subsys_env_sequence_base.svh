@@ -1,6 +1,5 @@
-`ifndef SUBSYS_INCLUDED_
-`define SUBSYS_INCLUDED_
-
+`ifndef SUBSYS_ENV_SEQUENCE_BASE
+`define SUBSYS_ENV_SEQUENCE_BASE
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------

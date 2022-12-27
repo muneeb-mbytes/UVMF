@@ -1,5 +1,5 @@
-`ifndef SYSTEM_INCLUDED_
-`define SYSTEM_INCLUDED_
+`ifndef SYSTEM_TB_TESTS_SRC_EXAMPLE_DERIVED_TEST_SVH
+`define SYSTEM_TB_TESTS_SRC_EXAMPLE_DERIVED_TEST_SVH
 
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3

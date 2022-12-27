@@ -1,2 +1,5 @@
+`ifndef SYSTEM_ENV_SCOREBOARD
+`define SYSTEM_ENV_SCOREBOARD
 @use $UVMF_PROJECT_DIR/tb/tests/system_tests_pkg.vinfo
 hvl_top.sv
+`endif

@@ -1,7 +1,5 @@
-`ifndef APB_M_INCLUDED_ 
-`define APB_M_INCLUDED_
-
-
+`ifndef APB_M_2REG_ADAPTER
+`define APB_M_2REG_ADAPTER 
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------

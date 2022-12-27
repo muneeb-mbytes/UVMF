@@ -1,3 +1,6 @@
+`ifndef BLOCK_1_TB_TESTBENCH_HVL_TOP_COMPILE
+`define BLOCK_1_TB_TESTBENCH_HVL_TOP_COMPILE
+
 incdir:
   - ${uvm_path}/src
   - .
@@ -5,3 +8,4 @@ needs:
   - ../tests/block_1_tests_pkg.compile
 src:
   - hvl_top.sv
+`endif

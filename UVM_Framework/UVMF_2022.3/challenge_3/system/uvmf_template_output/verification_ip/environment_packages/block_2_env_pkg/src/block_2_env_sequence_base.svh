@@ -1,6 +1,5 @@
-`ifndef BLOCK_2_INCLUDED_
-`define BLOCK_2_INCLUDED_
-
+`ifndef BLOCK_2_ENV_SEQUENCE_BASE
+`define BLOCK_2_ENV_SEQUENCE_BASE
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------

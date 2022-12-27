@@ -1,7 +1,5 @@
-
-`ifndef AXI_M_INCLUDED_
-`define AXI_M_INCLUDED_
-
+`ifndef AXI_M_DRIVER
+`define AXI_M_DRIVER
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------

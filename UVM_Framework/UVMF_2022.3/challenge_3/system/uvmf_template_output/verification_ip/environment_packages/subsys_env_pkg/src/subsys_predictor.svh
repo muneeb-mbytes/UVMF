@@ -1,6 +1,5 @@
-`ifndef SUBSYS_PREDICTOR_INCLUDED_
-`define SUBSYS_PREDICTOR_INCLUDED_
-
+`ifndef SUBSYS_PREDICTOR_ENV_PRED
+`define SUBSYS_PREDICTOR_ENV_PRED
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------

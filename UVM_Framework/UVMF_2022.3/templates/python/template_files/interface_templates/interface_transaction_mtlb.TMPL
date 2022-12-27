@@ -1,6 +1,5 @@
-`ifndef {{name|upper}}_INCLUDED_ 
-`define {{name|upper}}_INCLUDED_
-
+`ifndef {{name|upper}}_IF_TRANS_MTLB
+`define {{name|upper}}_IF_TRANS_MTLB 
 {% set fname = "{{vip_location}}/{{interface_location}}/{{name}}_pkg/{{src_dir}}{{name}}_transaction_mtlb.svh" %}
 {% set conditional = "mtlbReady" %}
 {% extends "base_template.TMPL" %}

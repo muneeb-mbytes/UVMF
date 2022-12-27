@@ -1,6 +1,5 @@
-`ifndef BLOCK_3_INCLUDED_
-`define BLOCK_3_INCLUDED_
-
+`ifndef BLOCK_3_TB_TESTBENCH_HVL_TOP_SV
+`define BLOCK_3_TB_TESTBENCH_HVL_TOP_SV
 
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
@@ -34,5 +33,4 @@ endmodule
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
 `endif

@@ -1,6 +1,5 @@
-`ifndef SPI_S_INCLUDED_
-`define SPI_S_INCLUDED_
-
+`ifndef SPI_S_CONFIGURATION
+`define SPI_S_CONFIGURATION
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------

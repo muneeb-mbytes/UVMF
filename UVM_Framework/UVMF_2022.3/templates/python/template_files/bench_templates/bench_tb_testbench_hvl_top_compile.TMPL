@@ -1,3 +1,6 @@
+`ifndef {{name|upper}}_TB_TESTBENCH_HVL_TOP_COMPILE
+`define {{name|upper}}_TB_TESTBENCH_HVL_TOP_COMPILE
+
 {% set fname = "{{bench_location}}/{{name}}/tb/testbench/hvl_top.compile" %}
 {% block description %}
 {% endblock %}
@@ -12,4 +15,5 @@ needs:
   - ../tests/{{name}}_tests_pkg.compile
 src:
   - hvl_top.sv
+`endif
 {% endblock %}

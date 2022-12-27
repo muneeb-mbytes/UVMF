@@ -1,7 +1,5 @@
-`ifndef SPI_S_INCLUDED_ 
-`define SPI_S_INCLUDED_
-
-
+`ifndef SPI_S_IF_COV
+`define SPI_S_IF_COV
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------

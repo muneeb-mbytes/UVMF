@@ -1,4 +1,5 @@
-
+`ifndef SPI_M_MONITOR_BFM
+`define SPI_M_MONITOR_BFM
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------
@@ -29,8 +30,6 @@
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
 //
-`ifndef SPI_M_INCLUDED_
-`define SPI_M_INCLUDED_
 import uvmf_base_pkg_hdl::*;
 import spi_m_pkg_hdl::*;
 `include "src/spi_m_macros.svh"

@@ -1,6 +1,5 @@
-`ifndef BLOCK_2_INCLUDED_
-`define BLOCK_2_INCLUDED_
-
+`ifndef BLOCK_2_ENV_
+`define BLOCK_2_ENV_
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------
@@ -127,5 +126,4 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
 `endif

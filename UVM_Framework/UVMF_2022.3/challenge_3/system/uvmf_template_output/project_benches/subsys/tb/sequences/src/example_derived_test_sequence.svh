@@ -1,7 +1,5 @@
-`ifndef SUBSYS_INCLUDED_
-`define SUBSYS_INCLUDED_
-
-
+`ifndef SUBSYS_TB_SEQUENCES_SRC_EXAMPLE_DERIVED_TEST_SEQUENCE_SVH
+`define SUBSYS_TB_SEQUENCES_SRC_EXAMPLE_DERIVED_TEST_SEQUENCE_SVH
 
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3

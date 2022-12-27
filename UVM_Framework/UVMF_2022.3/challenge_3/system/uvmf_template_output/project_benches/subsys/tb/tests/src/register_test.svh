@@ -1,6 +1,5 @@
-
-`ifndef SUBSYS_INCLUDED_
-`define SUBSYS_INCLUDED_
+`ifndef SUBSYS_TB_TESTS_SRC_REGISTER_TEST_SVH
+`define SUBSYS_TB_TESTS_SRC_REGISTER_TEST_SVH
 
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3

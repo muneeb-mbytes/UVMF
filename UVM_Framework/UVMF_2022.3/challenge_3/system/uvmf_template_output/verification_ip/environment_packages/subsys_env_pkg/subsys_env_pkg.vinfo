@@ -1,5 +1,7 @@
+`ifndef SUBSYS_ENVIRONMENT_OKG_VINFO.TMPL
 @use $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg.vinfo
 @use $UVMF_VIP_LIBRARY_HOME/environment_packages/b1_pkg/b1_pkg.vinfo
 @use $UVMF_VIP_LIBRARY_HOME/environment_packages/b2_pkg/b2_pkg.vinfo
 +incdir+@vinfodir
 subsys_env_pkg.sv
+`endif

@@ -1,7 +1,5 @@
-`ifndef APB_M_INCLUDED_
-`define APB_M_INCLUDED_
-
-
+`ifndef APB_M_IF_HDL_TYPEDEFS
+`define APB_M_IF_HDL_TYPEDEFS
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------

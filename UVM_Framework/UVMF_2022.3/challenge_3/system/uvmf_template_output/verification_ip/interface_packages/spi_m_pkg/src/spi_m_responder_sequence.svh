@@ -1,8 +1,5 @@
-`ifndef SPI_M_INCLUDED_ 
-`define SPI_M_INCLUDED_
-
-
-
+`ifndef SPI_M_RES_SEQUENCE
+`define SPI_M_RES_SEQUENCE
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------

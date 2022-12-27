@@ -1,6 +1,5 @@
-`ifndef SYSTEM_INCLUDED_
-`define SYSTEM_INCLUDED_
-
+`ifndef SYSTEM_ENV_SEQUENCE_BASE
+`define SYSTEM_ENV_SEQUENCE_BASE
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------

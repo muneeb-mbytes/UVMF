@@ -1,6 +1,5 @@
-`ifndef SYSTEM_INCLUDED_
-`define SYSTEM_INCLUDED_
-
+`ifndef SYSTEM_TB_TESTBENCH_HDL_TOP_SV
+`define SYSTEM_TB_TESTBENCH_HDL_TOP_SV
 
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
@@ -157,4 +156,3 @@ endmodule
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
 `endif
-

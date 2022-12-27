@@ -1,6 +1,5 @@
-`ifndef BLOCK_1_INCLUDED__
-`define BLOCK_1_INCLUDED__
-
+`ifndef BLOCK_1_TB_SEQUENCES_BENCH_SEQUENCES_PKG_SV
+`define BLOCK_1_TB_SEQUENCES_BENCH_SEQUENCES_PKG_SV
 
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
@@ -51,7 +50,7 @@ package block_1_sequences_pkg;
   // pragma uvmf custom package_item_additional end
 
 endpackage
-`endif
+
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif

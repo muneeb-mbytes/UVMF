@@ -1,6 +1,5 @@
-`ifndef SUBSYS_INCLUDED_
-`define SUBSYS_INCLUDED_
-
+`ifndef SUBSYS_TB_PARAMETERS_BENCH_PARAMETERS_PKG_SV
+`define SUBSYS_TB_PARAMETERS_BENCH_PARAMETERS_PKG_SV
 
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
@@ -40,7 +39,7 @@ package subsys_parameters_pkg;
   // pragma uvmf custom package_item_additional end
 
 endpackage
+
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
 `endif

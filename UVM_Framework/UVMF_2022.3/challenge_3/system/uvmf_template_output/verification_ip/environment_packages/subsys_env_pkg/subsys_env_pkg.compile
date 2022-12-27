@@ -5,4 +5,3 @@ needs:
 
 src:
   - subsys_env_pkg.sv
-

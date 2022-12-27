@@ -1,4 +1,7 @@
+`ifndef SYSTEM_TB_PARAMETERS_PARAMETERS_PKG_COMPILE
+`define SYSTEM_TB_PARAMETERS_PARAMETERS_PKG_COMPILE
 needs:
   - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg_hdl.compile
 src:
   - system_parameters_pkg.sv
+`endif

@@ -1,6 +1,5 @@
-
-`ifndef {{name|upper}}_INCLUDED_
-`define {{name|upper}}_INCLUDED_
+`ifndef {{name|upper}}_IF
+`define {{name|upper}}_IF
 {% set fname = "{{vip_location}}/{{interface_location}}/{{name}}_pkg/{{src_dir}}{{name}}_if.sv" %}
 {% extends "base_template.TMPL" %}
 
@@ -81,5 +80,7 @@ endinterface
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
+
 `endif
 {% endblock %}
+

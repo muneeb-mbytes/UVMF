@@ -1,3 +1,5 @@
+`ifndef BLOCK_1_ENV_SCOREBOARD
+`define BLOCK_1_ENV_SCOREBOARD
 @use $UVMF_PROJECT_DIR/rtl/verilog/verilog_dut.vinfo
 @use $UVMF_PROJECT_DIR/tb/parameters/block_1_parameters_pkg.vinfo
 @use $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg_hdl.vinfo
@@ -5,3 +7,4 @@
 @use $UVMF_VIP_LIBRARY_HOME/interface_packages/axi_m_pkg/axi_m_bfm.vinfo
 @use $UVMF_VIP_LIBRARY_HOME/interface_packages/spi_s_pkg/spi_s_bfm.vinfo
 hdl_top.sv
+`endif

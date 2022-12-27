@@ -1,7 +1,5 @@
-`ifndef AXI_M_INCLUDED_ 
-`define AXI_M_INCLUDED_
-
-
+`ifndef AXI_M_IF_SEQ_BASE
+`define AXI_M_IF_SEQ_BASE
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------

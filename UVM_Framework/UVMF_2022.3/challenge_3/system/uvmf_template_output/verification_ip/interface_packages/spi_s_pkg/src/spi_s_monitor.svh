@@ -1,4 +1,5 @@
-
+`ifndef SPI_S_MONITOR
+`define SPI_S_MONITOR
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------
@@ -17,8 +18,6 @@
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
 //
-`ifndef SPI_S_INCLUDED_
-`define SPI_S_INCLUDED_
 class spi_s_monitor  extends uvmf_monitor_base #(
                     .CONFIG_T(spi_s_configuration  ),
                     .BFM_BIND_T(virtual spi_s_monitor_bfm  ),

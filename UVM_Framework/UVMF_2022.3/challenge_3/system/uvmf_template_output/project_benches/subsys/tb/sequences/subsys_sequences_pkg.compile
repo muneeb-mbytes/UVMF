@@ -1,3 +1,5 @@
+`ifndef SUBSYS_TB_SEQUENCES_SEQUENCES_PKG_COMPILE
+`define SUBSYS_TB_SEQUENCES_SEQUENCES_PKG_COMPILE
 needs:
   - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg.compile
   - ../../../../verification_ip/interface_packages/apb_m_pkg/apb_m.compile
@@ -9,3 +11,4 @@ needs:
   - ../parameters/subsys_parameters_pkg.compile
 src:
   - subsys_sequences_pkg.sv
+`endif

@@ -1,2 +1,5 @@
+`ifndef BLOCK_3_ENV_SCOREBOARD
+`define BLOCK_3_ENV_SCOREBOARD
 @use $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg_hdl.vinfo
 block_3_parameters_pkg.sv
+`endif

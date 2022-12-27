@@ -1,7 +1,5 @@
-`ifndef WB_M_INCLUDED_ 
-`define WB_M_INCLUDED_
-
-
+`ifndef WB_M_2REG_ADAPTER
+`define WB_M_2REG_ADAPTER 
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------

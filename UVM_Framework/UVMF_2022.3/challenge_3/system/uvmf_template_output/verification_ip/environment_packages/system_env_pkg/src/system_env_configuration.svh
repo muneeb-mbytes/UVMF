@@ -1,6 +1,5 @@
-`ifndef SYSTEM_INCLUDED_
-`define SYSTEM_INCLUDED_
-
+`ifndef SYSTEM_ENV_CONFIG
+`define SYSTEM_ENV_CONFIG
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------
@@ -156,5 +155,4 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
 `endif

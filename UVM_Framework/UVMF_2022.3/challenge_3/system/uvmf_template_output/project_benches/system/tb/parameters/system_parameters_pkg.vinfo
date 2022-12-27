@@ -1,2 +1,5 @@
+`ifndef SYSTEM_ENV_SCOREBOARD
+`define SYSTEM_ENV_SCOREBOARD
 @use $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg_hdl.vinfo
 system_parameters_pkg.sv
+`endif

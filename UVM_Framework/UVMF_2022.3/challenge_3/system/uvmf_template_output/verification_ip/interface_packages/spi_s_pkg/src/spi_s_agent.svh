@@ -1,6 +1,5 @@
-`ifndef SPI_S_INCLUDED_
-`define SPI_S_INCLUDED_
-
+`ifndef SPI_S_AGENT
+`define SPI_S_AGENT  
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------

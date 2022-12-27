@@ -1,4 +1,7 @@
+`ifndef BLOCK_1_TB_PARAMETERS_PARAMETERS_PKG_COMPILE
+`define BLOCK_1_TB_PARAMETERS_PARAMETERS_PKG_COMPILE
 needs:
   - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg_hdl.compile
 src:
   - block_1_parameters_pkg.sv
+`endif

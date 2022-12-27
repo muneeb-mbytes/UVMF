@@ -1,7 +1,10 @@
+`ifndef {{name|upper}}_ENV_SCOREBOARD
+`define {{name|upper}}_ENV_SCOREBOARD
 {% set fname = "{{bench_location}}/{{name}}/tb/testbench/hvl_top.vinfo" %}
 {% block description %}
 {% endblock %}
 {% block contents %}
 @use $UVMF_PROJECT_DIR/tb/tests/{{name}}_tests_pkg.vinfo
 hvl_top.sv
+`endif
 {% endblock %}

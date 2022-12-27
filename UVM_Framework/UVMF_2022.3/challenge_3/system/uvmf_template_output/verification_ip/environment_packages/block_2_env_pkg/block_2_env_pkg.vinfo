@@ -1,5 +1,7 @@
+`ifndef BLOCK_2_ENVIRONMENT_OKG_VINFO.TMPL
 @use $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg.vinfo
 @use $UVMF_VIP_LIBRARY_HOME/interface_packages/spi_m_pkg/spi_m_pkg.vinfo
 @use $UVMF_VIP_LIBRARY_HOME/interface_packages/wb_s_pkg/wb_s_pkg.vinfo
 +incdir+@vinfodir
 block_2_env_pkg.sv
+`endif

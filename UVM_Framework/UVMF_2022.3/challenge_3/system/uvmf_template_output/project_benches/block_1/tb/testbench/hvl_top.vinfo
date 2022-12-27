@@ -1,2 +1,5 @@
+`ifndef BLOCK_1_ENV_SCOREBOARD
+`define BLOCK_1_ENV_SCOREBOARD
 @use $UVMF_PROJECT_DIR/tb/tests/block_1_tests_pkg.vinfo
 hvl_top.sv
+`endif

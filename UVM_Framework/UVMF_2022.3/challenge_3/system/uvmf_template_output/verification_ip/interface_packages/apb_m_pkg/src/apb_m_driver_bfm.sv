@@ -1,6 +1,5 @@
-`ifndef APB_M_INCLUDED_
-`define APB_M_INCLUDED_
-
+`ifndef APB_M_DRIVER_BFM
+`define APB_M_DRIVER_BFM
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------

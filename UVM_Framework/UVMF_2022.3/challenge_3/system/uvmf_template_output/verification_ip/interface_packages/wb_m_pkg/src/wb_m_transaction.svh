@@ -1,7 +1,5 @@
-`ifndef WB_M_INCLUDED_ 
-`define WB_M_INCLUDED_
-
-
+`ifndef WB_M_IF_TRANSACTION
+`define WB_M_IF_TRANSACTION
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------

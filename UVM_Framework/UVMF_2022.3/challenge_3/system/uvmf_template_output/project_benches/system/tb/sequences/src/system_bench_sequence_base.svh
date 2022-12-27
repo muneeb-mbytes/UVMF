@@ -1,6 +1,5 @@
-`ifndef SYSTEM_INCLUDED_
-`define SYSTEM_INCLUDED_
-
+`ifndef SYSTEM_TB_SEQUENCES_SRC_BENCH_SEQUENCE_BASE_SVH
+`define SYSTEM_TB_SEQUENCES_SRC_BENCH_SEQUENCE_BASE_SVH
 
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3

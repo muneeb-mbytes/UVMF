@@ -1,4 +1,5 @@
-
+`ifndef WB_M_MACROS
+`define WB_M_MACROS
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------
@@ -147,3 +148,4 @@ typedef struct packed  { \
   endfunction
 // pragma uvmf custom additional begin
 // pragma uvmf custom additional end
+`endif

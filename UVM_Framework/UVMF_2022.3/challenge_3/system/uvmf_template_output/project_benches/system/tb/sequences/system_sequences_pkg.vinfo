@@ -1,3 +1,5 @@
+`ifndef SYSTEM_ENV_SCOREBOARD
+`define SYSTEM_ENV_SCOREBOARD
 @use $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg.vinfo
 @use $UVMF_VIP_LIBRARY_HOME/interface_packages/apb_m_pkg/apb_m_pkg.vinfo
 @use $UVMF_VIP_LIBRARY_HOME/interface_packages/axi_m_pkg/axi_m_pkg.vinfo
@@ -10,3 +12,4 @@
 @use $UVMF_PROJECT_DIR/tb/parameters/system_parameters_pkg.vinfo
 +incdir+@vinfodir
 system_sequences_pkg.sv
+`endif

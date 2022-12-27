@@ -1,4 +1,5 @@
-
+`ifndef AXI_M_MONITOR_BFM
+`define AXI_M_MONITOR_BFM
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------
@@ -29,8 +30,6 @@
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
 //
-`ifndef AXI_M_INCLUDED_
-`define AXI_M_INCLUDED_
 import uvmf_base_pkg_hdl::*;
 import axi_m_pkg_hdl::*;
 `include "src/axi_m_macros.svh"

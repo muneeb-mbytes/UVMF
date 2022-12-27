@@ -1,7 +1,5 @@
-`ifndef WB_M_INCLUDED_ 
-`define WB_M_INCLUDED_
-
-
+`ifndef WB_M_IF_SEQ_BASE
+`define WB_M_IF_SEQ_BASE
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------

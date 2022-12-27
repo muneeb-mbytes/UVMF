@@ -6,4 +6,3 @@ needs:
 
 src:
   - block_1_env_pkg.sv
-

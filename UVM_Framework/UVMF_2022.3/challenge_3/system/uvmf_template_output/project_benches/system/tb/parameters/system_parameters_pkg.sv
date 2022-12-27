@@ -1,6 +1,5 @@
-`ifndef SYSTEM_INCLUDED_
-`define SYSTEM_INCLUDED_
-
+`ifndef SYSTEM_TB_PARAMETERS_BENCH_PARAMETERS_PKG_SV
+`define SYSTEM_TB_PARAMETERS_BENCH_PARAMETERS_PKG_SV
 
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
@@ -42,7 +41,7 @@ package system_parameters_pkg;
   // pragma uvmf custom package_item_additional end
 
 endpackage
+
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
 `endif

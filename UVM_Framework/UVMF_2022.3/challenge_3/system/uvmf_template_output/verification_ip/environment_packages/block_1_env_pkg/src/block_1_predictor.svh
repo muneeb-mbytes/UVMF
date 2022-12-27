@@ -1,6 +1,5 @@
-`ifndef BLOCK_1_PREDICTOR_INCLUDED_
-`define BLOCK_1_PREDICTOR_INCLUDED_
-
+`ifndef BLOCK_1_PREDICTOR_ENV_PRED
+`define BLOCK_1_PREDICTOR_ENV_PRED
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------

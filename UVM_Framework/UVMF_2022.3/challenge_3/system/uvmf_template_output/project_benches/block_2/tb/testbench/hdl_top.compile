@@ -1,3 +1,6 @@
+`ifndef BLOCK_2_TB_TESTBENCH_HDL_TOP_COMPILE
+`define BLOCK_2_TB_TESTBENCH_HDL_TOP_COMPILE
+
 incdir:
   - ${uvm_path}/src
   - .
@@ -8,3 +11,4 @@ needs:
   - ../../../../verification_ip/interface_packages/wb_s_pkg/wb_s_hdl.compile
 src:
   - hdl_top.sv
+`endif

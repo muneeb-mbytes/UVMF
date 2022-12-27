@@ -1,5 +1,5 @@
-`ifndef {{name|upper}}_INCLUDED_
-`define {{name|upper}}_INCLUDED_
+`ifndef {{name|upper}}_ENV_MTLB_PKG
+`define {{name|upper}}_ENV_MTLB_PKG
 {% set fname = "{{vip_location}}/{{environment_location}}/{{name}}_env_pkg/{{name}}_env_pkg_mtlb.sv" %}
 {% set conditional = "mtlbReady" %}
 {% extends "base_template.TMPL" %}
@@ -83,6 +83,5 @@ endpackage
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
 `endif
 {% endblock %}

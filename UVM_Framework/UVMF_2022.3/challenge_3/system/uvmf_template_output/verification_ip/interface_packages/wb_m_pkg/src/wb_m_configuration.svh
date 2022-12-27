@@ -1,6 +1,5 @@
-`ifndef WB_M_INCLUDED_
-`define WB_M_INCLUDED_
-
+`ifndef WB_M_CONFIGURATION
+`define WB_M_CONFIGURATION
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------

@@ -1,7 +1,5 @@
-`ifndef AXI_M_INCLUDED_ 
-`define AXI_M_INCLUDED_
-
-
+`ifndef AXI_M_2REG_ADAPTER
+`define AXI_M_2REG_ADAPTER 
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------

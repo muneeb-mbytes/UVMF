@@ -1,3 +1,6 @@
+`ifndef SYSTEM_TB_TESTS_TESTS_PKG_COMPILE
+`define SYSTEM_TB_TESTS_TESTS_PKG_COMPILE
+
 needs:
   - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg.compile
   - ../../../../verification_ip/interface_packages/apb_m_pkg/apb_m.compile
@@ -12,3 +15,4 @@ needs:
   - ../sequences/system_sequences_pkg.compile
 src:
   - system_tests_pkg.sv
+`endif

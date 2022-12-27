@@ -1,3 +1,6 @@
+`ifndef SUBSYS_TB_TESTBENCH_HVL_TOP_COMPILE
+`define SUBSYS_TB_TESTBENCH_HVL_TOP_COMPILE
+
 incdir:
   - ${uvm_path}/src
   - .
@@ -5,3 +8,4 @@ needs:
   - ../tests/subsys_tests_pkg.compile
 src:
   - hvl_top.sv
+`endif

@@ -1,3 +1,4 @@
+`ifndef SYSTEM_ENVIRONMENT_COMPILE_DO.TMPL
 # Tcl do file for compile of system interface
 
 # pragma uvmf custom additional begin
@@ -15,4 +16,4 @@ quietly set cmd [format "vlog -timescale 1ps/1ps +incdir+%s/environment_packages
 quietly set cmd [format "%s %s/environment_packages/system_env_pkg/system_env_pkg.sv" $cmd $env(UVMF_VIP_LIBRARY_HOME)]
 eval $cmd
 
-
+`endif

@@ -1,7 +1,5 @@
-`ifndef AXI_M_INCLUDED_ 
-`define AXI_M_INCLUDED_
-
-
+`ifndef AXI_M_IF_TRANSACTION
+`define AXI_M_IF_TRANSACTION
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------

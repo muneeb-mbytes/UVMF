@@ -1,5 +1,5 @@
-`ifndef {{name|upper}}_INCLUDED_
-`define {{name|upper}}_INCLUDED_
+`ifndef {{name|upper}}_TB_SEQUENCES_BENCH_SEQUENCES_PKG_SV_MTLB
+`define {{name|upper}}_TB_SEQUENCES_BENCH_SEQUENCES_PKG_SV_MTLB
 
 {% set fname = "{{bench_location}}/{{name}}/tb/sequences/{{name}}_sequences_pkg_mtlb.sv" %}
 {% set conditional = "mtlbReady" %}
@@ -71,8 +71,8 @@ package {{name}}_sequences_pkg;
   // pragma uvmf custom package_item_additional end
 
 endpackage
-`endif
+
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

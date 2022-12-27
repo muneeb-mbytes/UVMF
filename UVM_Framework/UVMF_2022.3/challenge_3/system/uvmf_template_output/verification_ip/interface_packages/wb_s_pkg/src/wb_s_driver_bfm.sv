@@ -1,6 +1,5 @@
-`ifndef WB_S_INCLUDED_
-`define WB_S_INCLUDED_
-
+`ifndef WB_S_DRIVER_BFM
+`define WB_S_DRIVER_BFM
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------

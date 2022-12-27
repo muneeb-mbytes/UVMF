@@ -1,3 +1,6 @@
+`ifndef BLOCK_2_TB_TESTS_TESTS_PKG_COMPILE
+`define BLOCK_2_TB_TESTS_TESTS_PKG_COMPILE
+
 needs:
   - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg.compile
   - ../../../../verification_ip/interface_packages/spi_m_pkg/spi_m.compile
@@ -7,3 +10,4 @@ needs:
   - ../sequences/block_2_sequences_pkg.compile
 src:
   - block_2_tests_pkg.sv
+`endif

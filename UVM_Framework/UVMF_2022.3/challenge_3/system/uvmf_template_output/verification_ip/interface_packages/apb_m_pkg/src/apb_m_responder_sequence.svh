@@ -1,8 +1,5 @@
-`ifndef APB_M_INCLUDED_ 
-`define APB_M_INCLUDED_
-
-
-
+`ifndef APB_M_RES_SEQUENCE
+`define APB_M_RES_SEQUENCE
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------

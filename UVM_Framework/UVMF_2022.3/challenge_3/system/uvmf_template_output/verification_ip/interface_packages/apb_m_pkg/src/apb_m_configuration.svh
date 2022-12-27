@@ -1,6 +1,5 @@
-`ifndef APB_M_INCLUDED_
-`define APB_M_INCLUDED_
-
+`ifndef APB_M_CONFIGURATION
+`define APB_M_CONFIGURATION
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------

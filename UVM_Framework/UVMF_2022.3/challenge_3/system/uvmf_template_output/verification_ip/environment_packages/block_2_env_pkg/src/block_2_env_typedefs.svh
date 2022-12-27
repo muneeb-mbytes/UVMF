@@ -1,4 +1,5 @@
-
+`ifndef BLOCK_2_ENV_TYPEDEFS
+`define BLOCK_2_ENV_TYPEDEFS
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------
@@ -18,4 +19,4 @@
 
   // pragma uvmf custom additional begin
   // pragma uvmf custom additional end
-
+`endif

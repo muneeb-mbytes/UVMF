@@ -1,7 +1,5 @@
-`ifndef SPI_S_INCLUDED_ 
-`define SPI_S_INCLUDED_
-
-
+`ifndef SPI_S_2REG_ADAPTER
+`define SPI_S_2REG_ADAPTER 
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------

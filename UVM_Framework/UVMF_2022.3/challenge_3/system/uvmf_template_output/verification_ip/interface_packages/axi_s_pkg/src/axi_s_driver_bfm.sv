@@ -1,6 +1,5 @@
-`ifndef AXI_S_INCLUDED_
-`define AXI_S_INCLUDED_
-
+`ifndef AXI_S_DRIVER_BFM
+`define AXI_S_DRIVER_BFM
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------

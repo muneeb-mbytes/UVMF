@@ -1,6 +1,5 @@
-
-`ifndef BLOCK_1_INCLUDED_
-`define BLOCK_1_INCLUDED_
+`ifndef BLOCK_1_TB_TESTS_SRC_REGISTER_TEST_SVH
+`define BLOCK_1_TB_TESTS_SRC_REGISTER_TEST_SVH
 
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3

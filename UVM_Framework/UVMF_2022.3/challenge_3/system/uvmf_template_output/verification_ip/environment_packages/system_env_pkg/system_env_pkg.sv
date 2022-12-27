@@ -1,6 +1,5 @@
-`ifndef SYSTEM_INCLUDED_
-`define SYSTEM_INCLUDED_
-
+`ifndef SYSTEM_ENV_PKG
+`define SYSTEM_ENV_PKG
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------
@@ -61,7 +60,7 @@ package system_env_pkg;
   // pragma uvmf custom package_item_additional end
 
 endpackage
+
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
 `endif

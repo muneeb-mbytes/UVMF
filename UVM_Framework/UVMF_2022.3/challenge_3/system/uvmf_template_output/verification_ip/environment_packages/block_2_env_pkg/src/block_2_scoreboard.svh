@@ -1,6 +1,5 @@
-`ifndef BLOCK_2_SCOREBOARD_INCLUDED_
-`define BLOCK_2_SCOREBOARD_INCLUDED_
-
+`ifndef BLOCK_2_SCOREBOARD_ENV_SCOREBOARD
+`define BLOCK_2_SCOREBOARD_ENV_SCOREBOARD
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------
@@ -131,5 +130,4 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
 `endif

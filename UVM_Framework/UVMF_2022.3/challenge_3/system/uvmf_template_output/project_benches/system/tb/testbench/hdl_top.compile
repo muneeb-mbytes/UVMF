@@ -1,3 +1,6 @@
+`ifndef SYSTEM_TB_TESTBENCH_HDL_TOP_COMPILE
+`define SYSTEM_TB_TESTBENCH_HDL_TOP_COMPILE
+
 incdir:
   - ${uvm_path}/src
   - .
@@ -13,3 +16,4 @@ needs:
   - ../../../../verification_ip/interface_packages/axi_s_pkg/axi_s_hdl.compile
 src:
   - hdl_top.sv
+`endif

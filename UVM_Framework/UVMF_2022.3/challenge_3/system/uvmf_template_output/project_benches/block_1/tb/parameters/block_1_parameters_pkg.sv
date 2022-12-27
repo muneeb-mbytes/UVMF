@@ -1,6 +1,5 @@
-`ifndef BLOCK_1_INCLUDED_
-`define BLOCK_1_INCLUDED_
-
+`ifndef BLOCK_1_TB_PARAMETERS_BENCH_PARAMETERS_PKG_SV
+`define BLOCK_1_TB_PARAMETERS_BENCH_PARAMETERS_PKG_SV
 
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
@@ -38,7 +37,7 @@ package block_1_parameters_pkg;
   // pragma uvmf custom package_item_additional end
 
 endpackage
+
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
 `endif

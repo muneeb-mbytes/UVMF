@@ -1,6 +1,5 @@
-`ifndef BLOCK_3_INCLUDED_
-`define BLOCK_3_INCLUDED_
-
+`ifndef BLOCK_3_TB_SEQUENCES_SRC_BENCH_SEQUENCE_BASE_SVH
+`define BLOCK_3_TB_SEQUENCES_SRC_BENCH_SEQUENCE_BASE_SVH
 
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
