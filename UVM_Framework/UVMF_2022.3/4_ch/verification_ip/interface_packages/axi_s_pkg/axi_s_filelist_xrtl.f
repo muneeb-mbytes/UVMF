@@ -1,3 +1,0 @@
-$UVMF_VIP_LIBRARY_HOME/interface_packages/axi_s_pkg/src/axi_s_if.sv
-$UVMF_VIP_LIBRARY_HOME/interface_packages/axi_s_pkg/src/axi_s_monitor_bfm.sv
-$UVMF_VIP_LIBRARY_HOME/interface_packages/axi_s_pkg/src/axi_s_driver_bfm.sv
