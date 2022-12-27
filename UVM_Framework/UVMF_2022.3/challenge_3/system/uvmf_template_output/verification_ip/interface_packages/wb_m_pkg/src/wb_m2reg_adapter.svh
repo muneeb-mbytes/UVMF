@@ -1,3 +1,7 @@
+`ifndef WB_M_INCLUDED_ 
+`define WB_M_INCLUDED_
+
+
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------
@@ -110,4 +114,4 @@ endclass : wb_m2reg_adapter
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif

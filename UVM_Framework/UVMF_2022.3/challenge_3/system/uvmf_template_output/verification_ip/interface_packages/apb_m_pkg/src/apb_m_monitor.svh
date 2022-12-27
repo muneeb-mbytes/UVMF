@@ -1,3 +1,4 @@
+
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------
@@ -16,6 +17,8 @@
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
 //
+`ifndef APB_M_INCLUDED_
+`define APB_M_INCLUDED_
 class apb_m_monitor #(
       int APB_ADDR_WIDTH = 32,
       int APB_DATA_WIDTH = 32,
@@ -104,4 +107,4 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif

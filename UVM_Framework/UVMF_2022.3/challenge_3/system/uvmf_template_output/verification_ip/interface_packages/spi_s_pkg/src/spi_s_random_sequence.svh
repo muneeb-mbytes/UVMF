@@ -1,3 +1,7 @@
+`ifndef SPI_S_INCLUDED_ 
+`define SPI_S_INCLUDED_
+
+
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------
@@ -50,4 +54,4 @@ endclass: spi_s_random_sequence
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif

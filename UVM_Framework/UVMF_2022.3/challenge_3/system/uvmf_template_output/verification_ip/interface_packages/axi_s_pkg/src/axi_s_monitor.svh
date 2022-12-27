@@ -1,3 +1,4 @@
+
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------
@@ -16,6 +17,8 @@
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
 //
+`ifndef AXI_S_INCLUDED_
+`define AXI_S_INCLUDED_
 class axi_s_monitor #(
       int AW_WIDTH = 32,
       int LEN = 8,
@@ -109,4 +112,4 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif

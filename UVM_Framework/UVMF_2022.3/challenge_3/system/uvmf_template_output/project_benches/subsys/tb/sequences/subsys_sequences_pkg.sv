@@ -1,3 +1,7 @@
+`ifndef SUBSYS_INCLUDED__
+`define SUBSYS_INCLUDED__
+
+
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------
@@ -51,7 +55,7 @@ package subsys_sequences_pkg;
   // pragma uvmf custom package_item_additional end
 
 endpackage
-
+`endif
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
 

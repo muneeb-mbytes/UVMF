@@ -18,9 +18,12 @@ uvmf:
           type: "sys_scoreboard"
       
       imports:
-        - name: apb_m_pkg
-        - name: axi_m_pkg
-        - name: axi_s_pkg
+        - name: "apb_m_pkg"
+        - name: "axi_m_pkg"
+        - name: "axi_s_pkg"
+        - name: "block_1_env_pkg"
+        - name: "block_2_env_pkg"
+
 
       tlm_connections:
         - driver: "s1.block_1_ap1"

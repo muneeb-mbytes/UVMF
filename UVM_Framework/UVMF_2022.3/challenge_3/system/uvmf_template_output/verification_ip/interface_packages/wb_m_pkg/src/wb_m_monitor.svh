@@ -1,3 +1,4 @@
+
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------
@@ -16,6 +17,8 @@
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
 //
+`ifndef WB_M_INCLUDED_
+`define WB_M_INCLUDED_
 class wb_m_monitor #(
       int WB_ADDR_WIDTH = 32,
       int WB_DATA_WIDTH = 16
@@ -99,4 +102,4 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif

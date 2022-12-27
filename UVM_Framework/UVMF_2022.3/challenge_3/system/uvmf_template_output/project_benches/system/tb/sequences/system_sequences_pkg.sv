@@ -1,3 +1,7 @@
+`ifndef SYSTEM_INCLUDED__
+`define SYSTEM_INCLUDED__
+
+
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------
@@ -55,7 +59,7 @@ package system_sequences_pkg;
   // pragma uvmf custom package_item_additional end
 
 endpackage
-
+`endif
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
 

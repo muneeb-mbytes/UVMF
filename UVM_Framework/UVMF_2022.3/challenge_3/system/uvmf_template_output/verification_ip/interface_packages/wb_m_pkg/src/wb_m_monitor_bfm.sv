@@ -1,3 +1,4 @@
+
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------
@@ -28,6 +29,8 @@
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
 //
+`ifndef WB_M_INCLUDED_
+`define WB_M_INCLUDED_
 import uvmf_base_pkg_hdl::*;
 import wb_m_pkg_hdl::*;
 `include "src/wb_m_macros.svh"
@@ -210,4 +213,4 @@ endinterface
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif

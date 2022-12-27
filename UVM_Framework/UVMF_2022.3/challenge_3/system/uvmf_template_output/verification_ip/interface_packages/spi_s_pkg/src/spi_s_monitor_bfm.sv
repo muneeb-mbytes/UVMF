@@ -1,3 +1,4 @@
+
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------
@@ -28,6 +29,8 @@
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
 //
+`ifndef SPI_S_INCLUDED_
+`define SPI_S_INCLUDED_
 import uvmf_base_pkg_hdl::*;
 import spi_s_pkg_hdl::*;
 `include "src/spi_s_macros.svh"
@@ -182,4 +185,4 @@ endinterface
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif

@@ -1,3 +1,4 @@
+
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------
@@ -28,6 +29,8 @@
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
 //
+`ifndef APB_M_INCLUDED_
+`define APB_M_INCLUDED_
 package apb_m_pkg;
   
    import uvm_pkg::*;
@@ -74,4 +77,4 @@ endpackage
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif

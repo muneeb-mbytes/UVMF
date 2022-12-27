@@ -1,3 +1,4 @@
+
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------
@@ -16,6 +17,8 @@
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
 //
+`ifndef SPI_M_INCLUDED_
+`define SPI_M_INCLUDED_
 class spi_m_monitor  extends uvmf_monitor_base #(
                     .CONFIG_T(spi_m_configuration  ),
                     .BFM_BIND_T(virtual spi_m_monitor_bfm  ),
@@ -84,4 +87,4 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif

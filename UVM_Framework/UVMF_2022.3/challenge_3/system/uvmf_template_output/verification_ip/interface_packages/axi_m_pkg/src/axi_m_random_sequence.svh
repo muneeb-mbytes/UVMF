@@ -1,3 +1,7 @@
+`ifndef AXI_M_INCLUDED_ 
+`define AXI_M_INCLUDED_
+
+
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------
@@ -70,4 +74,4 @@ endclass: axi_m_random_sequence
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif

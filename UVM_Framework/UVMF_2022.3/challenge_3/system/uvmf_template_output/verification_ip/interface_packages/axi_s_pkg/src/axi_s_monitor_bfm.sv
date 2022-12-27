@@ -1,3 +1,4 @@
+
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------
@@ -28,6 +29,8 @@
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
 //
+`ifndef AXI_S_INCLUDED_
+`define AXI_S_INCLUDED_
 import uvmf_base_pkg_hdl::*;
 import axi_s_pkg_hdl::*;
 `include "src/axi_s_macros.svh"
@@ -357,4 +360,4 @@ endinterface
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif

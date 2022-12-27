@@ -1,3 +1,7 @@
+`ifndef SYSTEM_INCLUDED_
+`define SYSTEM_INCLUDED_
+
+
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------
@@ -58,7 +62,7 @@ package system_tests_pkg;
   // pragma uvmf custom package_item_additional end
 
 endpackage
-
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
+`endif
 

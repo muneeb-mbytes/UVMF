@@ -1,3 +1,6 @@
+`ifndef APB_M_INCLUDED_
+`define APB_M_INCLUDED_
+
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------
@@ -375,4 +378,4 @@ endinterface
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif

@@ -1,3 +1,7 @@
+`ifndef WB_S_INCLUDED_
+`define WB_S_INCLUDED_
+
+
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------
@@ -17,4 +21,4 @@
 
 // pragma uvmf custom additional begin
 // pragma uvmf custom additional end
-
+`endif

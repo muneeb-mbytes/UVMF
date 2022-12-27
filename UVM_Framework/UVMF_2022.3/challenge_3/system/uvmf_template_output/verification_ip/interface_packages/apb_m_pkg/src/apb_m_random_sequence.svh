@@ -1,3 +1,7 @@
+`ifndef APB_M_INCLUDED_ 
+`define APB_M_INCLUDED_
+
+
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------
@@ -66,4 +70,4 @@ endclass: apb_m_random_sequence
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif

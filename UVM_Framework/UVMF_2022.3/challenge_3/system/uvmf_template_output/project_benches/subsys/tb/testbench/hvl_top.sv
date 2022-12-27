@@ -1,3 +1,7 @@
+`ifndef SUBSYS_INCLUDED_
+`define SUBSYS_INCLUDED_
+
+
 //----------------------------------------------------------------------
 // Created with uvmf_gen version 2022.3
 //----------------------------------------------------------------------
@@ -31,3 +35,4 @@ endmodule
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
 
+`endif
