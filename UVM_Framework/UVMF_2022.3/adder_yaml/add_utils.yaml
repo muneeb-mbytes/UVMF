@@ -1,0 +1,23 @@
+uvmf:
+  util_components:
+    "add_predictor":
+      type: predictor
+      analysis_exports:
+      - name: "add_in_agent_ae"
+        type: 'add_in_transaction'
+      analysis_ports:
+      - name: "add_sb_ap"
+        type: 'add_out_transaction'
+      
+    "add_scoreboard":
+      type: scoreboard
+      analysis_exports:
+      - name: "add_out_pred_sb_ae"
+        type: 'add_out_transaction'
+      - name: "add_out_ag_sb_ae"
+        type: 'add_out_transaction'
+      #- sb_type: "uvmf_in_order_scoreboard"
+      # trans_type: "add_out_transaction"
+
+      
+      

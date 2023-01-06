@@ -1,0 +1,9 @@
+needs:
+  - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg_hdl.compile
+  - ./add_out_common.compile
+incdir:
+  - .
+src:
+  - src/add_out_if.sv
+  - src/add_out_monitor_bfm.sv
+  - src/add_out_driver_bfm.sv
