@@ -1,3 +1,5 @@
+`ifndef {{name|upper}}_MONITOR_PROXY
+`define {{name|upper}}_MONITOR_PROXY
 {% set fname = "{{vip_location}}/{{interface_location}}/{{name}}_pkg/{{src_dir}}{{name}}_monitor_proxy.svh" %}
 {% extends "base_template.TMPL" %}
 {% set conditional = "dpi_link" %}
@@ -79,5 +81,5 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

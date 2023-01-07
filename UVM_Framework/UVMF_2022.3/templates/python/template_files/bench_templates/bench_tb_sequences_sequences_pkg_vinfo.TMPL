@@ -1,3 +1,5 @@
+`ifndef {{name|upper}}_ENV_SCOREBOARD
+`define {{name|upper}}_ENV_SCOREBOARD
 {% set fname = "{{bench_location}}/{{name}}/tb/sequences/{{name}}_sequences_pkg.vinfo" %}
 {% block description %}
 {% endblock %}
@@ -10,4 +12,5 @@
 @use $UVMF_PROJECT_DIR/tb/parameters/{{name}}_parameters_pkg.vinfo
 +incdir+@vinfodir
 {{name}}_sequences_pkg.sv
+`endif
 {% endblock %}

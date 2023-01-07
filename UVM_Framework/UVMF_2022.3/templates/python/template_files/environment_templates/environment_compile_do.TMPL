@@ -1,3 +1,4 @@
+`ifndef {{name|upper}}_ENVIRONMENT_COMPILE_DO.TMPL
 {% set fname = "{{vip_location}}/{{environment_location}}/{{name}}_env_pkg/compile.do" %}
 # Tcl do file for compile of {{name}} interface
 
@@ -53,5 +54,4 @@ quietly set cmd [format "%s %s/{{environment_location}}/{{name}}_env_pkg/registe
 quietly set cmd [format "%s %s/{{environment_location}}/{{name}}_env_pkg/{{name}}_env_pkg.sv" $cmd $env(UVMF_VIP_LIBRARY_HOME)]
 eval $cmd
 
-
-
+`endif

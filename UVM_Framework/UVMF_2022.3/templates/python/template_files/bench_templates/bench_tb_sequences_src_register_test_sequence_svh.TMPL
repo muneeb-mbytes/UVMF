@@ -1,3 +1,6 @@
+`ifndef {{name|upper}}_TB_SEQUENCES_SRC_REGISTER_TEST_SEQUENCE_SVH
+`define {{name|upper}}_TB_SEQUENCES_SRC_REGISTER_TEST_SEQUENCE_SVH
+
 {% set fname = "{{bench_location}}/{{name}}/tb/sequences/{{src_dir}}register_test_sequence.svh" %}
 {% extends "base_template.TMPL" %}
 
@@ -82,5 +85,5 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

@@ -1,3 +1,5 @@
+`ifndef {{name|upper}}_COVERAGE
+`define {{name|upper}}_COVERAGE
 {% set fname = "{{vip_location}}/{{environment_location}}/{{env_name}}_env_pkg/{{src_dir}}{{name}}.svh" %}
 {% set conditional = "coverage" %}
 {% extends "base_template.TMPL" %}
@@ -169,5 +171,5 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

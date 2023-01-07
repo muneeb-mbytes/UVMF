@@ -1,3 +1,5 @@
+`ifndef {{name|upper}}_ENV_SEQUENCE_BASE
+`define {{name|upper}}_ENV_SEQUENCE_BASE
 {% set fname = "{{vip_location}}/{{environment_location}}/{{name}}_env_pkg/{{src_dir}}{{name}}_env_sequence_base.svh" %}
 {% extends "base_template.TMPL" %}
 
@@ -118,5 +120,5 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

@@ -1,3 +1,5 @@
+`ifndef {{name|upper}}_TB_TESTS_SRC_INFACT_TEST_BASE
+`define {{name|upper}}_TB_TESTS_SRC_INFACT_TEST_BASE
 {% set fname = "{{bench_location}}/{{name}}/tb/tests/{{src_dir}}infact_test_base.svh" %}
 {% set conditional = "infact_enabled" %}
 {% extends "base_template.TMPL" %}
@@ -37,5 +39,5 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

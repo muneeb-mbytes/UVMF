@@ -1,7 +1,0 @@
-needs:
-  - $UVMF_HOME/uvmf_base_pkg/uvmf_base_pkg.compile
-  - ./axi_s_common.compile
-incdir:
-  - .
-src:
-  - axi_s_pkg.sv

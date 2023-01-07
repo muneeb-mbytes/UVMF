@@ -1,3 +1,5 @@
+`ifndef {{name|upper}}_ENV_MTLB_PRED
+`define {{name|upper}}_ENV_MTLB_PRED
 {% set fname = "{{vip_location}}/{{environment_location}}/{{env_name}}_env_pkg/{{src_dir}}{{name}}_mtlb.svh" %}
 {% set conditional = "predictor_mtlb" %}
 {% extends "base_template.TMPL" %}
@@ -218,5 +220,5 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}

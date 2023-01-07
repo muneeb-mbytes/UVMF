@@ -1,3 +1,6 @@
+`ifndef {{name|upper}}_TB_SEQUENCES_SRC_READ_FROM_FILE_SEQUENCE_SVH_MTLB
+`define {{name|upper}}_TB_SEQUENCES_SRC_READ_FROM_FILE_SEQUENCE_SVH_MTLB
+
 {% set fname = "{{bench_location}}/{{name}}/tb/sequences/{{src_dir}}read_from_file_sequence_mtlb.svh" %}
 {% set conditional = "mtlbReady" %}
 {% extends "base_template.TMPL" %}
@@ -71,5 +74,5 @@ endclass
 
 // pragma uvmf custom external begin
 // pragma uvmf custom external end
-
+`endif
 {% endblock %}
