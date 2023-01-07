@@ -1,0 +1,3 @@
+needs:
+  - add_out_hvl.compile
+  - add_out_hdl.compile

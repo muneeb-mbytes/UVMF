@@ -1,0 +1,34 @@
+
+uvmf:
+ interfaces:
+   add_out:
+      clock: "clk"
+      reset: "rst"
+      reset_assertion_level: 'False'
+      veloce_ready: "False" 
+      parameters:
+      - name: "add_width"
+        type: 'int'
+        value: '4'
+
+#port declaratio
+      ports:
+      - name: "sum"
+        dir: "input"
+        width: "add_width"
+      - name: "cout"
+        dir: "input"
+        width: '1'
+
+#transaction variables
+      transaction_vars:
+      - name: "sum"
+        type: "bit [add_width-1:0]" 
+        iscompare: 'True'
+        isrand: 'False'
+
+      - name: "cout"
+        type: 'bit'
+        iscompare: 'True'
+        isrand: 'False'
+
