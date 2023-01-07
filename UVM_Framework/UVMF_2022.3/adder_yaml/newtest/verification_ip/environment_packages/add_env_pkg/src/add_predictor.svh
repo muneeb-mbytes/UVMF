@@ -94,11 +94,12 @@ class add_predictor #(
     add_sb_ap_output_transaction = add_sb_ap_output_transaction_t::type_id::create("add_sb_ap_output_transaction");
     //  UVMF_CHANGE_ME: Implement predictor model here. 
     {add_sb_ap_output_transaction.cout,add_sb_ap_output_transaction.sum} = t.a + t.b;
-
-    `uvm_info("UNIMPLEMENTED_PREDICTOR_MODEL", "******************************************************************************************************",UVM_NONE)
+    `uvm_info("PRED",$sformatf("values are %0d and %0d",t.a,t.b), UVM_MEDIUM)
+    
+/*    `uvm_info("UNIMPLEMENTED_PREDICTOR_MODEL", "******************************************************************************************************",UVM_NONE)
     `uvm_info("UNIMPLEMENTED_PREDICTOR_MODEL", "UVMF_CHANGE_ME: The add_predictor::write_add_in_agent_ae function needs to be completed with DUT prediction model",UVM_NONE)
     `uvm_info("UNIMPLEMENTED_PREDICTOR_MODEL", "******************************************************************************************************",UVM_NONE)
- 
+ */
     // Code for sending output transaction out through add_sb_ap
     // Please note that each broadcasted transaction should be a different object than previously 
     // broadcasted transactions.  Creation of a different object is done by constructing the transaction 
