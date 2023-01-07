@@ -15,10 +15,11 @@ class add_fixed_sequence #(int add_width = 4) extends add_ben_bench_sequence_bas
   add_in_agent_fixed_seq = add_in_fixed_sequence#()::type_id::create("add_in_agent_fixed_seq");
 
   add_in_agent_config.wait_for_reset();
- // add_in_agent_config.wait_for_num_clocks(10);
-
+  add_in_agent_config.wait_for_num_clocks(1);
+  repeat (5)
+begin
   add_in_agent_fixed_seq.start(add_in_agent_sequencer);
-
+end
  // add_in_agent_config.wait_for_num_clocks(50);
 
 endtask
