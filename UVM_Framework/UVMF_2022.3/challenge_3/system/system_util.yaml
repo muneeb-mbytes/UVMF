@@ -12,7 +12,6 @@ uvmf:
       analysis_ports:
         - name: "sys_pre_to_sco_ap"
           type: "axi_s_transaction"
-      existing_library_component: 'True'
       type: predictor
     sys_scoreboard:
       analysis_exports: 

@@ -1,0 +1,397 @@
+uvmf:
+  interfaces:
+    "axi_m":
+      clock: axi_clk
+      reset: rst
+      reset_assertion_level: "False"
+      veloce_ready: "True"
+      existing_library_component: 'True'
+      parameters:
+        - name: "AW_WIDTH"
+          type: "int"
+          value: "32"
+        - name: "LEN"
+          type: "int"
+          value: "8"
+        - name: "DATA_WIDTH"
+          type: "int"
+          value: "32"
+        - name: "X"
+          type: "int"
+          value: "16"
+      ports:
+        # write address channel
+        - name: awvalid
+          dir: output
+          width: "1"
+        - name: awready
+          dir: input
+          width: "1"
+        - name: awaddr
+          dir: output
+          width: "AW_WIDTH"
+        - name: awsize
+          dir: output
+          width: "3"
+        - name: awburst
+          dir: output
+          width: "2"
+        - name: awcache
+          dir: output
+          width: "4"
+        - name: awprot
+          dir: output
+          width: "3"
+        - name: awid
+          dir: output
+          width: "X"
+        - name: awlen
+          dir: output
+          width: "LEN"
+        - name: awlock
+          dir: output
+          width: "1"
+        - name: awqos
+          dir: output
+          width: "4"
+        - name: awregion
+          dir: output
+          width: "4"
+        - name: awuser
+          dir: output
+          width: "X"
+        # write data channel   
+        - name: wvalid
+          dir: output
+          width: "1"
+        - name: wready
+          dir: input
+          width: "1"
+        - name: wlast
+          dir: output
+          width: "1"
+        - name: wdata
+          dir: output
+          width: "DATA_WIDTH"
+        - name: wstrb
+          dir: output
+          width: "DATA_WIDTH/8"
+        - name: wid
+          dir: output
+          width: "X"
+        - name: wuser
+          dir: output
+          width: "X"
+        # write response channel
+        - name: bwvalid
+          dir: input
+          width: "1"
+        - name: bwready
+          dir: output
+          width: "1"
+        - name: bresp
+          dir: input
+          width: "2"
+        - name: bid
+          dir: input
+          width: "X"
+        - name: buser
+          dir: input
+          width: "X"
+        #read address channel
+        - name: arvalid
+          dir: output
+          width: "1"
+        - name: aready
+          dir: input
+          width: "1"
+        - name: araddr
+          dir: output
+          width: "AW_WIDTH"
+        - name: arsize
+          dir: output
+          width: "3"
+        - name: arburst
+          dir: output
+          width: "2"
+        - name: arcache
+          dir: output
+          width: "4"
+        - name: arprot
+          dir: output
+          width: "3"
+        - name: arid
+          dir: output
+          width: "X"
+        - name: arlen
+          dir: output
+          width: "LEN"
+        - name: arlock
+          dir: output
+          width: "1"
+        - name: arqos
+          dir: output
+          width: "4"
+        - name: aregion
+          dir: output
+          width: "4"
+        - name: aruser
+          dir: output
+          width: "X"
+        #read data channel
+        - name: rvalid
+          dir: input
+          width: "1"
+        - name: rready
+          dir: output
+          width: "1"
+        - name: rlast
+          dir: input
+          width: "1"
+        - name: rdata
+          dir: input
+          width: "DATA_WIDTH"
+        - name: rid
+          dir: input
+          width: "X"
+        - name: ruser
+          dir: input
+          width: "X"
+        - name: rresp
+          dir: input
+          width: "2"
+      transaction_vars: 
+  #write address channel
+        - name: "awvalid"
+          type: "bit"
+          isrand: "False"
+          iscompare: "False"
+
+        - name: "awready"
+          type: "bit"
+          isrand: "False"
+          iscompare: "False"
+
+        - name: "awaddr"
+          type: "bit [AW_WIDTH-1:0]"
+          isrand: "True"
+          iscompare: "False"
+
+        - name: "awsize"
+          type: "bit"
+          isrand: "True"
+          iscompare: "False"
+
+        - name: "awburst"
+          type: "bit"
+          isrand: "True"
+          iscompare: "False"
+
+        - name: "awcache"
+          type: "bit"
+          isrand: "True"
+          iscompare: "False"
+
+        - name: "awprot"
+          type: "bit"
+          isrand: "True"
+          iscompare: "False"
+
+        - name: "awid"
+          type: "bit [X-1:0]"
+          isrand: "True"
+          iscompare: "False"
+
+        - name: "awlen"
+          type: "bit [LEN-1:0]"
+          isrand: "True"
+          iscompare: "False"
+
+        - name: "awlock"
+          type: "bit"
+          isrand: "True"
+          iscompare: "False"
+
+        - name: "awqos"
+          type: "bit"
+          isrand: "True"
+          iscompare: "False"
+
+        - name: "awregion"
+          type: "bit"
+          isrand: "True"
+          iscompare: "False"
+
+        - name: "awuser"
+          type: "bit [X-1:0]"
+          isrand: "True"
+          iscompare: "False"
+
+  #write data channel
+        - name: "wvalid"
+          type: "bit"
+          isrand: "False"
+          iscompare: "False"
+
+        - name: "wready"
+          type: "bit"
+          isrand: "False"
+          iscompare: "False"
+
+        - name: "wlast"
+          type: "bit"
+          isrand: "False"
+          iscompare: "False"
+
+        - name: "wdata"
+          type: "bit [DATA_WIDTH-1:0]"
+          isrand: "True"
+          iscompare: "False"
+
+        - name: "wstrb"
+          type: "bit [DATA_WIDTH/8-1:0]"
+          isrand: "True"
+          iscompare: "False"
+
+        - name: "wid"
+          type: "bit [X-1:0]"
+          isrand: "False"
+          iscompare: "False"
+
+        - name: "wuser"
+          type: "bit [X-1:0]"
+          isrand: "True"
+          iscompare: "False"
+
+  #write response channel
+        - name: "bwvalid"
+          type: "bit"
+          isrand: "False"
+          iscompare: "False"
+
+        - name: "bwready"
+          type: "bit"
+          isrand: "False"
+          iscompare: "False"
+
+        - name: "bresp"
+          type: "bit"
+          isrand: "True"
+          iscompare: "False"
+
+        - name: "bid"
+          type: "bit [X-1:0]"
+          isrand: "False"
+          iscompare: "False"
+
+        - name: "buser"
+          type: "bit [X-1:0]"
+          isrand: "True"
+          iscompare: "False"
+
+  #ready address channel
+        - name: "arvalid"
+          type: "bit"
+          isrand: "False"
+          iscompare: "False"
+
+        - name: "aready"
+          type: "bit"
+          isrand: "False"
+          iscompare: "False"
+
+        - name: "araddr"
+          type: "bit [AW_WIDTH-1:0]"
+          isrand: "True"
+          iscompare: "False"
+
+        - name: "arsize"
+          type: "bit"
+          isrand: "True"
+          iscompare: "False"
+
+        - name: "arburst"
+          type: "bit"
+          isrand: "True"
+          iscompare: "False"
+
+        - name: "arcache"
+          type: "bit"
+          isrand: "True"
+          iscompare: "False"
+
+        - name: "arprot"
+          type: "bit"
+          isrand: "True"
+          iscompare: "False"
+
+        - name: "arid"
+          type: "bit [X-1:0]"
+          isrand: "True"
+          iscompare: "False"
+
+        - name: "arlen"
+          type: "bit [LEN-1:0]"
+          isrand: "True"
+          iscompare: "False"
+
+        - name: "arlock"
+          type: "bit"
+          isrand: "True"
+          iscompare: "False"
+
+        - name: "arqos"
+          type: "bit"
+          isrand: "True"
+          iscompare: "False"
+
+        - name: "aregion"
+          type: "bit"
+          isrand: "True"
+          iscompare: "False"
+
+        - name: "aruser"
+          type: "bit [X-1:0]"
+          isrand: "True"
+          iscompare: "False"
+     
+  #ready data channel 
+  
+        - name: "rvalid"
+          type: "bit"
+          isrand: "False"
+          iscompare: "False"
+
+        - name: "rready"
+          type: "bit"
+          isrand: "False"
+          iscompare: "False"
+
+        - name: "rlast"
+          type: "bit"
+          isrand: "False"
+          iscompare: "False"
+
+        - name: "rdata"
+          type: "bit [DATA_WIDTH-1:0]"
+          isrand: "True"
+          iscompare: "False"
+
+        - name: "rid"
+          type: "bit [X-1:0]"
+          isrand: "True"
+          iscompare: "False"
+
+        - name: "ruser"
+          type: "bit [X-1:0]"
+          isrand: "True"
+          iscompare: "False"
+
+        - name: "rresp"
+          type: "bit"
+          isrand: "True"
+          iscompare: "False"
+
+
+
+         

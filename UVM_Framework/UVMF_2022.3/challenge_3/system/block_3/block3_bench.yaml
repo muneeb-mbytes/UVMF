@@ -1,0 +1,14 @@
+uvmf:
+  benches:
+    "block_3" :
+      ## Specify the top-level block
+      top_env: "block_3"
+      clock_half_period: "5ns"
+      reset_assertion_level: "True"
+      reset_duration: "200ns"
+      existing_library_component: 'True'
+      active_passive: 
+        - bfm_name: "wb_master" 
+          value: "ACTIVE"
+        - bfm_name: "axi_slave" 
+          value: "ACTIVE"

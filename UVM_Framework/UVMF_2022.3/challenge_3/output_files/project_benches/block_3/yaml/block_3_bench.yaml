@@ -1,0 +1,17 @@
+uvmf:
+  benches:
+    block_3:
+      active_passive:
+      - bfm_name: wb_master
+        value: ACTIVE
+      - bfm_name: axi_slave
+        value: ACTIVE
+      active_passive_default: ACTIVE
+      clock_half_period: 5ns
+      clock_phase_offset: 9ns
+      existing_library_component: 'True'
+      interface_params: []
+      reset_assertion_level: 'True'
+      reset_duration: 200ns
+      top_env: block_3
+      use_dpi_link: 'False'
