@@ -1,1 +1,0 @@
-$UVMF_VIP_LIBRARY_HOME/interface_packages/nand_in_pkg/nand_in_pkg_hdl.sv

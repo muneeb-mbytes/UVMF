@@ -1,3 +1,0 @@
-needs:
-  - nand_in_hvl.compile
-  - nand_in_hdl.compile
