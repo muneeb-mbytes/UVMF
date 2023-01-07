@@ -1,3 +1,0 @@
-$UVMF_VIP_LIBRARY_HOME/interface_packages/jtag_pkg/src/jtag_if.sv
-$UVMF_VIP_LIBRARY_HOME/interface_packages/jtag_pkg/src/jtag_monitor_bfm.sv
-$UVMF_VIP_LIBRARY_HOME/interface_packages/jtag_pkg/src/jtag_driver_bfm.sv
